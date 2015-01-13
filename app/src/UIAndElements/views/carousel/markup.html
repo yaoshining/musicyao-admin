@@ -1,0 +1,23 @@
+<div ng-controller="CarouselDemoController">
+    <div style="height: 305px;width: 601px;margin: 0 auto">
+        <carousel interval="myInterval">
+            <slide ng-repeat="slide in slides" active="slide.active">
+                <img ng-src="{{slide.image}}" style="margin: auto" />
+                <div class="carousel-caption">
+                    <h4>幻灯片{{$index}}</h4>
+                    <p>{{slide.text}}</p>
+                </div>
+            </slide>
+        </carousel>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <button type="button" class="btn btn-info" ng-click="addSlide()">添加幻灯片</button>
+        </div>
+        <div class="col-md-6">
+            间隔,以毫秒为单位: <input type="number" class="form-control" ng-model="myInterval" />
+            <br />
+            输入一个负数或者0来停止间隔.
+        </div>
+    </div>
+</div>

@@ -1,0 +1,77 @@
+.worktile {
+    margin: 0;
+    position: absolute;
+    top: 45px;
+    left: 190px;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    .sidebar.menu-min+.main-content & {
+        left: 43px;
+    }
+}
+.worktile > aside {
+    width: 238px;
+    padding: 0 5px 5px 5px;
+    float: right;
+    height: 100%;
+    border-left: 1px solid rgb(225,225,225);
+    box-shadow: rgb(238, 238, 238) 0px 0px 3px 0px, rgb(255, 255, 255) 0px 0px 3px 0px inset;
+}
+.worktile > .task-container {
+    margin-right: 238px;
+    height: 100%;
+    position: relative;
+    & > header {
+        height: 59px;
+        line-height: 59px;
+        background-color: #ffffff;
+        padding: 0 15px;
+        border-bottom: 1px solid rgb(225,225,225);
+        box-shadow: rgb(238, 238, 238) 1px 0px 3px 0px, rgb(255, 255, 255) 0px 0px 3px 0px inset;
+    }
+    & > main {
+        width: 100%;
+        overflow-x: auto;
+        position: absolute;
+        top: 59px;
+        bottom: 0;
+        white-space: nowrap;
+    }
+}
+.wt-entry-placeholder {
+    display:inline-block;
+    border:solid 1px #e1e1e1;
+    background:#f2f2ea;
+    margin: 15px 0 0 15px;
+}
+.wt-tasks-main {
+    min-height: 25px;
+}
+.wt-task-placeholder {
+    border:solid 1px #e1e1e1;
+    background:#f2f2ea;
+    padding: 10px 5px;
+}
+.wt-side-content {
+    border-left: solid 1px #e1e1e1;
+    box-shadow: 0 0px 15px rgba(0, 0, 0, 0.10);
+}
+.wt-entries-main {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: inline-block;
+}
+.wt-entry {
+    display:inline-block;
+    width: 278px;
+    min-height: 60px;
+    margin: 15px 0 0 15px;
+    white-space: initial;
+    vertical-align: top;
+    cursor: pointer;
+}
+.worktile .ui-sortable-helper {
+    transform: rotate(5deg);
+}

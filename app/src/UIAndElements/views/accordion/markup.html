@@ -1,0 +1,29 @@
+<div ng-controller="AccordionDemoController">
+    <p>
+        <button class="btn btn-primary btn-sm" ng-click="status.open = !status.open">开关最后一个面板</button>
+        <button class="btn btn-primary btn-sm" ng-click="status.isFirstDisable=!status.isFirstDisable">启用/禁用第一个面板</button>
+    </p>
+    <label>
+        <input type="checkbox" class="ebp" ng-model="oneAtATime" />
+        <span class="lbl">同一时间尽打开一个面板</span>
+    </label>
+    <accordion close-others="oneAtATime">
+        <accordion-group heading="静态的头部,初始是展开的" is-open="status.isFirstOpen" is-disabled="status.isFirstDisable">
+            这里的内容是直接在模板中的
+        </accordion-group>
+        <accordion-group heading="{{group.title}}" ng-repeat="group in groups">
+            {{group.content}}
+        </accordion-group>
+        <accordion-group heading="动态主体内容">
+            <p>这个手风琴组的主体大小会增长以适应内容.</p>
+            <button class="btn btn-success btn-sm" ng-click="addItem()">添加列表项</button>
+            <div ng-repeat="item in items">{{item}}</div>
+        </accordion-group>
+        <accordion-group is-open="status.open">
+            <accordion-heading>
+                这里也可以写标签!<i class="pull-right fa" ng-class="{'fa-arrow-right': !status.open,'fa-arrow-down': status.open}"></i>
+            </accordion-heading>
+            这里仅仅是一些内容,为了说明这么牛逼的头部.
+        </accordion-group>
+    </accordion>
+</div>

@@ -1,0 +1,96 @@
+<section class="row worktile" ng-controller="WorktileController">
+    <aside ng-include="'src/worktile/views/worktile.sidebar.tpl.html'">
+
+    </aside>
+    <div class="task-container">
+        <header>
+            <div class="pull-left">
+                <h2 class="inline">
+                    <i class="ebp-icon fa fa-desktop inline"></i>
+                    <small style="margin-left: 20px">熟悉Tasks</small>
+                </h2>
+                <i class="ebp-icon fa fa-star orange"></i>
+                <i class="ebp-icon fa fa-lock red"></i>
+            </div>
+            <div class="pull-right">
+                <div class="btn-group">
+                    <button class="btn btn-danger">新建任务</button>
+                    <a class="btn btn-danger dropdown-toggle" data-toggle="dropdown"> <i class="ebp-icon fa fa-caret-down"></i> </a>
+                </div>
+                <button class="btn btn-success">筛选</button>
+                <button class="btn btn-success">
+                    <i class="ebp-icon fa fa-step-forward"></i>
+                </button>
+            </div>
+        </header>
+        <main class="wt-entries-container" ebp-jq="mCustomScrollbar" jq-options="{horizontalScroll:true,theme:'dark-thick',advanced: {autoExpandHorizontalScroll: true,autoScrollOnFocus: false}}">
+            <div class="wt-entries-main" ui-sortable="entrySortableOptions" ng-model="entries">
+                <div class="wt-entry" ng-repeat="entry in entries">
+                    <div class="widget-box widget-color-blue">
+                        <div class="widget-header ui-sortable-handle">
+                            <h5 class="widget-title">{{entry.name}}</h5>
+                            <div class="widget-toolbar">
+                                <div class="widget-menu" dropdown="">
+                                    <a href="" data-action="settings" dropdown-toggle="" aria-haspopup="true" aria-expanded="false">
+                                        <i class="ebp-icon fa fa-bars"></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-right dropdown-light-blue dropdown-caret dropdown-closer">
+                                        <li>
+                                            <a data-toggle="tab" href="#dropdown1">列表选项<i class="pull-right ebp-icon fa fa-close"></i></a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <a data-toggle="tab" href="#dropdown2">新建任务</a>
+                                        </li>
+                                        <li>
+                                            <a data-toggle="tab" href="#dropdown2">批量操作任务</a>
+                                        </li>
+                                        <li>
+                                            <a data-toggle="tab" href="#dropdown2"><i class="ebp-icon fa fa-archive"></i>归档完成任务</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <a data-toggle="tab" href="#dropdown2">重命名</a>
+                                        </li>
+                                        <li>
+                                            <a data-toggle="tab" href="#dropdown2">关注</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <a data-toggle="tab" href="#dropdown2">
+                                                <i class="ebp-icon fa fa-ellipsis-h"></i>
+                                                更多操作
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget-body">
+                            <div class="widget-main wt-tasks-main no-padding" ui-sortable="taskSortableOptions" ng-model="entry.tasks">
+                                <div style="border-bottom: solid 1px #e1e1e1;border-top:solid 1px #fff;vertical-align: middle;padding: 10px 5px;background-color: #ffffff" ng-repeat="task in entry.tasks" ng-click="openTaskDetail($event,task)">
+                                    <label class="inline" ng-click="$event.stopPropagation()">
+                                        <input type="checkbox" class="ebp">
+                                        <span class="lbl"> </span>
+                                    </label>
+                                    {{task.name}}
+                                </div>
+                            </div>
+                            <div style="border-top:solid 1px #fff;vertical-align: middle;padding: 5px 15px;background-color: #ffffff">
+                                新建任务
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="display: inline-block;width: 278px;margin: 15px 0 0 15px;white-space: initial;vertical-align: top">
+                <a class="btn btn-success" style="width: 100%" ng-click="addEntry()">
+                    <i class="ebp-icon fa fa-plus"></i>
+                    新建列表
+                </a>
+            </div>
+        </main>
+    </div>
+    <div class="wt-side-content slide-right" ng-include="'src/worktile/views/worktile.sidecontent.tpl.html'" ng-show="showSlideContent" style="position: absolute;right: 0;top:0;bottom:0;width:700px;z-index: 5;background-color: #ffffff"></div>
+</section>
+

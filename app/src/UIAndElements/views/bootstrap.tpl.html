@@ -1,0 +1,39 @@
+<div ng-init="collapsed = true" style="position: fixed;right: -200px;width: 200px;z-index: 3" ng-style="showStyle" ng-mouseleave="showStyle = {right: '-200px'};collapsed = true">
+    <div class="list-group">
+        <a href class="list-group-item minijianyingbikaishu" style="font-size: 16px" ng-click="goToPlugin(item.name)" ng-repeat="item in pluginItems">
+            {{item.name}}
+        </a>
+    </div>
+    <div ng-click="showStyle = collapsed?{right: 0}:{right: '-200px'};collapsed = !collapsed;" style="position: absolute;left: -50px;width: 50px;height: 50px;top: 10%;margin-top: -25px;text-align: center;background-color: rgba(255,0,0,0.5);line-height: 60px;cursor: pointer;border-top-left-radius: 5px;border-bottom-left-radius: 5px;">
+        <i class="ebp-icon fa" ng-class="{'fa-plus': collapsed,'fa-close': !collapsed}" style="font-size: 25px;color: #ffffff"></i>
+    </div>
+</div>
+<div ng-repeat="item in pluginItems" style="display: inline-block;width: 100%;margin-bottom: 10px;" class="curved_box">
+    <div oc-lazy-load="{name: 'UIAndElementsModule',files: item.deps}">
+        <a name="{{item.name | lowercase}}"></a>
+        <h1 class="printify">{{item.name}}</h1>
+        <div class="hr hr32"></div>
+        <div class="col-md-6 col-xs-6" ng-include="item.markupUrl">
+
+        </div>
+        <div class="col-md-6 col-xs-6 qingchakaiti bigger-150" ng-include="item.descriptionUrl">
+
+        </div>
+        <div class="hr hr32" style="float: left;width: 100%"></div>
+        <div class="col-md-12" style="padding: 0">
+            <section>
+                <tabset>
+                    <tab ng-if="item.markupUrl" heading="Markup" class="tab-gray">
+                        <pre ui-codemirror="codeMirrorOpts" ui-refresh="true" ng-model="item.markup" class="prettyprint linenums prettyprinted" style="position: relative;top: -1px;border-radius: 0">
+                        </pre>
+                    </tab>
+                    <tab ng-if="item.javascriptUrl" heading="JavaScript" class="tab-gray">
+                        <pre ui-codemirror="codeMirrorOpts" ui-codemirror-opts="{mode: 'javascript'}" ui-refresh="true" ng-model="item.javascript" class="prettyprint linenums prettyprinted" style="position: relative;top: -1px;border-radius: 0">
+                        </pre>
+                    </tab>
+                    <tab ng-if="item.cssUrl" heading="CSS">css</tab>
+                </tabset>
+            </section>
+        </div>
+    </div>
+</div>

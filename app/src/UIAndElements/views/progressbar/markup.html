@@ -1,0 +1,33 @@
+<div ng-controller="ProgressbarDemoController">
+
+    <h3>静态的</h3>
+    <div class="row">
+        <div class="col-sm-4"><progressbar value="55"></progressbar></div>
+        <div class="col-sm-4"><progressbar class="progress-striped" value="22" type="warning">22%</progressbar></div>
+        <div class="col-sm-4">
+            <progressbar class="progress-striped active" max="200" value="166" type="danger">
+                <i>166 / 200</i>
+            </progressbar>
+        </div>
+    </div>
+
+    <hr />
+    <h3>动态的 <button class="btn btn-sm btn-primary" type="button" ng-click="random()">随机生成</button></h3>
+    <progressbar max="max" value="dynamic">
+        <span style="color: #000000;white-space: nowrap;">{{dynamic}} / {{max}}</span>
+    </progressbar>
+
+    <small><em>没有动画的</em></small>
+    <progressbar animate="false" value="dynamic" type="success"><b>{{dynamic}}%</b></progressbar>
+
+    <small><em>对象(根据值来改变类型)</em></small>
+    <progressbar class="progress-striped active" value="dynamic" type="{{type}}">{{typeText(type)}}<i ng-show="showWarning">!!当心!!!</i></progressbar>
+
+    <hr />
+    <h3>堆积的 <button class="btn btn-sm btn-primary" type="button" ng-click="randomStacked()">随机生成</button></h3>
+    <progress class="progress-striped active">
+        <bar ng-repeat="bar in stacked track by $index" value="bar.value" type="{{bar.type}}">
+            <span ng-hide="bar.value < 5">{{bar.value}}%</span>
+        </bar>
+    </progress>
+</div>

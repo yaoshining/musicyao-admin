@@ -1,0 +1,31 @@
+<div ng-controller="PopoverDemoController">
+    <h4>动态的</h4>
+    <div class="form-group">
+        <label>弹出的文本:</label>
+        <input type="text" ng-model="dynamicPopover" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>弹出的标题:</label>
+        <input type="text" ng-model="dynamicPopoverTitle" class="form-control" />
+    </div>
+    <button popover="{{dynamicPopover}}" popover-title="{{dynamicPopoverTitle}}" class="btn btn-default">动态的弹出框</button>
+
+    <hr />
+    <h4>按位置显示</h4>
+    <button popover-placement="top" popover="在上面的!" class="btn btn-default">上面的</button>
+    <button popover-placement="left" popover="在左边的!" class="btn btn-default">左边的</button>
+    <button popover-placement="right" popover="在右边的!" class="btn btn-default">右边的</button>
+    <button popover-placement="bottom" popover="在下面的!" class="btn btn-default">下面的</button>
+
+    <hr />
+    <h4>触发器</h4>
+    <p>
+        <button popover="当鼠标进入时我就会显示!" popover-trigger="mouseenter" class="btn btn-default">鼠标进入时</button>
+    </p>
+    <input type="text" value="点击我!" popover="当我被选中时就会显示!点击其它地方我就会消失..." popover-trigger="focus" class="form-control" />
+
+    <hr />
+    <h4>其他的</h4>
+    <button popover-animation="true" popover="我淡入和淡出!" class="btn btn-default">淡入淡出</button>
+    <button popover="我有一个标题!" popover-title="这是标题!" class="btn btn-default">标题</button>
+</div>

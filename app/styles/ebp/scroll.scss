@@ -1,0 +1,39 @@
+.scroll-content {
+  position: static;
+  overflow: hidden;
+}
+.scroll-track {
+  position: absolute;
+  top: auto;
+  bottom: auto;
+  right: 0;
+  height: auto;
+  background-color: #E7E7E7;
+  z-index: 99;
+  width: 0;
+  opacity: 0;
+}
+.ebp-scroll {
+    overflow: hidden;
+}
+.ebp-scroll:hover .scroll-active, .scroll-active.scroll-track:hover, .scroll-active.scroll-track.scroll-hover, .scroll-active.scroll-track.active, .scroll-active.scroll-track:active {
+  width: 8px;
+  opacity: 1;
+  -webkit-transition-duration: .15s;
+  transition-duration: .15s;
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+.scroll-track.scroll-active {
+  -webkit-transition: width .25s ease .75s,opacity .25s ease .75s;
+  -o-transition: width .25s ease .75s,opacity .25s ease .75s;
+  transition: width .25s ease .75s,opacity .25s ease .75s;
+}
+.scroll-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  background-color: #ACE;
+  background: #bbd4e5;
+}

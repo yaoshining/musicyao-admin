@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-xs-12">
+        <div class="row">
+            <div class="col-sm-6">
+                <div ng-nestable ng-model="items1">
+                    <div ng-class="{true: $item.className}[$item.className!=null]">
+                        <span ng-class="{true: $item.color}[$item.color!=null]">{{$item.name}}</span>
+                        <span class="lighter grey" ng-if="$item.description" ng-bind="$item.description" style="margin-left: 10px">
+                        </span>
+                        <i ng-if="$item.iconClass" class="pull-right bigger-130 ebp-icon fa" ng-class="{true: $item.iconClass}[$item.iconClass!=null]"></i>
+                        <a ng-if="$item.tooltip" href ng-mousedown="tooltipClicked($event)" tooltip-html-unsafe="{{tooltipHtml($item.tooltip)}}" tooltip-placement="left" class="pull-right btn btn-primary btn-mini btn-white btn-bold">
+                            <i class="bigger-120 ebp-icon fa fa-calendar"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div ng-nestable ng-model="items2">
+                    <div>
+                        {{$item.name}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

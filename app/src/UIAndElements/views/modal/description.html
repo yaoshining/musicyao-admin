@@ -1,0 +1,42 @@
+<p>
+    <code>$modal</code>是一个可以快速创建AngularJS强大的模态窗口的服务.创建它们是非常直接的:创建一个区域视图,它们的控制器以及当使用这个服务时去引用它们.
+</p>
+<p>
+    <code>$modal</code>服务紧紧只有一个方法:<code>open(options)</code>,这里可用的选项如下:
+</p>
+<p>
+    <ul>
+        <li>
+            <code>templateUrl</code> -
+            <span>
+                一个可以代表模态窗口内容的模板路径.
+            </span>
+        </li>
+        <li>
+            <code>template</code> -
+            <span>
+                可以代表模态窗口内容的内置模板.
+            </span>
+        </li>
+        <li>
+            <code>scope</code> -
+            <span>
+                一个可以被模态窗口内容使用的作用域实例(实际上<code>$modal</code>服务将会创建一个被提供作用域的子作用域).默认值是<code>$rootScope</code>
+            </span>
+        </li>
+        <li>
+            <code>controller</code> -
+            <span>
+                一个模态窗口实例的控制器 - 它可以初始化模态窗口要使用的作用域.支持像这种'SomeCtrl as myctrl'的"controller-as"语法;可以同
+                <code>$modalInstance</code>一起注入.
+            </span>
+        </li>
+        <li>
+            <code>controllerAs</code> -
+            <span>
+                另一种"controller-as"语法,和指定定义的API使用方法一致.需要提供<code>controller</code>选项.
+            </span>
+        </li>
+        ...
+    </ul>
+</p>

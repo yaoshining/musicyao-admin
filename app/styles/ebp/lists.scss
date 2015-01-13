@@ -1,0 +1,122 @@
+.dd {
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 0;
+    max-width: 600px;
+    list-style: none;
+    line-height: 20px;
+}
+.dd-list {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    .dd-list {
+        padding-left: 30px;
+    }
+}
+.dd-item, .dd-empty, .dd-placeholder {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    min-height: 20px;
+    line-height: 20px;
+}
+.dd-handle, .dd2-content {
+    display: block;
+    min-height: 38px;
+    margin: 5px 0;
+    padding: 8px 12px;
+    background: #F8FAFF;
+    border: 1px solid #DAE2EA;
+    color: #7C9EB2;
+    text-decoration: none;
+    font-weight: 700;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+li.item-orange {
+    border-left-color: #e8b110;
+}
+li.item-red {
+    border-left-color: #d53f40;
+}
+li.item-blue2 {
+    border-left-color: #3983c2;
+}
+.dd-list>li[class*=item-]>.dd-handle {
+    border-left: 2px solid;
+    border-left-color: inherit;
+}
+.dd-item>button {
+    display: block;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    float: left;
+    width: 25px;
+    height: 20px;
+    margin: 5px 1px 5px 5px;
+    padding: 0;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    border: 0;
+    background: 0 0;
+    font-size: 12px;
+    line-height: 1;
+    text-align: center;
+    font-weight: 700;
+    top: 4px;
+    left: 1px;
+    color: #707070;
+    &:before {
+        font-family: FontAwesome;
+        content: '\f067';
+        display: block;
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        text-indent: 0;
+        font-weight: 400;
+        font-size: 14px;
+    }
+}
+.dd-item>button[data-action=collapse]:before {
+    content: '\f068';
+}
+.dd-dragel {
+    position: absolute;
+    pointer-events: none;
+    z-index: 999;
+    opacity: .8
+}
+.dd-dragel>li>.dd-handle {
+    color: #4B92BE;
+    background: #F1F5FA;
+    border-color: #D6E1EA;
+    border-left: 2px solid #777;
+    position: relative
+}
+
+.dd-dragel>li>.dd-handle[class*=btn-] {
+    color: #FFF
+}
+
+.dd-dragel>.dd-item>.dd-handle {
+    margin-top: 0
+}
+.dd-placeholder,.dd-empty {
+    margin: 5px 0;
+    padding: 0;
+    min-height: 30px;
+    background: #F0F9FF;
+    border: 2px dashed #BED2DB;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}

@@ -1,0 +1,38 @@
+<div ng-controller="TabsDemoController">
+    <p>通过设置active属性为true来选择一个标签页:</p>
+
+    <p>
+        <button class="btn btn-default btn-sm" ng-click="tabs[0].active = true">选择第二个标签页</button>
+        <button class="btn btn-default btn-sm" ng-click="tabs[1].active = true">选择第三个标签页</button>
+    </p>
+    <p>
+        <button class="btn btn-default btn-sm" ng-click="tabs[1].disabled = !tabs[1].disabled">启用/禁用第三个标签页</button>
+    </p>
+    <hr />
+
+    <tabset>
+        <tab heading="静态标题">静态的内容</tab>
+        <tab ng-repeat="tab in tabs" heading="{{tab.title}}" active="tab.active" disabled="tab.disabled">
+            {{tab.content}}
+        </tab>
+        <tab select="alertMe()">
+            <tab-heading>
+                <i class="glyphicon glyphicon-bell"></i>警报!
+            </tab-heading>
+            我有一个HTML的头部,并且也有一个选择回调方法,真的很酷啊!
+        </tab>
+    </tabset>
+    <hr />
+
+    <tabset vertical="true" type="pills">
+        <tab heading="垂直布局的标签页1">垂直布局的标签页1的内容</tab>
+        <tab heading="垂直布局的标签页2">垂直布局的标签页2的内容</tab>
+    </tabset>
+
+    <hr />
+    <tabset justified="true">
+        <tab heading="自适应的">自适应的内容</tab>
+        <tab heading="SJ">短标签自适应的内容</tab>
+        <tab heading="很长的自适应.......">长标签的自适应内容</tab>
+    </tabset>
+</div>

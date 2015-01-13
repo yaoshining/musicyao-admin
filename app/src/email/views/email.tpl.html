@@ -1,0 +1,40 @@
+<div class="topdata">
+    <div class="btn-group">
+        <button type="button" class="btn btn-xs btn-default dropdown-toggle" data-toggle="dropdown">
+           <span translate="LANGUAGES"></span><span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            <li><a ng-href="" ng-click="changeLanguage('en')">English</a></li>
+            <li><a ng-href="" ng-click="changeLanguage('zh-CN')">简体中文</a></li>
+        </ul>
+    </div>
+</div>
+<div class="email-main">
+	<div class="list-group email-navbar">
+		<a ng-href="#/emails/compose/" class="list-group-item" ng-class="{'active': viewName==='compose'}" translate="COMPOSE"></a>
+		<a ng-href="#/emails/inbox/" class="list-group-item" translate="CHECK"></a>
+		<a class="list-group-item" translate="CONTACTS"></a>
+		<a class="divider"></a>
+		<a href="#/emails/inbox/" class="list-group-item" ng-class="{'active': viewName==='inbox'}" translate="INBOX"></a>
+		<a href="#" class="list-group-item" translate="STARRED"></a>
+		<a href="#" class="list-group-item" translate="GROUP_MAIL"></a>
+		<a href="#" class="list-group-item"><span translate="DRAFT"></span>(4)</a>
+		<a href="#" class="list-group-item" translate="SENT"></a>
+		<a href="#" class="list-group-item" translate="TRASH"></a>
+		<a href="#" class="list-group-item" translate="SPAM"></a>
+		<a href="#" class="list-group-item" translate="SUBSCRIPTION"></a>
+	</div>
+	<div style="padding: 5px 10px 0 10px;overflow-x: hidden;overflow-y: auto;height: 100%;width: 83.33333%">
+		<div ng-switch on="viewName">
+            <div ng-switch-when="inbox">
+                <div ng-include="'/src/email/views/inbox.tpl.html'"></div>
+            </div>
+			<div class="email-compose" ng-switch-when="compose">
+                <div ng-include="'/src/email/views/compose.tpl.html'"></div>
+			</div>
+            <div ng-switch-when="details">
+                <div ng-include="'/src/email/views/details.tpl.html'"></div>
+            </div>
+		</div>
+	</div>
+</div>

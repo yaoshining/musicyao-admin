@@ -1,0 +1,28 @@
+.table > thead > tr > th {
+  border-color: #DDD;
+  font-weight: 700;
+  .ebp-icon:first-child {
+    margin-right: 2px;
+  }
+}
+.table > thead > tr {
+  color: #707070;
+  font-weight: 400;
+}
+.table-bordered{
+  & > thead.thin-border-bottom{
+    & > tr > th, & > tr > td {
+      border-bottom-width: 1px;
+    }
+  }
+}
+.table>thead>tr {
+    color: #707070;
+    font-weight: 400;
+    background: #F2F2F2;
+    background-image: -webkit-linear-gradient(top,#f8f8f8 0,#ececec 100%);
+    background-image: -o-linear-gradient(top,#f8f8f8 0,#ececec 100%);
+    background-image: linear-gradient(to bottom,#f8f8f8 0,#ececec 100%);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff8f8f8', endColorstr='#ffececec', GradientType=0);
+}

@@ -1,0 +1,23 @@
+<div>
+    <videogular vg-theme="musicController.config.theme" vg-player-ready="musicController.onPlayReady">
+        <vg-audio vg-src="musicController.config.sources"
+                  vg-tracks="musicController.config.tracks">
+        </vg-audio>
+        <vg-controls>
+            <vg-play-pause-button></vg-play-pause-button>
+            <vg-timedisplay>{{ currentTime | date:'mm:ss' }}</vg-timedisplay>
+            <vg-scrubBar>
+                <vg-scrubbarcurrenttime></vg-scrubbarcurrenttime>
+            </vg-scrubBar>
+            <vg-timedisplay>{{ timeLeft | date:'mm:ss' }}</vg-timedisplay>
+            <vg-volume>
+                <vg-mutebutton></vg-mutebutton>
+                <vg-volumebar></vg-volumebar>
+            </vg-volume>
+            <vg-fullscreenButton></vg-fullscreenButton>
+        </vg-controls>
+        <vg-overlay-play></vg-overlay-play>
+        <vg-buffering></vg-buffering>
+        <!--<vg-poster-image vg-url="musicController.config.plugins.poster"></vg-poster-image>-->
+    </videogular>
+</div>

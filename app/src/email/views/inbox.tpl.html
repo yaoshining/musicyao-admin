@@ -1,0 +1,101 @@
+<div class="email-toolbar">
+    <button class="btn btn-xs btn-default" translate="DELETE"></button>
+    <button class="btn btn-xs btn-default" translate="DELETE_PERMANENTLY"></button>
+    <button class="btn btn-xs btn-default" translate="FORWARD"></button>
+    <button class="btn btn-xs btn-default" translate="MARK_ALL_AS_READ"></button>
+    <div class="btn-group">
+        <button type="button" class="btn btn-xs btn-default dropdown-toggle" data-toggle="dropdown">
+            <span translate="MARK_AS"></span><span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Read</a></li>
+            <li><a href="#">Unread</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Starred Messages</a></li>
+            <li><a href="#">Remove Star</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Remove Label</a></li>
+            <li class="divider"></li>
+            <li><a href="#">New Label</a></li>
+        </ul>
+    </div>
+    <div class="btn-group">
+        <button type="button" class="btn btn-xs btn-default dropdown-toggle" data-toggle="dropdown">
+            <span translate="MOVE_TO"></span><span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Inbox</a></li>
+            <li><a href="#">Sent</a></li>
+            <li class="divider"></li>
+            <li><a href="#">New Folder...</a></li>
+        </ul>
+    </div>
+</div>
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th width="5%">
+            <input type="checkbox" />
+        </th>
+        <th width="5%">
+            <span class="glyphicon glyphicon-envelope"></span>
+            <span class="glyphicon glyphicon-paperclip"></span>
+        </th>
+        <th width="10%" translate="FROM"></th>
+        <th width="65%" translate="SUBJECT"></th>
+        <th width="15%" translate="TIME"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="email in emails" ng-click="showEmailDetails(email)">
+        <td>
+            <input type="checkbox" ng-click="$event.stopPropagation()" ng-model="email.checked" />{{email.checked}}
+        </td>
+        <td>
+            <span class="glyphicon glyphicon-envelope"></span>
+        </td>
+        <td>
+            {{email.sender.username}}
+        </td>
+        <td>
+            {{email.subject}}
+        </td>
+        <td>
+            {{email.sendTime | date}}
+        </td>
+    </tr>
+    </tbody>
+</table>
+<div class="email-toolbar">
+    <button class="btn btn-xs btn-default" translate="DELETE" ng-click="multiDelete()"></button>
+    <button class="btn btn-xs btn-default" translate="DELETE_PERMANENTLY"></button>
+    <button class="btn btn-xs btn-default" translate="FORWARD"></button>
+    <button class="btn btn-xs btn-default" translate="MARK_ALL_AS_READ"></button>
+    <div class="btn-group">
+        <button type="button" class="btn btn-xs btn-default dropdown-toggle" data-toggle="dropdown">
+            <span translate="MARK_AS"></span><span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Read</a></li>
+            <li><a href="#">Unread</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Starred Messages</a></li>
+            <li><a href="#">Remove Star</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Remove Label</a></li>
+            <li class="divider"></li>
+            <li><a href="#">New Label</a></li>
+        </ul>
+    </div>
+    <div class="btn-group">
+        <button type="button" class="btn btn-xs btn-default dropdown-toggle" data-toggle="dropdown">
+            <span translate="MOVE_TO"></span><span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Inbox</a></li>
+            <li><a href="#">Sent</a></li>
+            <li class="divider"></li>
+            <li><a href="#">New Folder...</a></li>
+        </ul>
+    </div>
+</div>

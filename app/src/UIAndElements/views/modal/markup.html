@@ -1,0 +1,23 @@
+<div ng-controller="ModalDemoController">
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">我是一个模态窗口!</h3>
+        </div>
+        <div class="modal-body">
+            <ul>
+               <li ng-repeat="item in items">
+                   <a ng-click="selected.item = item">{{item}}</a>
+               </li>
+            </ul>
+            选择了:<b>{{selected.item}}</b>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">确定</button>
+            <button class="btn btn-warning" ng-click="cancel()">取消</button>
+        </div>
+    </script>
+    <button class="btn btn-default" ng-click="open()">打开我!</button>
+    <button class="btn btn-default" ng-click="open('lg')">较大的模态窗口</button>
+    <button class="btn btn-default" ng-click="open('sm')">较小的模态窗口</button>
+    <div ng-show="selected">从一个模态窗口选择: {{selected}}</div>
+</div>

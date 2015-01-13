@@ -1,0 +1,67 @@
+<div class="hbox my-app-content">
+    <div class="col wrapper-lg">
+        <h3 class="font-thin m-t-n-xs m-b">Recommendation</h3>
+        <div class="row row-sm">
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2-4" ng-repeat="item in musicItems" ng-class="'flip-in'">
+                <div class="my-item" style="position: relative">
+                    <div style="position: relative;">
+                        <div class="item-overlay bg-black-opacity r r-2x r r-2x">
+                            <div class="center text-center m-t-n w-full">
+                                <a href ng-click="musicController.setVideo(item.sources)">
+                                    <i class="fa white"
+                                       ng-class="{'fa-pause': musicController.API.sources == item.sources,'fa-play-circle-o': !(musicController.API.sources == item.sources)}" style="font-size: 2em">
+                                    </i>
+                                </a>
+                            </div>
+                        </div>
+                        <a href>
+                            <img ng-src="{{item.poster}}" class="img-full r-2x" />
+                        </a>
+                    </div>
+                    <div class="padder-v">
+                        <a href class="text-ellipsis">{{item.title}}</a>
+                        <a href class="text-ellipsis text-xs text-muted">{{item.artist}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col w-md bg-light dker bg-auto">
+        <div style="padding: 20px">
+            <div class="m-b-sm" style="font-size: 16px">Top Plays</div>
+            <ul class="list-group no-borders" style="margin-left: -15px;margin-right: -15px;list-style: none;padding-left: 0">
+                <li class="list-group-item no-border" style="background-color: transparent" ng-repeat="item in musicItems | limitTo: 5" ng-class="'scale-fade-in'">
+                    <a herf="" class="pull-left m-r" style="width: 40px;display: inline-block;margin-right: 15px">
+                        <img ng-src="{{item.poster}}" alt="..." class="r" style="max-width: 100%;vertical-align: middle">
+                    </a>
+                    <div class="clear">
+                        <div><a href class="text-ellipsis">{{item.title}}</a></div>
+                        <small class="text-muted text-ellipsis">{{item.artist}}</small>
+                    </div>
+                </li>
+            </ul>
+            <div class="text-center">
+                <a href="" class="btn btn-sm btn-info padder-md m-b">More</a>
+            </div>
+        </div>
+        <div class="m-b-sm" style="font-size: 16px;padding: 20px">Activity</div>
+        <div class="list-group no-borders m-l-xs m-r-xs m-t-n" style="background-color: transparent">
+            <div class="list-group-item no-border" style="background-color: transparent">
+                <div class="text-muted">5 minutes ago</div>
+                <div><a href="" class="text-info light-blue">Jessi</a> commented your post.</div>
+            </div>
+            <div class="list-group-item no-border" style="background-color: transparent">
+                <div class="text-muted">11:30</div>
+                <div><a ui-sref="music.detail" href="#/music/detail">Jone</a> published a song</div>
+            </div>
+            <div class="list-group-item no-border" style="background-color: transparent">
+                <div class="text-muted">Sun, 11 Feb</div>
+                <div><a href="" class="text-info light-blue">Jessi</a> upload a video <a href="" class="text-info light-blue">Cat</a>.</div>
+            </div>
+            <div class="list-group-item no-border" style="background-color: transparent">
+                <div class="text-muted">Thu, 17 Jan</div>
+                <div>Mike Followed you</div>
+            </div>
+        </div>
+    </div>
+</div>

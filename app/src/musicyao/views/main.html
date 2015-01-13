@@ -1,0 +1,19 @@
+<div class="my-app" ng-controller="MusicPlayerController as musicController">
+    <div class="my-header-collapse" ebp-stickup>
+        <form class="m-t-sm m-b-sm" role="search">
+            <div class="form-group">
+                <div class="input-group" style="width: 280px">
+                    <input class="form-control no-border bg-light input-sm" style="width: 100%" type="text" placeholder="Search songs and artists..." />
+                    <span class="input-group-btn">
+                        <button type="submit" class="btn btn-sm bg-light no-border" style="padding: 5px 10px;margin-left: -1px;width: 100%;height: 100%;width: 33px;height: 30px"><i class="fa fa-search"></i></button>
+                    </span>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="my-app-content fade-in-up" ui-view>
+    </div>
+    <div class="my-app-footer my-app-footer-fixed" ng-include="'src/musicyao/views/player.html'">
+
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<div ng-controller="PaginationDemoController">
+    <h4>默认的</h4>
+    <pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" previous-text="上一页" next-text="下一页"></pagination>
+    <pagination boundary-links="true" total-items="totalItems" ng-model="currentPage" class="pagination-sm" previous-text="&lsaquo;"
+            next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></pagination>
+    <br />
+    <pagination direction-links="false" boundary-links="true" total-items="totalItems" ng-model="currentPage"
+                first-text="第一个" last-text="最后一个"></pagination>
+    <br />
+    <pagination direction-links="false" total-items="totalItems" ng-model="currentPage" num-pages="smallnumPages"></pagination>
+    <pre>选择的页码为:{{currentPage}}</pre>
+    <button class="btn btn-info" ng-click="setPage(3)">设置当前页码为:3</button>
+
+    <hr />
+    <h4>翻页</h4>
+    <pager total-items="totalItems" ng-model="currentPage" previous-text="上一页" next-text="下一页"></pager>
+
+    <hr />
+    <h4>限制最多可见按钮</h4>
+    <pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm"
+                boundary-links="true" previous-text="上一页" next-text="下一页" first-text="第一个" last-text="最后一个"></pagination>
+    <pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm"
+                boundary-links="true" rotate="false" num-pages="numPages" previous-text="上一页" next-text="下一页"
+                first-text="第一个" last-text="最后一个"></pagination>
+    <pre>页码: {{bigCurrentPage}}/{{numPages}}</pre>
+</div>

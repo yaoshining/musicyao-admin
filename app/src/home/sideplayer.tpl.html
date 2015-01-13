@@ -1,0 +1,99 @@
+<div oc-lazy-load="{name: 'mediaModule',files: ['media/module','media/controllers/audio/SidePlayerController']}">
+    <div ng-controller="SidePlayerController as sidePlayerController">
+        <div oc-lazy-load="dependencies">
+            <videogular vg-theme="sidePlayerController.config.theme" vg-player-ready="sidePlayerController.onPlayReady" vg-complete="sideController.onComplete">
+                <vg-audio vg-src="sidePlayerController.config.sources" vg-loop="true">
+                </vg-audio>
+                <div id="sidePlayerWrapper" class="slide-right" ng-show="showPlayer" ng-class="playerSkin">
+                    <div id="sidePlayer">
+                        <div id="sidePlayerInfo" style="display: inline-block;float:left;width: 200px;position: relative">
+                            <div style="width: 75px;height: 75px;position: relative;float: left" id="albumFrontCover" class="album-front-cover">
+                                <img ng-src="{{sidePlayerController.config.plugins.poster}}" style="position: absolute;left: 0;width: 75px;height: 75px;overflow: hidden" class="slide-down" />
+                                <div class="front-cover-mask"></div>
+                            </div>
+                            <div id="infoDetails" style="width: 115px;overflow: hidden;padding: 0 5px;">
+                                <dl class="no-padding no-margin">
+                                    <dt class="track-title">{{sidePlayerController.config.title}}</dt>
+                                    <dd class="track-artist">Tarkan</dd>
+                                    <dd class="album-name"></dd>
+                                </dl>
+                                <div id="sidePlayerFunctions" style="position: absolute;bottom: 0">
+                                    <a href class="white" style="font-size: 15px">
+                                        <i class="ebp-icon fa fa-th-list" ng-click="showList = !showList"></i>
+                                    </a>
+                                    <a href class="white" style="font-size: 15px">
+                                        <i class="ebp-icon fa fa-list-alt"></i>
+                                    </a>
+                                    <a href class="white" style="font-size: 15px" ng-click="changeSkin()">
+                                        <i class="ebp-icon fa fa-user"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="sidePlayerControls" style="position: relative;margin-left: 200px;width:330px;height: 75px;">
+                            <vg-controls style="height: 75px;top: 0">
+                                <div style="position: absolute;width: 100%;display: table;">
+                                    <vg-volume style="text-align: left">
+                                        <vg-mutebutton></vg-mutebutton>
+                                        <vg-volumebar></vg-volumebar>
+                                    </vg-volume>
+                                    <div style="display: table-cell;width: 50px;text-align: right;vertical-align: middle">
+                                        <button class="iconButton" ng-click="sidePlayerController.prev()">
+                                            <i class="ebp-icon fa fa-refresh"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div style="display: table-row">
+                                    <div style="display: table-cell;width: 50px;text-align: right;vertical-align: middle">
+                                        <button class="iconButton" ng-click="sidePlayerController.prev()">
+                                            <i class="ebp-icon fa fa-backward" style="font-size: 20px"></i>
+                                        </button>
+                                    </div>
+                                    <vg-play-pause-button style="font-size: 20px"></vg-play-pause-button>
+                                    <div style="display: table-cell;width: 50px;text-align: left;vertical-align: middle">
+                                        <button class="iconButton" ng-click="sidePlayerController.next()">
+                                            <i class="ebp-icon fa fa-forward" style="font-size: 20px"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div style="position: absolute;width: 100%;display: table;">
+                                    <vg-timedisplay style="width: 30px;font-size: inherit">{{ currentTime | date:'mm:ss' }}</vg-timedisplay>
+                                    <vg-scrubBar style="vertical-align: middle;padding: 0 10px">
+                                        <vg-scrubbarcurrenttime style="height: 4px;;"></vg-scrubbarcurrenttime>
+                                    </vg-scrubBar>
+                                    <vg-timedisplay style="width: 30px;font-size: inherit">{{ timeLeft | date:'mm:ss' }}</vg-timedisplay>
+                                </div>
+                            </vg-controls>
+                            <vg-buffering></vg-buffering>
+                        </div>
+                    </div>
+                    <div id="sidePlayerSwitchOff" style="float: left;width: 15px;height: 58px;background-color: rgba(56,56,56,0.7);
+                    padding: 38px 0 0 5px;box-sizing: content-box;border-radius: 0 6px 6px 0;cursor: pointer;box-shadow: 3px 3px 6px RGBA(0,0,0,.42)" ng-click="showPlayer = false">
+                        <a href>
+                            <i class="ebp-icon fa fa-lg fa-angle-left" style="font-size: 25px;color: rgba(255,255,255,0.7)"></i>
+                        </a>
+                    </div>
+                </div>
+                <div id="sidePlayerSwitchOn" ng-hide="showPlayer" class="slide-left" ng-click="showPlayer = true">
+                    <div style="background-color: rgba(56,56,56,0.7);position: absolute;top: 0;left: 0;width: 100%;height: 100%;padding: 38px 0 0 5px;border-radius: 0 6px 6px 0;">
+                        <a href>
+                            <i class="ebp-icon fa fa-lg fa-angle-right" style="font-size: 25px;color: rgba(255,255,255,0.7)"></i>
+                        </a>
+                    </div>
+                </div>
+                <div id="sidePlayerList" class="bouncy-slide-top" ng-class="playerSkin" ng-show="showPlayer && showList">
+                    <div class="list-title" style="position: relative;padding: 0 15px;height: 50px;line-height: 50px;background-color: rgba(0,0,0,0.7)"></div>
+                    <div id="listWrapper" style="height: 394px;background-color: rgba(27, 27, 27,0.7);padding: 13px 6px 13px 13px;box-sizing: content-box;overflow: auto" ebp-jq="mCustomScrollbar" jq-options="{setHeight: 394,theme:'dark-thick'}">
+                        <ul style="list-style: none;padding: 0;margin: 0">
+                            <li style="display: inline-block;width: 33.3333%;padding: 5px;margin-bottom: 30px" ng-repeat="audio in sidePlayerController.audios">
+                                <a href>
+                                    <img ng-src="{{audio.poster}}" style="width: 100%;box-shadow: 2px 4px 6px #0a0a0a" ng-class="'flip-in'" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </videogular>
+        </div>
+    </div>
+</div>

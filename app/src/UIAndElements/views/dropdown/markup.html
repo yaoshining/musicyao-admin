@@ -1,0 +1,51 @@
+<div ng-controller="DropdownDemoController">
+    <!-- 一个简单的下拉菜单 -->
+    <span class="dropdown" dropdown on-toggle="toggled(open)">
+        <a href class="dropdown-toggle" dropdown-toggle>
+            点击我来控制下拉菜单!
+        </a>
+        <ul class="dropdown-menu">
+            <li ng-repeat="choice in items">
+                <a href>{{choice}}</a>
+            </li>
+        </ul>
+    </span>
+    <!-- 单个按钮 -->
+    <div class="btn-group" dropdown is-open="status.isopen">
+        <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle ng-disabled="disabled">
+            按钮下拉菜单<span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            <li><a href>行为</a></li>
+            <li><a href>另一个行为</a></li>
+            <li><a href>其它的一些东西</a></li>
+            <li class="divider"></li>
+            <li><a href>被分开的链接</a></li>
+        </ul>
+    </div>
+    <!-- 分开的按钮 -->
+    <div class="btn-group" dropdown>
+        <button type="button" class="btn btn-danger">行为</button>
+        <button type="button" class="btn btn-danger dropdown-toggle" dropdown-toggle>
+            <span class="caret"></span>
+            <span class="sr-only">分开的按钮!</span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            <li><a href>行为</a></li>
+            <li><a href>另一个行为</a></li>
+            <li><a href>其它的一些东西</a></li>
+            <li class="divider"></li>
+            <li><a href>被分开的链接</a></li>
+        </ul>
+    </div>
+
+    <hr />
+    <p>
+        <button type="button" class="btn btn-default btn-sm" ng-click="toggleDropdown($event)">
+            切换按钮下拉菜单的状态
+        </button>
+        <button type="button" class="btn btn-warning btn-sm" ng-click="disabled = !disabled">
+            启用/禁用
+        </button>
+    </p>
+</div>

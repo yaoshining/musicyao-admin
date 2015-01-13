@@ -1,0 +1,288 @@
+<div ng-controller="WidgetsDemoController" class="row">
+    <div class="col-xs-12">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 widget-container-col" ui-sortable="sortableOptions" style="min-height: 210px" ng-init="widget1 = {}">
+                <div class="widget-box" ng-class="{'fullscreen': widget1.isFullscreen}">
+                    <div class="widget-header">
+                        <h5 class="widget-title">Default Widget Box</h5>
+                        <div class="widget-toolbar">
+                            <div class="widget-menu" dropdown>
+                                <a href data-action="settings" dropdown-toggle>
+                                    <i class="ebp-icon fa fa-bars"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-right dropdown-light-blue dropdown-caret dropdown-closer">
+                                    <li>
+                                        <a data-toggle="tab" href="#dropdown1">Option#1</a>
+                                    </li>
+
+                                    <li>
+                                        <a data-toggle="tab" href="#dropdown2">Option#2</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <a href data-action="fullscreen" class="orange2" ng-click="fullscreen($event,widget1)">
+                                <i class="ebp-icon fa fa-expand"></i>
+                            </a>
+                            <a href data-action="reload">
+                                <i class="ebp-icon fa fa-refresh"></i>
+                            </a>
+                            <a href data-action="collapse" ng-click="widget1.isCollapsed = !widget1.isCollapsed">
+                                <i class="ebp-icon fa" ng-class="{'fa-chevron-up': !widget1.isCollapsed,'fa-chevron-down': widget1.isCollapsed}"></i>
+                            </a>
+                            <a href data-action="close">
+                                <i class="ebp-icon fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="widget-body" collapse="widget1.isCollapsed">
+                        <div class="widget-main">
+                            <p alert type="info">
+                                Nunc aliquam enim ut arcu aliquet adipiscing. Fusce dignissim volutpat justo non consectetur. Nulla fringilla eleifend consectetur.
+                            </p>
+                            <p alert type="success">
+                                Raw denim you probably haven't heard of them jean shorts Austin.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 widget-container-col" ui-sortable="sortableOptions" style="min-height: 210px">
+                <div class="widget-box widget-color-blue">
+                    <div class="widget-header">
+                        <h5 class="widget-title bigger lighter">
+                            <i class="ebp-icon fa fa-table"></i>
+                            Tables &amp; Colors
+                        </h5>
+                        <div class="widget-toolbar widget-toolbar-light no-border">
+
+                        </div>
+                    </div>
+                    <div class="widget-body">
+                        <div class="widget-main no-padding">
+                            <table class="table table-striped table-bordered table-hover" at-table at-list="tableData">
+                                <thead class="thin-border-bottom">
+                                    <tr>
+                                        <th at-attribute="user">
+                                            <i class="ebp-icon fa fa-user"></i>
+                                            User
+                                        </th>
+
+                                        <th at-attribute="email">
+                                            <i>@</i>
+                                            Email
+                                        </th>
+                                        <th at-attribute="status" class="hidden-480">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td at-implicit at-attribute="user" at-initial-sorting="asc"></td>
+
+                                        <td at-attribute="email">
+                                            <a href>{{item.email}}</a>
+                                        </td>
+
+                                        <td at-attribute="status" class="hidden-480">
+                                            <span class="label label-warning" ng-if="(item.status | lowercase)==='pending'">{{item.status}}</span>
+                                            <span class="label label-success arrowed-in arrowed-in-right" ng-if="(item.status | lowercase)==='approved'">{{item.status}}</span>
+                                            <span class="label label-inverse arrowed" ng-if="(item.status | lowercase)==='blocked'">{{item.status}}</span>
+                                            <span class="label label-info arrowed-in arrowed-in-right" ng-if="(item.status | lowercase)==='online'">{{item.status}}</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="space-24"></div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 widget-container-col" ui-sortable="sortableOptions" style="min-height: 210px" ng-init="widget3 = {isCollapsed: true}">
+                <div class="widget-box widget-color-orange">
+                    <div class="widget-header widget-header-small">
+                        <h6 class="widget-title">
+                            <i class="ebp-icon fa fa-sort"></i>
+                            Small Header &amp; Collapsed
+                        </h6>
+                        <div class="widget-toolbar">
+                            <a href data-action="settings">
+                                <i class="ebp-icon fa fa-cog"></i>
+                            </a>
+                            <a href data-action="reload">
+                                <i class="ebp-icon fa fa-refresh"></i>
+                            </a>
+                            <a href data-action="collapse">
+                                <i class="ebp-icon fa" ng-class="{'fa-plus':widget3.isCollapsed,'fa-minus': !widget3.isCollapsed}" data-icon-show="fa-plus" data-icon-hide="fa-minus" ng-click="widget3.isCollapsed = !widget3.isCollapsed"></i>
+                            </a>
+                            <a href data-action="close">
+                                <i class="ebp-icon fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="widget-body" collapse="widget3.isCollapsed">
+                        <div class="widget-main">
+                            <p alert type="info">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo massa sed ipsum porttitor facilisis.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 widget-container-col" ui-sortable="sortableOptions" style="min-height: 210px" ng-init="widget4 = {}">
+                <div class="widget-box">
+                    <div class="widget-header widget-header-large">
+                        <h4 class="widget-title">Big Header</h4>
+                        <div class="widget-toolbar">
+                            <a href data-action="settings">
+                                <i class="ebp-icon fa fa-cog"></i>
+                            </a>
+                            <a href data-action="reload">
+                                <i class="ebp-icon fa fa-refresh"></i>
+                            </a>
+                            <a href data-action="collapse" ng-click="widget4.isCollapsed = !widget4.isCollapsed">
+                                <i class="ebp-icon fa" ng-class="{'fa-chevron-up':!widget4.isCollapsed,'fa-chevron-down':widget4.isCollapsed}"></i>
+                            </a>
+                            <a href data-action="close">
+                                <i class="ebp-icon fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="widget-body" collapse="widget4.isCollapsed">
+                        <div class="widget-main">
+                            <p alert type="info">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo massa sed ipsum porttitor facilisis.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="space-24"></div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-3 widget-container-col" ui-sortable="sortableOptions" style="min-height: 104px" ng-init="widget5 = {}">
+                <div class="widget-box">
+                    <div class="widget-header">
+                        <h5 class="widget-title smaller">With Label</h5>
+                        <div class="widget-toolbar">
+                            <span class="label label-success">
+                                16%
+                                <i class="ebp-icon fa fa-arrow-up"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="widget-body">
+                        <div class="widget-main padding-6">
+                            <div alert type="info"> Hello Dear Lord! </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-3 widget-container-col" ui-sortable="sortableOptions" style="min-height: 104px" ng-init="widget6 = {}">
+                <div class="widget-box widget-color-dark light-border">
+                    <div class="widget-header">
+                        <h5 class="widget-title smaller">With Badge</h5>
+                        <div class="widget-toolbar">
+                            <span class="badge badge-danger">Alert</span>
+                        </div>
+                    </div>
+                    <div class="widget-body">
+                        <div class="widget-main padding-6">
+                            <div alert type="info"> Hello Tomorrow! </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 widget-container-col" ui-sortable="sortableOptions" style="min-height: 104px">
+                <div class="widget-box widget-color-dark">
+                    <div class="widget-header widget-header-small">
+                        <h6 class="widget-title smaller">With Labels &amp; Badges</h6>
+                        <div class="widget-toolbar no-border">
+                            <label>
+                                <input type="checkbox" class="ebp ebp-switch ebp-switch-3">
+                                <span class="lbl middle"></span>
+                            </label>
+                        </div>
+                        <div class="widget-toolbar">
+                            <span class="label label-warning">
+                                1.2%
+                                <i class="ebp-icon fa fa-arrow-down"></i>
+                            </span>
+                            <span class="badge badge-info">info</span>
+                        </div>
+                    </div>
+
+                    <div class="widget-body">
+                        <div class="widget-main">
+                            <div alert type="info">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="space"></div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 widget-container-col" ui-sortable="sortableOptions" style="min-height: 199px" ng-init="widget8 = {font: {},layout:'left'}">
+                <div class="widget-box widget-color-dark">
+                    <div class="widget-header">
+                        <h5 class="widget-title bigger lighter">With Toolbox</h5>
+                        <div class="widget-toolbar">
+                            <label>
+                                <input type="checkbox" class="ebp ebp-checkbox-2" id="id-checkbox-vertical">
+                                <span class="lbl middle padding-4"> Vertical</span>
+                            </label>
+                        </div>
+                        <div class="widget-toolbar">
+                            <progressbar class="progress-mini progress-striped active pos-rel" style="width: 60px;" type="danger" value="61"></progressbar>
+                        </div>
+                    </div>
+                    <div class="widget-body">
+                        <div class="widget-toolbox" id="widget-toolbox-1">
+                            <div class="btn-toolbar">
+                                <div class="btn-group">
+                                    <button class="btn btn-sm btn-success btn-white btn-round">
+                                        <i class="ebp-icon fa fa-check bigger-110 green"></i>
+                                        Approve
+                                    </button>
+                                    <button class="btn btn-sm btn-danger btn-white btn-round">
+                                        <i class="ebp-icon fa fa-times bigger-110 red2"></i>
+                                        Reject
+                                    </button>
+                                </div>
+                                <div class="btn-group">
+                                    <label class="btn btn-sm btn-default btn-white btn-round" ng-model="widget8.font.bold" btn-checkbox>
+                                        <i class="icon-only ebp-icon fa fa-bold bigger-110"></i>
+                                    </label>
+                                    <label class="btn btn-sm btn-default btn-white btn-round" ng-model="widget8.font.italic" btn-checkbox>
+                                        <i class="icon-only ebp-icon fa fa-italic bigger-110"></i>
+                                    </label>
+                                </div>
+                                <div class="btn-group">
+                                    <label class="btn btn-sm btn-primary btn-white btn-round" ng-model="widget8.layout" btn-radio="'left'">
+                                        <i class="icon-only ebp-icon fa fa-align-left bigger-110"></i>
+                                    </label>
+                                    <label class="btn btn-sm btn-primary btn-white btn-round" ng-model="widget8.layout" btn-radio="'center'">
+                                        <i class="icon-only ebp-icon fa fa-align-center bigger-110"></i>
+                                    </label>
+                                    <label class="btn btn-sm btn-primary btn-white btn-round" ng-model="widget8.layout" btn-radio="'right'">
+                                        <i class="icon-only ebp-icon fa fa-align-right bigger-110"></i>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget-main padding-16">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo massa sed ipsum porttitor facilisis. Nullam interdum massa vel nisl fringilla sed viverra erat tincidunt. Phasellus in ipsum velit. Maecenas id erat vel sem convallis blandit. Nunc aliquam enim ut arcu aliquet adipiscing. Fusce dignissim volutpat justo non consectetur. Nulla fringilla eleifend consectetur. Etiam justo nisl, gravida id egestas eu, eleifend vel metus. Pellentesque tellus ipsum, euismod in facilisis quis, aliquet quis sem.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 widget-container-col" ui-sortable="sortableOptions" style="min-height: 199px">
+
+            </div>
+        </div>
+    </div>
+</div>

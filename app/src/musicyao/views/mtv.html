@@ -1,0 +1,48 @@
+<div class="col wrapper-lg">
+    <h3 class="font-thin m-t-n-xs m-b">MTV</h3>
+    <div class="row row-sm">
+        <div class="col-xs-12 col-sm-4" ng-repeat="item in mtvItems" ng-class="'flip-in'">
+            <div class="my-item" style="position: relative">
+                <div style="position: relative;padding: 5px;background-color: #ffffff">
+                    <div>
+                        <div class="center text-center m-t-n w-full">
+                            <a ui-sref="music.mtvdetail">
+                                <i class="fa white fa-play-circle" style="font-size: 2em;display: block">
+                                </i>
+                            </a>
+                        </div>
+                    </div>
+                    <a href>
+                        <img ng-src="{{item.poster}}" class="img-full" style="max-height: 220px" />
+                    </a>
+                </div>
+                <div class="padder-v">
+                    <a href class="text-ellipsis">{{item.title}}</a>
+                    <a href class="text-ellipsis text-xs text-muted">{{item.artist}}</a>
+                </div>
+            </div>
+        </div>
+        <h3 class="font-thin" style="padding: 20px">Video List</h3>
+        <div class="col-xs-6 col-sm-4 col-md-3" ng-repeat="item in videoListItems" ng-class="'flip-in'">
+            <div class="my-item" style="position: relative">
+                <div style="position: relative;padding: 5px;background-color: #ffffff">
+                    <div class="item-overlay bg-black-opacity">
+                        <div class="center text-center m-t-n w-full">
+                            <a ui-sref="music.mtvdetail">
+                                <i class="fa white fa-play-circle" style="font-size: 2em;display: block">
+                                </i>
+                            </a>
+                        </div>
+                    </div>
+                    <a href>
+                        <img ng-src="{{item.poster}}" class="img-full" style="max-height: 220px" />
+                    </a>
+                </div>
+                <div class="padder-v">
+                    <a href class="text-ellipsis">{{item.title}}</a>
+                    <a href class="text-ellipsis text-xs text-muted">{{item.artist}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

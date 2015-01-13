@@ -1,0 +1,22 @@
+<div ng-controller="TimepickerDemoController">
+    <timepicker ng-model="mytime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+
+    <pre alert type="info">时间为：{{mytime | date:'shortTime'}}</pre>
+
+    <div class="row">
+        <div class="col-xs-6">
+            小时步长为：
+            <select class="form-control" ng-model="hstep" ng-options="opt for opt in options.hstep"></select>
+        </div>
+        <div class="col-xs-6">
+            分钟步长为：
+            <select class="form-control" ng-model="mstep" ng-options="opt for opt in options.mstep"></select>
+        </div>
+    </div>
+
+    <hr />
+
+    <button class="btn btn-info" ng-click="toggleMode()">12小时制/24小时制</button>
+    <button class="btn btn-default" ng-click="update()">设置为14：00</button>
+    <button class="btn btn-danger" ng-click="clear()">清空</button>
+</div>

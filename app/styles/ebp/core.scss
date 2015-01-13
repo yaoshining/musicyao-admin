@@ -1,0 +1,224 @@
+@import 'buttons';
+@import 'progress-bars';
+@import 'forms';
+@import 'navbar';
+@import 'sidebar';
+@import 'colors';
+@import 'scroll';
+@import 'typography';
+@import 'dropdowns';
+@import 'grid';
+@import 'alert';
+@import 'modal';
+@import 'table';
+@import 'badges';
+@import 'labels';
+@import 'widgets';
+@import 'lists';
+@import 'animations';
+@import 'players';
+/***************************  login begin  *********************************/
+.login-container {
+  width: 375px;
+  margin: 0 auto;
+  position: relative;
+  .login-box {
+    .widget-main {
+      padding-bottom: 16px;
+    }
+    .forgot-password-link {
+      color: #FE9;
+    }
+    .user-signup-link {
+      color: #CF7;
+    }
+    .toolbar {
+      background: #5090C1;
+      border-top: 2px solid #597597;
+      &>div{
+        width: 50%;
+        display: inline-block;
+        padding: 9px 0 11px;
+        &:first-child{
+          float: left;
+          text-align: left;
+          a{
+            margin-left: 11px;
+          }
+          &+div {
+            float: right;
+            text-align: right;
+            a {
+              margin-right: 11px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .widget-box{
+    padding: 6px;
+    background-color: #394557;
+    .widget-main {
+      padding: 16px 36px 36px;
+      background: #F7F7F7;
+    }
+    .widget-body {
+      .toolbar > div >a {
+        font-size: 15px;
+        font-weight: 400;
+        text-shadow: 1px 0 1px rgba(0,0,0,.25);
+      }
+    }
+  }
+  label{
+    margin-bottom: 11px;
+  }
+}.space {
+   max-height: 1px;
+   min-height: 1px;
+   overflow: hidden;
+   margin: 12px 0;
+ }
+.space-6 {
+  max-height: 1px;
+  min-height: 1px;
+  overflow: hidden;
+  margin: 12px 0;
+  margin: 6px 0 5px;
+}
+.space-24 {
+    max-height: 1px;
+    min-height: 1px;
+    overflow: hidden;
+    margin: 12px 0;
+    margin: 24px 0 23px;
+}
+.middle {
+    vertical-align: middle;
+}
+.hr {
+    display: block;
+    height: 0;
+    overflow: hidden;
+    font-size: 0;
+    border-width: 1px 0 0 0;
+    border-top: 1px solid #E3E3E3;
+    margin: 12px 0;
+    border-top-color: rgba(0,0,0,.11);
+}
+.hr-8, .hr8 {
+    margin: 8px 0;
+}
+.hr-32, .hr32 {
+    margin: 32px 0;
+}
+.hr-double {
+    height: 3px;
+    border-top: 1px solid #E3E3E3;
+    border-bottom: 1px solid #E3E3E3;
+    border-top-color: rgba(0,0,0,.11);
+    border-bottom-color: rgba(0,0,0,.11);
+}
+.hr.dotted, .hr-dotted {
+    border-style: dotted;
+}
+.no-padding {
+  padding: 0px !important;
+}
+.no-margin {
+    margin: 0px !important;
+}
+.no-border {
+    border-width: 0;
+}
+.social-or-login {
+  margin-top: 4px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  :first-child {
+    display: inline-block;
+    background: #F7F7F7;
+    padding: 0 8px;
+    color: #5090C1;
+    font-size: 13px;
+  }
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 0;
+    right: 0;
+    border-top: 1px dotted #A6C4DB;
+  }
+}
+.social-login {
+  a {
+    border-radius: 100%;
+    width: 42px;
+    height: 42px;
+    line-height: 46px;
+    padding: 0;
+    margin: 0 1px;
+    border-width: 0;
+    &>.ebp-icon {
+      font-size: 24px;
+      margin: 0;
+    }
+  }
+}/************************** login end ******************************/
+li.tab-gray {
+  z-index: 2;
+}
+li.tab-gray.active {
+  & > a,& > a:hover,& > a:focus {
+    background-color: #F5F5F5;
+  }
+}
+
+
+/************** entertainment ********************/
+.curved_box {
+    display: inline-block;
+    *display: inline;
+    width: 100%;
+    min-height: 248px;
+    background-color: #fff;
+    border: 1px solid #eee;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 60px rgba(0, 0, 0, 0.06) inset;
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+    position: relative;
+    padding: 10px;
+    *zoom: 1;
+}
+
+.curved_box:before {
+    -webkit-transform: skew(-15deg) rotate(-6deg);
+    -moz-transform: skew(-15deg) rotate(-6deg);
+    transform: skew(-15deg) rotate(-6deg);
+    left: 15px;
+}
+.curved_box:after {
+    -webkit-transform: skew(15deg) rotate(6deg);
+    -moz-transform: skew(15deg) rotate(6deg);
+    transform: skew(15deg) rotate(6deg);
+    right: 15px;
+}
+
+//.curved_box:before, .curved_box:after {
+//    width: 70%;
+//    height: 55%;
+//    content: ' ';
+//
+//    -webkit-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+//    -moz-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+//    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+//
+//    position: absolute;
+//    bottom: 10px;
+//    z-index: -1;
+//}

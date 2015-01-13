@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-sm-12">
+        <tabset>
+            <tab heading="简单的例子">
+                <tabset style="padding-top: 20px;">
+                    <tab heading="结果">
+                        <table class="table table-hover table-striped" at-table at-list="people" at-paginated at-config="config">
+                            <thead>
+                            <tr>
+                                <th at-attribute="index">序号</th>
+                                <th at-attribute="name">姓名</th>
+                                <th at-attribute="email">电子邮件</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td at-implicit at-attribute="index" at-sortable></td>
+                                <td at-implicit at-attribute="name" at-sortable at-initial-sorting="desc"></td>
+                                <td at-implicit at-attribute="email" at-sortable></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <at-pagination at-list="people" at-config="config"></at-pagination>
+                    </tab>
+                    <tab heading="代码">
+
+                    </tab>
+                </tabset>
+            </tab>
+            <tab heading="交互的例子">
+                <table class="table table-hover table-striped" at-table at-list="people" at-paginated>
+                    <thead></thead>
+                    <tbody>
+                    <tr>
+                        <td at-implicit at-attribute="index" at-sortable></td>
+                        <td at-implicit at-attribute="name" at-sortable at-initial-sorting="desc"></td>
+                        <td at-implicit at-attribute="email" at-sortable></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <at-pagination at-list="people"></at-pagination>
+            </tab>
+        </tabset>
+    </div>
+</div>
+

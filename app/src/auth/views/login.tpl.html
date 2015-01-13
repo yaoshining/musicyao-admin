@@ -1,0 +1,99 @@
+<div style="position: absolute;top: 0;bottom: 0;left: 0;right: 0;background-image: url('images/bg/meteorshower2.jpg')" ng-init="dynamicBgSrc = 'src/roses/snowflake.html'">
+    <iframe ng-src="{{dynamicBgSrc}}" frameborder="0" scrolling="no" style="width: 100%;height: 100%;position: absolute"></iframe>
+    <div class="login-container">
+        <div class="center">
+            <h1>
+                <i class="ebp-icon fa fa-leaf green"></i>
+                <span class="red">Ebp</span>
+                <span class="white">Application</span>
+            </h1>
+            <h4 class="light-blue">© Shining Yao</h4>
+        </div>
+        <div style="position: relative;margin-top: 6px">
+            <div class="login-box widget-box">
+                <div class="widget-body">
+                    <div class="widget-main">
+                        <h4 class="header blue lighter bigger">
+                            <i class="ebp-icon fa fa-coffee green"></i>
+                            Please Enter Your Information
+                        </h4>
+                        <form name="loginForm" class="form-horizontal" role="form">
+                            <fieldset>
+                                <label class="block clearfix">
+                                    <span class="block input-icon input-icon-right">
+                                        <input type="text" class="form-control" id="username" name="username" ng-model="username" placeholder="Username" popover="The username must not be empty." popover-trigger="focus" popover-placement="right" required />
+                                        <i class="ebp-icon fa fa-user"></i>
+                                        <span class="error" ng-show="loginForm.username.$error.required">The username must specified!</span>
+                                    </span>
+                                </label>
+                                <label class="block clearfix">
+                                    <span class="block input-icon input-icon-right">
+                                        <input type="password" class="form-control" id="password" name="password" ng-model="password" placeholder="Password" popover="The password must not be empty." popover-trigger="focus" popover-placement="right" ng-required="true" />
+                                        <i class="ebp-icon fa fa-lock"></i>
+                                        <span class="error" ng-show="loginForm.password.$error.required">The password must provided!</span>
+                                    </span>
+                                </label>
+                                <div class="space"></div>
+                                <div class="clearfix">
+                                    <label class="inline">
+                                        <input type="checkbox" class="ebp" />
+                                        <span class="lbl"> Remember Me</span>
+                                    </label>
+                                    <button type="submit" class="pull-right btn btn-sm btn-primary" style="width: 35%" ng-click="login()">
+                                        <i class="ebp-icon fa fa-key"></i>
+                                        <span>Sign In</span>
+                                    </button>
+                                </div>
+                            </fieldset>
+                        </form>
+                        <div class="social-or-login center">
+                            <span class="bigger-110">Or Login Using</span>
+                        </div>
+                        <div class="space-6"></div>
+                        <div class="social-login center">
+                            <a class="btn btn-primary">
+                                <i class="ebp-icon fa fa-facebook"></i>
+                            </a>
+                            <a class="btn btn-info">
+                                <i class="ebp-icon fa fa-twitter"></i>
+                            </a>
+                            <a class="btn btn-danger">
+                                <i class="ebp-icon fa fa-google-plus"></i>
+                            </a>
+                            <a class="btn btn-block">
+                                <i class="ebp-icon fa fa-qq"></i>
+                            </a>
+                            <a class="btn btn-warning">
+                                <i class="ebp-icon fa fa-weixin"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="toolbar clearfix">
+                        <div>
+                            <a href="#" data-target="#forgot-box" class="forgot-password-link">
+                                <i class="ace-icon fa fa-arrow-left"></i>
+                                I forgot my password
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#" data-target="#signup-box" class="user-signup-link">
+                                I want to register
+                                <i class="ace-icon fa fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <span style="position: absolute;right: 10px;top: 10px">
+        <ul style="list-style-type: none">
+            <li style="float: left;margin-right: 10px">
+                <a ng-click="dynamicBgSrc = 'src/roses/snowflake.html'" href="javascript:void(0)">snowflake</a>
+            </li>
+            <li style="float: left;margin-right: 10px">
+                <a ng-click="dynamicBgSrc = 'src/roses/fisheye.html'" href="javascript:void(0)">fisheye</a>
+            </li>
+        </ul>
+    </span>
+</div>
