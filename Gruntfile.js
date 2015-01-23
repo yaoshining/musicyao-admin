@@ -84,12 +84,13 @@ module.exports = function(grunt) {
                 },
                 proxies: [
                     {
-                        context: '/oa',
+                        context: '/MusicYao-web',
                         host: '127.0.0.1',
-                        port: '8080',
+                        port: '7001',
                         https: false,
                         changeOrigin: true
-                    }, {
+                    }
+                    , {
                         context: '/MusicYao',
                         host: '114.215.109.39',
                         port: '7001',

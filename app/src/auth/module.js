@@ -44,30 +44,36 @@ define(['angular','angular-ui-router','angular-cookies'],function(angular){
             $scope.login = function(){
                 var username = $scope.username;
                 var password = $scope.password;
-                $.ajax({
-                    url: '/oa/auth/login',
-                    data: {
-                        username: username,
-                        password: password
-                    },
-                    type: 'POST',
-                    dataType: 'json',
-                    success: function(data){
-                        if(angular.isString(data)){
-                            authService.currentUser = $.parseJSON(data).principal;
-                        }
-                        if(angular.isObject(data)){
-                            authService.currentUser = data.principal;
-                        }
-                        $cookieStore.put('currentUser',authService.currentUser);
-                        window.location.href = '/';
-                        $scope.$apply();
-                    }
-                });
+
+
+                authService.currentUser = 'yao';
+                $cookieStore.put('currentUser',authService.currentUser);
+                window.location.href = '/';
+                $scope.$apply();
+                //$.ajax({
+                //    url: '/oa/auth/login',
+                //    data: {
+                //        username: username,
+                //        password: password
+                //    },
+                //    type: 'POST',
+                //    dataType: 'json',
+                //    success: function(data){
+                //        if(angular.isString(data)){
+                //            authService.currentUser = $.parseJSON(data).principal;
+                //        }
+                //        if(angular.isObject(data)){
+                //            authService.currentUser = data.principal;
+                //        }
+                //        $cookieStore.put('currentUser',authService.currentUser);
+                //        window.location.href = '/';
+                //        $scope.$apply();
+                //    }
+                //});
             };
         }]
     }).run(['$http',function($http){
-        $http.defaults.headers.common.Authorization = 'Basic eWFvOnlzMTk4NzU2';
+        //$http.defaults.headers.common.Authorization = 'Basic eWFvOnlzMTk4NzU2';
     }]);
     return authModule;
 });

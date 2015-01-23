@@ -11,8 +11,9 @@
     z-index: 999;
     opacity: 0.9;
     @include custom-rounded(0 6px 6px 0);
-    &+#sidePlayerSwitchOn {
+    &~#sidePlayerSwitchOn {
         position: fixed;
+        z-index: 999;
         left: 0;
         bottom:20px;
         width: 15px;
@@ -22,19 +23,44 @@
         box-sizing: content-box;
         border-radius: 0 6px 6px 0;
         cursor: pointer;
-        box-shadow: 3px 3px 6px RGBA(0,0,0,.42);
     }
-    &.dark-skin,&.dark-skin+#sidePlayerSwitchOn {
+    &.dark-skin,&.dark-skin~#sidePlayerSwitchOn {
         background-color: #000000;
     }
-    &.blue-skin,&.blue-skin+#sidePlayerSwitchOn {
+    &.blue-skin,&.blue-skin~#sidePlayerSwitchOn {
         background-color: #000DFF;
     }
-    &.red-skin,&.red-skin+#sidePlayerSwitchOn {
+    &.red-skin,&.red-skin~#sidePlayerSwitchOn {
         background-color: #FF0000;
     }
-    &.pink-skin,&.pink-skin+#sidePlayerSwitchOn {
+    &.pink-skin,&.pink-skin~#sidePlayerSwitchOn {
         background-color: #FF00AE;
+    }
+    & + .sideplayer-lrc-wrapper {
+        position: fixed;
+        z-index: 999;
+        left: 571px;
+        bottom:20px;
+        padding-top: 2px;
+        width: 250px;
+        height: 94px;
+        overflow: hidden;
+        background: #1B1B1B;
+        border-radius: 4px;
+        box-shadow: 3px 3px 6px RGBA(0,0,0,.42);
+        box-sizing: content-box;
+        &.dark-skin {
+            background: #1B1B1B;
+        }
+        &.blue-skin {
+            background-color: #000DFF;
+        }
+        &.red-skin {
+            background-color: #FF0000;
+        }
+        &.pink-skin {
+            background-color: #FF00AE;
+        }
     }
 }
 #sidePlayer {

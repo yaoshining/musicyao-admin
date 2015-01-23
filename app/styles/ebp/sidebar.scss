@@ -154,7 +154,7 @@
         margin-top: 40px;
         padding-bottom: 2px;
         width: 176px;
-        display: none!important;
+//        display: none!important;
     }
     .nav-list>li>a>.menu-text {
         display: none;
@@ -325,7 +325,7 @@
         }
     }
     .submenu {
-        display: none;
+//        display: none;
         list-style: none;
         margin: 0;
         padding: 0;
@@ -367,7 +367,7 @@
 }
 .nav-list .open{
     &>.submenu {
-        display: block;
+//        display: block;
     }
 }
 .no-skin .nav-list{
@@ -436,6 +436,9 @@
       }
       &.active > a {
         color: #2B7DBC;
+        .menu-icon {
+          color: #c86139;
+        }
       }
     }
       &.open>a {

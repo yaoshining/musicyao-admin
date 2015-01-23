@@ -196,3 +196,27 @@ input[type=checkbox].ebp:checked+.lbl::before,input[type=radio].ebp:checked+.lbl
 input[type=checkbox].ebp:hover+.lbl::before,input[type=radio].ebp:hover+.lbl::before,input[type=checkbox].ebp+.lbl:hover::before,input[type=radio].ebp+.lbl:hover::before {
   border-color: #ff893c
 }
+.form-control, select {
+    border-radius: 0;
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+    color: #858585;
+    background-color: #fff;
+    border: 1px solid #d5d5d5;
+}
+select.form-control {
+    padding: 4px 6px;
+}
+.dropzone .dz-default.dz-message {
+    background-image: none!important;
+    font-size: 24px;
+    text-align: center;
+    line-height: 32px;
+    left: 0;
+    width: 100%;
+    margin-left: auto;
+}
+.dropzone .dz-default.dz-message span {
+    display: inline!important;
+    color: #555!important;
+}

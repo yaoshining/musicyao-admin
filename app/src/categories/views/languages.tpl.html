@@ -1,0 +1,24 @@
+<div>
+    <button class="btn btn-sm btn-primary" ng-click="addLanguage()">Add language</button>
+    <button class="btn btn-sm btn-danger">Remove</button>
+</div>
+<div class="space-6"></div>
+<table class="table table-bordered table-hover table-striped" at-table at-list="languages" at-paginated at-config="config">
+    <thead>
+    <tr>
+        <th at-attribute="name">Language</th>
+        <th at-attribute="createUser">Creator</th>
+        <th at-attribute="createTime">Create Time</th>
+        <th at-attribute="modifyTime">Last Modify Time</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td at-implicit at-attribute="name" at-sortable at-initial-sorting="asc" editable-text="item.name" onaftersave="updateLanguage(item)" e-required e-placeholder="Enter name"></td>
+        <td at-implicit at-attribute="createUser" at-sortable></td>
+        <td at-attribute="createTime" at-sortable>{{item.createTime | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+        <td at-attribute="modifyTime" at-sortable>{{item.modifyTime | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+    </tr>
+    </tbody>
+</table>
+<at-pagination at-list="languages" at-config="config"></at-pagination>

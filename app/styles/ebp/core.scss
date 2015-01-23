@@ -124,10 +124,13 @@
     border-style: dotted;
 }
 .no-padding {
-  padding: 0px !important;
+  padding: 0 !important;
+}
+.no-padding-right {
+    padding-right: 0 !important;
 }
 .no-margin {
-    margin: 0px !important;
+    margin: 0 !important;
 }
 .no-border {
     border-width: 0;

@@ -5,7 +5,7 @@ define(['angular','codemirror','ui-codemirror','angular-sanitize','plugins/core/
     window.CodeMirror = CodeMirror;
     var module = angular.module('UIAndElementsModule',['ui.codemirror','ngSanitize','prettifyDirective']);
     module.config().run(['$http', function($http){
-        $http.defaults.headers.common.Authorization = 'Basic eWFvOnlzMTk4NzU2';
+        //$http.defaults.headers.common.Authorization = 'Basic eWFvOnlzMTk4NzU2';
     }]);
     return module;
 });

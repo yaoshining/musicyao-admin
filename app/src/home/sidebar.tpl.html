@@ -36,7 +36,7 @@
             <b ng-if="menus[menu.name]" class="arrow fa fa-angle-down"></b>
         </a>-->
         <b class="arrow"></b>
-        <ul class="submenu" ng-if="menus[menu.name]">
+        <ul class="submenu" ng-if="menus[menu.name]" collapse="!menu.isOpen || minified">
             <li ng-repeat="submenu in menus[menu.name]" ui-sref-active="active">
                 <a ui-sref="{{submenu.sref}}" ng-click="navigateTo(submenu.name);" ng-if="submenu.sref">
                     <i class="menu-icon fa fa-caret-right"></i>
@@ -56,7 +56,7 @@
             <b class="arrow fa fa-angle-down"></b>
         </a>
 
-        <b class="arrow"></b>
+        <!--<b class="arrow"></b>
 
         <ul class="submenu">
             <li class="">
@@ -67,63 +67,63 @@
                     <b class="arrow fa fa-angle-down"></b>
                 </a>
 
-                <b class="arrow"></b>
+                &lt;!&ndash;<b class="arrow"></b>&ndash;&gt;
 
-                <ul class="submenu">
-                    <li class="">
-                        <a href="top-menu.html">
-                            <i class="menu-icon fa fa-caret-right"></i>
-                            Top Menu
-                        </a>
+                &lt;!&ndash;<ul class="submenu">&ndash;&gt;
+                    &lt;!&ndash;<li class="">&ndash;&gt;
+                        &lt;!&ndash;<a href="top-menu.html">&ndash;&gt;
+                            &lt;!&ndash;<i class="menu-icon fa fa-caret-right"></i>&ndash;&gt;
+                            &lt;!&ndash;Top Menu&ndash;&gt;
+                        &lt;!&ndash;</a>&ndash;&gt;
 
-                        <b class="arrow"></b>
-                    </li>
+                        &lt;!&ndash;<b class="arrow"></b>&ndash;&gt;
+                    &lt;!&ndash;</li>&ndash;&gt;
 
-                    <li class="">
-                        <a href="two-menu-1.html">
-                            <i class="menu-icon fa fa-caret-right"></i>
-                            Two Menus 1
-                        </a>
+                    &lt;!&ndash;<li class="">&ndash;&gt;
+                        &lt;!&ndash;<a href="two-menu-1.html">&ndash;&gt;
+                            &lt;!&ndash;<i class="menu-icon fa fa-caret-right"></i>&ndash;&gt;
+                            &lt;!&ndash;Two Menus 1&ndash;&gt;
+                        &lt;!&ndash;</a>&ndash;&gt;
 
-                        <b class="arrow"></b>
-                    </li>
+                        &lt;!&ndash;<b class="arrow"></b>&ndash;&gt;
+                    &lt;!&ndash;</li>&ndash;&gt;
 
-                    <li class="">
-                        <a href="two-menu-2.html">
-                            <i class="menu-icon fa fa-caret-right"></i>
-                            Two Menus 2
-                        </a>
+                    &lt;!&ndash;<li class="">&ndash;&gt;
+                        &lt;!&ndash;<a href="two-menu-2.html">&ndash;&gt;
+                            &lt;!&ndash;<i class="menu-icon fa fa-caret-right"></i>&ndash;&gt;
+                            &lt;!&ndash;Two Menus 2&ndash;&gt;
+                        &lt;!&ndash;</a>&ndash;&gt;
 
-                        <b class="arrow"></b>
-                    </li>
+                        &lt;!&ndash;<b class="arrow"></b>&ndash;&gt;
+                    &lt;!&ndash;</li>&ndash;&gt;
 
-                    <li class="">
-                        <a href="mobile-menu-1.html">
-                            <i class="menu-icon fa fa-caret-right"></i>
-                            Default Mobile Menu
-                        </a>
+                    &lt;!&ndash;<li class="">&ndash;&gt;
+                        &lt;!&ndash;<a href="mobile-menu-1.html">&ndash;&gt;
+                            &lt;!&ndash;<i class="menu-icon fa fa-caret-right"></i>&ndash;&gt;
+                            &lt;!&ndash;Default Mobile Menu&ndash;&gt;
+                        &lt;!&ndash;</a>&ndash;&gt;
 
-                        <b class="arrow"></b>
-                    </li>
+                        &lt;!&ndash;<b class="arrow"></b>&ndash;&gt;
+                    &lt;!&ndash;</li>&ndash;&gt;
 
-                    <li class="">
-                        <a href="mobile-menu-2.html">
-                            <i class="menu-icon fa fa-caret-right"></i>
-                            Mobile Menu 2
-                        </a>
+                    &lt;!&ndash;<li class="">&ndash;&gt;
+                        &lt;!&ndash;<a href="mobile-menu-2.html">&ndash;&gt;
+                            &lt;!&ndash;<i class="menu-icon fa fa-caret-right"></i>&ndash;&gt;
+                            &lt;!&ndash;Mobile Menu 2&ndash;&gt;
+                        &lt;!&ndash;</a>&ndash;&gt;
 
-                        <b class="arrow"></b>
-                    </li>
+                        &lt;!&ndash;<b class="arrow"></b>&ndash;&gt;
+                    &lt;!&ndash;</li>&ndash;&gt;
 
-                    <li class="">
-                        <a href="mobile-menu-3.html">
-                            <i class="menu-icon fa fa-caret-right"></i>
-                            Mobile Menu 3
-                        </a>
+                    &lt;!&ndash;<li class="">&ndash;&gt;
+                        &lt;!&ndash;<a href="mobile-menu-3.html">&ndash;&gt;
+                            &lt;!&ndash;<i class="menu-icon fa fa-caret-right"></i>&ndash;&gt;
+                            &lt;!&ndash;Mobile Menu 3&ndash;&gt;
+                        &lt;!&ndash;</a>&ndash;&gt;
 
-                        <b class="arrow"></b>
-                    </li>
-                </ul>
+                        &lt;!&ndash;<b class="arrow"></b>&ndash;&gt;
+                    &lt;!&ndash;</li>&ndash;&gt;
+                &lt;!&ndash;</ul>&ndash;&gt;
             </li>
 
             <li class="">
@@ -241,7 +241,7 @@
                     </li>
                 </ul>
             </li>
-        </ul>
+        </ul>-->
     </li>
 
     <li class="">
@@ -252,27 +252,27 @@
             <b class="arrow fa fa-angle-down"></b>
         </a>
 
-        <b class="arrow"></b>
+        <!--<b class="arrow"></b>-->
 
-        <ul class="submenu">
-            <li class="">
-                <a href="tables.html">
-                    <i class="menu-icon fa fa-caret-right"></i>
-                    Simple &amp; Dynamic
-                </a>
+        <!--<ul class="submenu">-->
+            <!--<li class="">-->
+                <!--<a href="tables.html">-->
+                    <!--<i class="menu-icon fa fa-caret-right"></i>-->
+                    <!--Simple &amp; Dynamic-->
+                <!--</a>-->
 
-                <b class="arrow"></b>
-            </li>
+                <!--<b class="arrow"></b>-->
+            <!--</li>-->
 
-            <li class="">
-                <a href="jqgrid.html">
-                    <i class="menu-icon fa fa-caret-right"></i>
-                    jqGrid plugin
-                </a>
+            <!--<li class="">-->
+                <!--<a href="jqgrid.html">-->
+                    <!--<i class="menu-icon fa fa-caret-right"></i>-->
+                    <!--jqGrid plugin-->
+                <!--</a>-->
 
-                <b class="arrow"></b>
-            </li>
-        </ul>
+                <!--<b class="arrow"></b>-->
+            <!--</li>-->
+        <!--</ul>-->
     </li>
 
     <li class="">
@@ -283,7 +283,7 @@
             <b class="arrow fa fa-angle-down"></b>
         </a>
 
-        <b class="arrow"></b>
+        <!--<b class="arrow"></b>
 
         <ul class="submenu">
             <li class="">
@@ -330,7 +330,7 @@
 
                 <b class="arrow"></b>
             </li>
-        </ul>
+        </ul>-->
     </li>
 
     <li class="">
@@ -375,7 +375,7 @@
             <b class="arrow fa fa-angle-down"></b>
         </a>
 
-        <b class="arrow"></b>
+        <!--<b class="arrow"></b>
 
         <ul class="submenu">
             <li class="">
@@ -440,7 +440,7 @@
 
                 <b class="arrow"></b>
             </li>
-        </ul>
+        </ul>-->
     </li>
 
     <li class="">
@@ -456,7 +456,7 @@
             <b class="arrow fa fa-angle-down"></b>
         </a>
 
-        <b class="arrow"></b>
+        <!--<b class="arrow"></b>
 
         <ul class="submenu">
             <li class="">
@@ -503,7 +503,7 @@
 
                 <b class="arrow"></b>
             </li>
-        </ul>
+        </ul>-->
     </li>
 </ul>
 <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">

@@ -16,18 +16,55 @@ define(['angular','conf/modules'],function(angular,modules){
                 'homeModule': modules.homeModule
             }
         },
-        emails: {
-            url: '/emails/:emailView/:emailId',
+        categories: {
+            url: '/categories',
             views: {
                 '': {
-                    controller: 'EmailController',
-                    templateUrl: 'src/email/views/email.tpl.html'
+                    template: '<div ui-view></div>'
                 }
             },
             modules: {
-                'emailModule': modules.emailModule,
-                'usersModule': modules.usersModule,
-                'filesModule': modules.filesModule
+                'categoriesModule': modules.categoriesModule
+            }
+        },
+        'categories.languages': {
+            url: '/languages',
+            views: {
+                '': {
+                    controller: 'LanguagesController',
+                    templateUrl: 'src/categories/views/languages.tpl.html'
+                }
+            },
+            modules: {
+                'categoriesModule': modules['categoriesModule.languages'],
+                'angular-table': ['at-table'],
+                'xeditable': ['angular-xeditable']
+            }
+        },
+        'music': {
+            url: '/music',
+            views: {
+                '': {
+                    template: '<div ui-view></div>'
+                }
+            },
+            modules: {
+                'musicModule': modules['musicModule']
+            }
+        },
+        'music.upload': {
+            url: '/upload',
+            views: {
+                '': {
+                    controller: 'MusicUploadController',
+                    templateUrl: 'src/music/views/upload.tpl.html'
+                }
+            },
+            modules: {
+                'musicModule': modules['musicModule.upload'],
+                'categoriesModule': modules.categoriesModule.concat(modules['categoriesModule.languages']),
+                'ebp.dropzone': ['plugins/core/ebp-dropzone'],
+                'mgo-angular-wizard': ['angular-wizard']
             }
         },
         UIAndElements: {
@@ -145,8 +182,8 @@ define(['angular','conf/modules'],function(angular,modules){
                 'angular-table': ['at-table']
             }
         },
-        music: {
-            url: '/music',
+        musicyao: {
+            url: '/musicyao',
             views: {
                 'main.content': {
                     templateUrl: 'src/musicyao/views/main.html'
@@ -168,7 +205,7 @@ define(['angular','conf/modules'],function(angular,modules){
                 'com.2fdevs.videogular.plugins.poster': ['videogular-poster']
             }
         },
-        'music.home': {
+        'musicyao.home': {
             url: '/home',
             views: {
                 '': {
@@ -180,7 +217,7 @@ define(['angular','conf/modules'],function(angular,modules){
                 'musicYaoModule': modules['musicYaoModule_home']
             }
         },
-        'music.mtv': {
+        'musicyao.mtv': {
             url: '/mtv',
             views: {
                 '': {
@@ -192,7 +229,7 @@ define(['angular','conf/modules'],function(angular,modules){
                 'musicYaoModule': modules['musicYaoModule_mtv']
             }
         },
-        'music.mtvdetail': {
+        'musicyao.mtvdetail': {
             url: '/mtvdetail',
             views: {
                 '': {

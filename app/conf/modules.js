@@ -8,13 +8,19 @@ define(function(){
             'vendor/angular.easypiechart',
             'plot'
         ],
-        'emailModule': [
-            'email/module',
-            'email/controllers/emailController',
-            'email/services/emailService',
-            'email/repositories/Email',
-            'css!styles/email/email',
-            'css!styles/jquery-ui/jquery-ui'
+        'categoriesModule': [
+            'categories/module'
+        ],
+        'categoriesModule.languages': [
+            'categories/repositories/Languages',
+            'categories/services/LanguagesService',
+            'categories/controllers/LanguagesController'
+        ],
+        'musicModule': [
+            'music/module'
+        ],
+        'musicModule.upload': [
+            'music/controllers/MusicUploadController'
         ],
         'usersModule': [
             'users/module',
@@ -94,10 +100,6 @@ define(function(){
         'mediaModule.audioPlayer': [
             'media/controllers/audio/AudioPlayerDemoController',
             'jquery-knob'
-        ],
-        'myModule': [
-            'email/module2',
-            'email/controllers/MyController'
         ]
     }
 });

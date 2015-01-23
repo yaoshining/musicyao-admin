@@ -5,12 +5,19 @@ define(function(){
     return {
         '$root': [
             {name: 'Dashboard',sref: 'home',iconClass: 'fa-tachometer'},
-            {name: 'Email',sref: 'emails',iconClass: 'fa-envelope'},
-            {name: 'MusicYao',sref: 'music.home',iconClass: 'fa-music'},
+            {name: 'Categories',sref: 'categories',iconClass: 'fa-envelope'},
+            {name: 'Music',sref: 'music',iconClass: 'fa-music'},
+            {name: 'MusicYao',sref: 'musicyao.home',iconClass: 'fa-music'},
             {name: 'UI & Elements',sref: 'UIAndElements',iconClass: 'fa-desktop'},
             {name: 'Widgets',sref: 'widgetsDemo',iconClass: 'fa-list-alt'},
             {name: 'Tasks',sref: 'worktile',iconClass: 'fa-tasks'},
             {name: 'Media',sref: 'mediaDemo',iconClass: 'fa-headphones'}
+        ],
+        'Categories': [
+            {name: 'Languages',sref: 'categories.languages'}
+        ],
+        'Music': [
+            {name: 'Upload',sref: 'music.upload'}
         ],
         'UI & Elements': [
             {name: 'Bootstrap',sref: 'UIAndElements.bootstrap'},

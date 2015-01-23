@@ -43,6 +43,14 @@
     "jvectormap": "~2.0.0",
     "malihu-custom-scrollbar-plugin": "~3.0.7",
     "id3": "~1.0.2",
-    "aterrien/jQuery-Knob": "~1.2.11"
+    "videogular": "*",
+    "videogular-buffering": "~0.7.2",
+    "videogular-controls": "~0.7.2",
+    "videogular-overlay-play": "~0.7.2",
+    "videogular-poster": "~0.7.2",
+    "videogular-themes-default": "~0.7.2",
+    "angular-xeditable": "~0.1.8",
+    "dropzone": "~3.12.0",
+    "angular-wizard": "~0.4.2"
   }
 }
