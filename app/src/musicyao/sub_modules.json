@@ -1,0 +1,14 @@
+{
+    "musicYaoModule": [
+        "musicyao/module",
+        "musicyao/controllers/MusicPlayerController",
+        "musicyao/repositories/MusicYao",
+        "css!styles/ebp/musicyao"
+    ],
+    "musicYaoModule_home": [
+        "musicyao/controllers/MusicHomeController"
+    ],
+    "musicYaoModule_mtv": [
+        "musicyao/controllers/MTVController"
+    ]
+}

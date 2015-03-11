@@ -1,0 +1,8 @@
+{
+    "musicModule": [
+        "music/module"
+    ],
+    "musicModule.upload": [
+        "music/controllers/MusicUploadController"
+    ]
+}

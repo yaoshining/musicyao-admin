@@ -1,3 +1,6 @@
+dl {
+    margin-top: 0;
+}
 .dd {
     position: relative;
     display: block;
@@ -119,4 +122,19 @@ li.item-blue2 {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box
+}
+ol, ul {
+    margin: 0 0 10px 25px;
+    padding: 0;
+}
+.list-inline, .list-unstyled {
+    margin-left: 0;
+}
+.spaced>li {
+    margin-top: 9px;
+    margin-bottom: 9px;
+}
+.spaced2>li {
+    margin-top: 15px;
+    margin-bottom: 15px;
 }

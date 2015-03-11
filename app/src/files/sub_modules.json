@@ -1,0 +1,7 @@
+{
+    "filesModule": [
+        "files/module",
+        "files/services/attachService",
+        "files/repositories/Attachment"
+    ]
+}

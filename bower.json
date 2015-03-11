@@ -39,7 +39,7 @@
     "stickUp": "~0.5.7",
     "headroom.js": "~0.7.0",
     "tinycon": "~0.6.3",
-    "angular-ui-calendar": "~0.8.1",
+    "angular-ui-calendar": "0.9.0-beta.1",
     "jvectormap": "~2.0.0",
     "malihu-custom-scrollbar-plugin": "~3.0.7",
     "id3": "~1.0.2",
@@ -51,6 +51,8 @@
     "videogular-themes-default": "~0.7.2",
     "angular-xeditable": "~0.1.8",
     "dropzone": "~3.12.0",
-    "angular-wizard": "~0.4.2"
+    "angular-wizard": "~0.4.2",
+    "angular-ui-tree": "~2.1.5",
+    "Buttons": "alexwolfe/Buttons#~2.0.0"
   }
 }

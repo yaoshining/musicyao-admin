@@ -10,7 +10,7 @@
     height: 96px;
     z-index: 999;
     opacity: 0.9;
-    @include custom-rounded(0 6px 6px 0);
+    border-radius: 0 6px 6px 0;
     &~#sidePlayerSwitchOn {
         position: fixed;
         z-index: 999;

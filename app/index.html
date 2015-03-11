@@ -42,16 +42,8 @@
             </div>
             <div class="main-content">
                 <div class="main-content-inner" ui-view="main.content">
-                    <div class="breadcrumbs" id="breadcrumbs" ng-controller="NavigatorController">
-                        <ul class="breadcrumb">
-                            <li>
-                                <i class="fa fa-home home-icon"></i>
-                                <a ui-sref="home">Home</a>
-                            </li>
-                            <li ng-repeat="path in paths">
-                                {{path}}
-                            </li>
-                        </ul>
+                    <div class="breadcrumbs" id="breadcrumbs">
+                        <ebp-breadcrumb></ebp-breadcrumb>
                     </div>
                     <div class="page-content fade-in-up" ui-view></div>
                 </div>

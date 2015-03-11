@@ -1,69 +1,5 @@
-define(function(){
-    return {
-        'homeModule': [
-            'home/home',
-            'css!styles/ebp/infobox',
-            'css!styles/ebp/widgets',
-            'vendor/jquery.sparkline',
-            'vendor/angular.easypiechart',
-            'plot'
-        ],
-        'categoriesModule': [
-            'categories/module'
-        ],
-        'categoriesModule.languages': [
-            'categories/repositories/Languages',
-            'categories/services/LanguagesService',
-            'categories/controllers/LanguagesController'
-        ],
-        'musicModule': [
-            'music/module'
-        ],
-        'musicModule.upload': [
-            'music/controllers/MusicUploadController'
-        ],
-        'usersModule': [
-            'users/module',
-            'users/services/userService',
-            'users/repositories/Users'
-        ],
-        'filesModule': [
-            'files/module',
-            'files/services/attachService',
-            'files/repositories/Attachment'
-        ],
-        'UIAndElementsModule' : [
-            'UIAndElements/module'
-        ],
-        'UIAndElementsModule.bootstrap': [
-            'UIAndElements/controllers/BootstrapController'
-        ],
-        'UIAndElementsModule.treeView': [
-            'UIAndElements/controllers/TreeViewController'
-        ],
-        'UIAndElementsModule.tables': [
-            'UIAndElements/controllers/tables/TablesController'
-        ],
-        'UIAndElementsModule.nestable': [
-            'UIAndElements/controllers/list/NestableController'
-        ],
-        'UIAndElementsModule.calendar': [
-            'UIAndElements/controllers/calendar/CalendarDemoController'
-        ],
-        'UIAndElementsModule.maps': [
-            'UIAndElements/controllers/maps/MapDemoController',
-            'jvectormap-world',
-            'jvectormap-cn'
-        ],
-        'UIAndElementsModule.mindMap': [
-            'UIAndElements/controllers/TreeViewController',
-            'vendor/core/jsmind',
-            'css!styles/vendor/jsmind'
-        ],
-        'widgetsDemoModule' : [
-            'widgets/module',
-            'widgets/controllers/WidgetsDemoController'
-        ],
+define(['angular','conf/_modules'],function(angular,_modules){
+    var modules = {
         'ebpTreePlugin': [
             'plugins/core/ebp-tree'
         ],
@@ -75,18 +11,6 @@ define(function(){
         ],
         'ngNestable': [
             'ng-nestable'
-        ],
-        'musicYaoModule': [
-            'musicyao/module',
-            'musicyao/controllers/MusicPlayerController',
-            'musicyao/repositories/MusicYao',
-            'css!styles/ebp/musicyao'
-        ],
-        'musicYaoModule_home': [
-            'musicyao/controllers/MusicHomeController'
-        ],
-        'musicYaoModule_mtv': [
-            'musicyao/controllers/MTVController'
         ],
         'worktile': [
             'css!styles/ebp/worktile',
@@ -101,5 +25,9 @@ define(function(){
             'media/controllers/audio/AudioPlayerDemoController',
             'jquery-knob'
         ]
-    }
+    };
+    angular.forEach(_modules,function(e){
+        _.extend(modules,e);
+    });
+    return modules;
 });

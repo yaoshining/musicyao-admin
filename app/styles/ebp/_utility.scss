@@ -1,0 +1,77 @@
+@charset "UTF-8";
+.space {
+    max-height: 1px;
+    min-height: 1px;
+    overflow: hidden;
+    margin: 12px 0;
+}
+.space-2, [class*=vspace-2] {
+    max-height: 1px;
+    min-height: 1px;
+    overflow: hidden;
+    margin: 2px 0 1px;
+}
+.space-4, [class*=vspace-4] {
+    max-height: 1px;
+    min-height: 1px;
+    overflow: hidden;
+    margin: 4px 0 3px;
+}
+.space-6 {
+    max-height: 1px;
+    min-height: 1px;
+    overflow: hidden;
+    margin: 12px 0;
+    margin: 6px 0 5px;
+}
+.space-24 {
+    max-height: 1px;
+    min-height: 1px;
+    overflow: hidden;
+    margin: 12px 0;
+    margin: 24px 0 23px;
+}
+.middle {
+    vertical-align: middle;
+}
+.hr {
+    display: block;
+    height: 0;
+    overflow: hidden;
+    font-size: 0;
+    border-width: 1px 0 0 0;
+    border-top: 1px solid #E3E3E3;
+    margin: 12px 0;
+    border-top-color: rgba(0,0,0,.11);
+}
+@mixin hr-margin($hm){
+    @if $hm > 0{
+        .hr-#{$hm},.hr#{$hm} {
+            margin: $hm+px 0;
+        }
+        @include hr-margin($hm - 1);
+    }
+}
+@include hr-margin(32);
+.hr-double {
+    height: 3px;
+    border-top: 1px solid #E3E3E3;
+    border-bottom: 1px solid #E3E3E3;
+    border-top-color: rgba(0,0,0,.11);
+    border-bottom-color: rgba(0,0,0,.11);
+}
+.hr.dotted, .hr-dotted {
+    border-style: dotted;
+}
+.no-padding {
+    padding: 0 !important;
+}
+.no-padding-right {
+    padding-right: 0 !important;
+}
+.no-margin {
+    margin: 0 !important;
+}
+.no-border {
+    border-width: 0;
+}

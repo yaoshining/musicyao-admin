@@ -1,0 +1,52 @@
+<div ui-tree-handle class="tree-branch-header" ng-if="item.type=='folder'">
+    <label style="margin-bottom: 0" ng-click="$event.stopPropagation()" ng-dblclick="$event.stopPropagation()" ng-show="$checkSettings.enable">
+        <input type="checkbox" class="ebp" ng-model="item.$checked" ng-change="onCheckStateChange()" ng-class="{'intermediate': isSemiChecked(item)}">
+        <span class="lbl" style="z-index: 2"></span>
+    </label>
+    <span class="tree-branch-name" ng-click="$event.stopPropagation();toggle()">
+        <i class="icon-folder ebp-icon"
+            ng-class="(collapsed?((!hideIcon && treeOptions.closedIcon) || 'tree-plus'):((!hideIcon && treeOptions.openedIcon) || 'tree-minus'))+' '+item.iconClass"></i>
+        <span class="tree-label">{{item.name}}</span>
+    </span>
+</div>
+<span class="tree-item-name" ng-if="item.type=='item'">
+    <label style="margin-bottom: 0" ng-click="$event.stopPropagation()" ng-dblclick="$event.stopPropagation()" ng-show="$checkSettings.enable">
+        <input type="checkbox" class="ebp" ng-model="item.$checked">
+        <span class="lbl" style="z-index: 2"></span>
+    </label>
+    <i class="icon-item ebp-icon" ng-class="item.iconClass || treeOptions.itemIcon || 'hide'" ng-hide="hideIcon"></i>
+    <span class="tree-label">{{item.name}}</span>
+</span>
+<ul ui-tree-nodes class="tree-branch-children" ng-class="{'tree-line': showLine}" ng-model="item.children" ng-hide="collapsed" ng-if="item.children && item.children.length>0">
+    <li ng-repeat="item in item.children" ui-tree-node ebp-tree-node data-collapsed="true"
+        ng-class="{'tree-branch': item.type=='folder','tree-item': item.type=='item','selected': item.$selected,'tree-line': showLine}"
+        ng-include="'src/UIAndElements/views/tree_nodes_render.tpl.html'">
+    </li>
+</ul>
+<div class="tree-loader" role="alert" ng-hide="(collapsed || hasChild()) && !showLoader" ng-if="item.type=='folder'">
+    <div class="tree-loading"><i class="ebp-icon fa fa-refresh fa-spin blue"></i>
+    </div>
+</div>
+<div ng-if="item.type==='folder' && editItemHelper.enable" style="padding: 3px;margin-left: 25px;position: relative" ng-click="$event.stopPropagation()">
+    <label style="margin-bottom: 0" ng-click="$event.stopPropagation()" ng-dblclick="$event.stopPropagation()" ng-show="$checkSettings.enable">
+        <input type="checkbox" class="ebp" ng-model="editItemHelper.item.$checked">
+        <span class="lbl" style="z-index: 2"></span>
+    </label>
+    <i class="icon-folder ebp-icon"
+       ng-class="(!hideIcon && editItemHelper.item.iconClass) || 'tree-plus'" ng-if="editItemHelper.item.type === 'folder'"></i>
+    <i class="icon-item ebp-icon" ng-class="treeOptions.itemIcon"
+       ng-hide="hideIcon" ng-if="editItemHelper.item.type === 'item'"></i>
+    <span style="position: absolute;top: 0;bottom: 0;margin-left: 5px">
+        <input type="text" style="padding: 1px;width: 100px;" ng-model="editItemHelper.item.name" />
+        <div style="display: inline-block;width: 30px;position: relative;top: -3px;bottom: 0">
+            <button class="btn btn-success btn-xs btn-block" ng-click="editItemHelper.submit()">
+                <i class="ebp-icon fa fa-check white"></i>
+            </button>
+        </div>
+        <div style="display: inline-block;width: 30px;position: relative;top: -3px;bottom: 0">
+            <button class="btn btn-danger btn-xs btn-block" ng-click="dismissEditItemHelper()">
+                <i class="ebp-icon fa fa-times white"></i>
+            </button>
+        </div>
+    </span>
+</div>

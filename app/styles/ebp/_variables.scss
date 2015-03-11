@@ -1,0 +1,157 @@
+$icon: ebp-icon;
+//base variables
+// ----------------------------
+$baseFontSize: 13px;
+$sansFontFamily: "Open Sans";
+
+// Buttons
+// ----------------------------
+$btn-primary-bg:  #428bca;
+
+//some text color
+$ebp-dark: #333;
+$ebp-white: #FFF;
+$ebp-red: #DD5A43;
+$ebp-red2: #E08374;
+$ebp-light-red: #FF7777;
+$ebp-blue: #478FCA;
+$ebp-light-blue: #93CBF9;
+$ebp-green: #69AA46;
+$ebp-light-green: #B0D877;
+$ebp-orange: #FF892A;
+$ebp-orange2: #FEB902;
+$ebp-light-orange: #FCAC6F;
+$ebp-purple: #A069C3;
+$ebp-pink: #C6699F;
+$ebp-pink2: #D6487E;
+$ebp-brown:brown;
+$ebp-grey: #777;
+$ebp-light-grey: #BBB;
+
+
+//progress bar
+$progress-color: #2A91D8;
+$progress-danger: #CA5952;
+$progress-success: #59A84B;
+$progress-warning: #F2BB46;
+$progress-pink: #D6487E;
+$progress-purple: #9585BF;
+$progress-yellow: #FFD259;
+$progress-inverse: #404040;
+$progress-grey: #8A8A8A;
+
+//button colors
+// ----------------------------
+$btn-default: #ABBAC3;
+$btn-default-hover: #8B9AA3;
+
+$btn-primary: #428BCA;
+$btn-primary-hover: #1B6AAA;
+
+$btn-info: #6FB3E0;
+$btn-info-hover: #4F99C6;
+
+$btn-info2: #95C6E5;
+$btn-info2-hover: #67A6CE;
+
+$btn-success: #87B87F;
+$btn-success-hover: #629B58;
+
+$btn-warning: #FFB752;
+$btn-warning-hover: #E59729;
+
+$btn-danger: #D15B47;
+$btn-danger-hover: #B74635;
+
+$btn-inverse: #555555;
+$btn-inverse-hover: #303030;
+
+$btn-pink: #D6487E;
+$btn-pink-hover: #B73766;
+
+$btn-purple: #9585BF;
+$btn-purple-hover: #7461AA;
+
+$btn-yellow: #FEE188;
+$btn-yellow-hover: #F7D05B;
+$btn-yellow-color: #996633;
+
+$btn-light: #E7E7E7;
+$btn-light-hover: #D9D9D9;
+$btn-light-color: #888;
+
+$btn-grey: #A0A0A0;
+$btn-grey-hover: #888888;
+
+//active state:
+// ----------------------------
+$btn-active-color: #EFE5B5;
+$btn-yellow-active-border: #C96338;
+
+$btn-link-color: #0088CC;
+
+//application button colors
+// ----------------------------
+$btn-app-default-1: #BCC9D5;
+$btn-app-default-2: #ABBAC3;
+
+$btn-app-primary-1: #3B98D6;
+$btn-app-primary-2: #197EC1;
+
+$btn-app-info-1: #75B5E6;
+$btn-app-info-2: #5BA4D5;
+
+$btn-app-success-1: #8EBF60;
+$btn-app-success-2: #7DAA50;
+
+$btn-app-danger-1: #D55B52;
+$btn-app-danger-2: #D12723;
+
+$btn-app-warning-1: #FFBF66;
+$btn-app-warning-2: #FFA830;
+
+$btn-app-purple-1: #A696CE;
+$btn-app-purple-2: #8A7CB4;
+
+$btn-app-pink-1: #DB5E8C;
+$btn-app-pink-2: #CE3970;
+
+$btn-app-inverse-1: #555555;
+$btn-app-inverse-2: #333333;
+
+$btn-app-grey-1: #898989;
+$btn-app-grey-2: #696969;
+
+$btn-app-light-1: #F4F4F4;
+$btn-app-light-2: #E6E6E6;
+
+$btn-app-yellow-1: #FFE8A5;
+$btn-app-yellow-2: #FCD76A;
+
+$btn-app-active: #FFF;
+$btn-app-yellow-color: #963;
+$btn-app-yellow-border: #FEE188;
+$btn-app-light-color: #5A5A5A;
+$btn-app-light-active: #515151;
+
+//label & badge colors
+// ----------------------------
+$label-default: #ABBAC3;
+$label-primary:$btn-primary;
+$label-info: #3A87AD;
+$label-success: #82AF6F;
+$label-danger: #D15B47;
+$label-important:$label-danger;//!ignore
+$label-warning: #F89406;
+$label-inverse: #333333;
+$label-pink: #D6487E;
+$label-purple: #9585BF;
+$label-yellow: #FEE188;
+$label-light: #E7E7E7;
+$label-grey:$btn-grey;
+
+//tabs & accordion
+$tab-border: #C5D0DC;
+$tab-active-color: #576373;
+$tab-active-border: #4C8FBD;
+$tab-hover-color: #4C8FBD;

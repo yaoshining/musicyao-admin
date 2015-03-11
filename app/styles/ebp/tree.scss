@@ -4,7 +4,7 @@
   overflow-x: hidden;
   overflow-y: auto;
   position: relative;
-  &:before {
+  &.tree-line:before {
     display: inline-block;
     content: "";
     position: absolute;
@@ -29,7 +29,7 @@
       margin: 0px 0px 0px 23px;
       padding: 0px;
       position: relative;
-      &:before {
+      &.tree-line:before {
         display: inline-block;
         content: "";
         position: absolute;
@@ -68,7 +68,20 @@
     left: 5px;
   }
 }
-.tree .tree-branch:before, .tree .tree-item:before {
+.tree .tree-item {
+    &:hover,&.selected {
+        background-color: #F0F7FC;
+    }
+}
+.tree .tree-branch .tree-branch-header {
+    &:hover {
+        background-color: #F0F7FC;
+    }
+}
+.tree .tree-branch.selected > .tree-branch-header {
+    background-color: #F0F7FC;
+}
+.tree .tree-branch.tree-line:before, .tree .tree-item.tree-line:before {
   display: inline-block;
   content: "";
   position: absolute;
@@ -151,4 +164,12 @@
 }
 .tree .tree-item > .tree-item-name > .ebp-icon:first-child {
   margin-right: 3px;
+}
+.angular-ui-tree-placeholder {
+    background: #f0f9ff;
+    border: 2px dashed #bed2db;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
 }

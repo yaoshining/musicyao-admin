@@ -2,8 +2,8 @@
  * Created by 世宁 on 14-12-12.
  */
 'use strict'
-define(['angular','conf/modules'],function(angular,modules){
-    return {
+define(['angular','conf/modules','conf/_routes'],function(angular,modules,_routes){
+    var routes = {
         home: {
             url: '/',
             views: {
@@ -11,6 +11,9 @@ define(['angular','conf/modules'],function(angular,modules){
                     templateUrl: 'src/home/home.tpl.html',
                     controller: 'HomeController'
                 }
+            },
+            breadcrumb: {
+                label: 'Home'
             },
             modules: {
                 'homeModule': modules.homeModule
@@ -23,6 +26,10 @@ define(['angular','conf/modules'],function(angular,modules){
                     template: '<div ui-view></div>'
                 }
             },
+            breadcrumb: {
+                label: 'Categories',
+                parent: 'home'
+            },
             modules: {
                 'categoriesModule': modules.categoriesModule
             }
@@ -34,6 +41,9 @@ define(['angular','conf/modules'],function(angular,modules){
                     controller: 'LanguagesController',
                     templateUrl: 'src/categories/views/languages.tpl.html'
                 }
+            },
+            breadcrumb: {
+                label: 'Languages'
             },
             modules: {
                 'categoriesModule': modules['categoriesModule.languages'],
@@ -48,6 +58,10 @@ define(['angular','conf/modules'],function(angular,modules){
                     template: '<div ui-view></div>'
                 }
             },
+            breadcrumb: {
+                label: 'Music',
+                parent: 'home'
+            },
             modules: {
                 'musicModule': modules['musicModule']
             }
@@ -59,6 +73,9 @@ define(['angular','conf/modules'],function(angular,modules){
                     controller: 'MusicUploadController',
                     templateUrl: 'src/music/views/upload.tpl.html'
                 }
+            },
+            breadcrumb: {
+                label: 'Upload'
             },
             modules: {
                 'musicModule': modules['musicModule.upload'],
@@ -74,6 +91,10 @@ define(['angular','conf/modules'],function(angular,modules){
                     template: "<div ui-view class='fade-in-up' style='position: relative'></div>"
                 }
             },
+            breadcrumb: {
+                label: 'UIAndElements',
+                parent: 'home'
+            },
             modules: {
                 'UIAndElementsModule': modules.UIAndElementsModule
             }
@@ -85,6 +106,9 @@ define(['angular','conf/modules'],function(angular,modules){
                     controller: 'BootstrapController',
                     templateUrl: 'src/UIAndElements/views/bootstrap.tpl.html'
                 }
+            },
+            breadcrumb: {
+                label: 'Bootstrap'
             },
             modules: {
                 'UIAndElementsModule': modules['UIAndElementsModule.bootstrap'],
@@ -99,6 +123,9 @@ define(['angular','conf/modules'],function(angular,modules){
                     templateUrl: 'src/UIAndElements/views/treeView.tpl.html'
                 }
             },
+            breadcrumb: {
+                label: 'TreeView'
+            },
             modules: {
                 'UIAndElementsModule': modules['UIAndElementsModule.treeView'],
                 'ebp.tree': modules.ebpTreePlugin
@@ -111,6 +138,9 @@ define(['angular','conf/modules'],function(angular,modules){
                     controller: 'TablesController',
                     templateUrl: 'src/UIAndElements/views/tables/tables.tpl.html'
                 }
+            },
+            breadcrumb: {
+                label: 'Tables'
             },
             modules: {
                 'UIAndElementsModule': modules['UIAndElementsModule.tables'],
@@ -125,9 +155,67 @@ define(['angular','conf/modules'],function(angular,modules){
                     templateUrl: 'src/UIAndElements/views/list/nestable.html'
                 }
             },
+            breadcrumb: {
+                label: 'Nestable'
+            },
             modules: {
                 'UIAndElementsModule': modules['UIAndElementsModule.nestable'],
                 'ng-nestable': modules.ngNestable
+            }
+        },
+        'UIAndElements.typography': {
+            url: '/typography',
+            views: {
+                '': {
+                    templateUrl: 'src/UIAndElements/views/typography.tpl.html'
+                }
+            },
+            breadcrumb: {
+                label: 'Typography'
+            }
+        },
+        'UIAndElements.elements': {
+            url: '/elements',
+            views: {
+                '': {
+                    templateUrl: 'src/UIAndElements/views/elements.tpl.html'
+                }
+            },
+            breadcrumb: {
+                label: 'Elements'
+            }
+        },
+        'UIAndElements.buttons1': {
+            url: '/buttons1',
+            views: {
+                '': {
+                    templateUrl: 'src/UIAndElements/views/buttons1.tpl.html'
+                }
+            },
+            breadcrumb: {
+                label: 'Buttons1'
+            }
+        },
+        'UIAndElements.buttons2': {
+            url: '/buttons2',
+            views: {
+                '': {
+                    templateUrl: 'src/UIAndElements/views/buttons2.tpl.html'
+                }
+            },
+            breadcrumb: {
+                label: 'Buttons2'
+            }
+        },
+        'UIAndElements.icons': {
+            url: '/icons',
+            views: {
+                '': {
+                    templateUrl: 'src/UIAndElements/views/icons.tpl.html'
+                }
+            },
+            breadcrumb: {
+                label: 'Icons'
             }
         },
         'UIAndElements.calendar': {
@@ -137,6 +225,9 @@ define(['angular','conf/modules'],function(angular,modules){
                     controller: 'CalendarDemoController',
                     templateUrl: 'src/UIAndElements/views/calendar/calendar.tpl.html'
                 }
+            },
+            breadcrumb: {
+                label: 'Calendar'
             },
             modules: {
                 'UIAndElementsModule': modules['UIAndElementsModule.calendar'],
@@ -151,6 +242,9 @@ define(['angular','conf/modules'],function(angular,modules){
                     templateUrl: 'src/UIAndElements/views/maps/maps.tpl.html'
                 }
             },
+            breadcrumb: {
+                label: 'Maps'
+            },
             modules: {
                 'UIAndElementsModule': modules['UIAndElementsModule.maps'],
                 'ebp.jq': ['plugins/core/ebp-jq']
@@ -163,9 +257,35 @@ define(['angular','conf/modules'],function(angular,modules){
                     templateUrl: 'src/UIAndElements/views/mindMap.tpl.html'
                 }
             },
+            breadcrumb: {
+                label: 'MindMap'
+            },
             modules: {
                 'UIAndElementsModule': modules['UIAndElementsModule.mindMap'],
                 'ebp.mindmap': modules['ebpJsMindPlugin']
+            }
+        },
+        'tables': {
+            url: '/tables',
+            views: {
+                '': {
+                    template: '<div ui-view></div>'
+                }
+            },
+            breadcrumb: {
+                label: 'Tables',
+                parent: 'home'
+            }
+        },
+        'tables.ebpGrid': {
+            url: '/ebpGrid',
+            views: {
+                '': {
+                    templateUrl: 'src/tables/views/tables.tpl.html'
+                }
+            },
+            breadcrumb: {
+                label: 'EbpGrid'
             }
         },
         widgetsDemo: {
@@ -175,6 +295,10 @@ define(['angular','conf/modules'],function(angular,modules){
                     controller: 'WidgetsDemoController',
                     templateUrl: 'src/widgets/views/widgets.tpl.html'
                 }
+            },
+            breadcrumb: {
+                label: 'Widgets',
+                parent: 'home'
             },
             modules: {
                 'widgetsDemoModule': modules.widgetsDemoModule,
@@ -195,6 +319,10 @@ define(['angular','conf/modules'],function(angular,modules){
                     templateUrl: 'src/musicyao/views/navbar.html'
                 }
             },
+            breadcrumb: {
+                label: 'MusicYao',
+                parent: 'home'
+            },
             modules: {
                 'musicYaoModule': modules.musicYaoModule,
                 'ebp.stickUp': ['plugins/core/ebp-stickup'],
@@ -213,6 +341,9 @@ define(['angular','conf/modules'],function(angular,modules){
                     templateUrl: 'src/musicyao/views/recommendation.html'
                 }
             },
+            breadcrumb: {
+                label: 'Home'
+            },
             modules: {
                 'musicYaoModule': modules['musicYaoModule_home']
             }
@@ -225,6 +356,9 @@ define(['angular','conf/modules'],function(angular,modules){
                     templateUrl: 'src/musicyao/views/mtv.html'
                 }
             },
+            breadcrumb: {
+                label: 'MTV'
+            },
             modules: {
                 'musicYaoModule': modules['musicYaoModule_mtv']
             }
@@ -235,6 +369,9 @@ define(['angular','conf/modules'],function(angular,modules){
                 '': {
                     templateUrl: 'src/musicyao/views/mtvdetail.html'
                 }
+            },
+            breadcrumb: {
+                label: 'details'
             },
             modules: {
                 'musicYaoModule': ['musicyao/controllers/VideoPlayerController']
@@ -250,6 +387,10 @@ define(['angular','conf/modules'],function(angular,modules){
                     controller: 'WorktileSidebarController',
                     templateUrl: 'src/home/sidebar.tpl.html'
                 }
+            },
+            breadcrumb: {
+                label: 'Tasks',
+                parent: 'home'
             },
             modules: {
                 'worktileModule': modules.worktile,
@@ -267,6 +408,10 @@ define(['angular','conf/modules'],function(angular,modules){
             modules: {
                 'mediaModule': modules.mediaModule,
                 'ebp.jq': ['plugins/core/ebp-jq']
+            },
+            breadcrumb: {
+                label: 'Media',
+                parent: 'home'
             }
         },
         'mediaDemo.audioPlayer': {
@@ -276,6 +421,9 @@ define(['angular','conf/modules'],function(angular,modules){
                     controller: 'AudioPlayerDemoController',
                     templateUrl: 'src/media/views/audio/players.tpl.html'
                 }
+            },
+            breadcrumb: {
+                label: 'AudioPlayer'
             },
             modules: {
                 'mediaModule': modules['mediaModule.audioPlayer']
@@ -288,9 +436,20 @@ define(['angular','conf/modules'],function(angular,modules){
                     template: ''
                 }
             },
+            breadcrumb: {
+                label: 'MyState',
+                parent: 'home'
+            },
             modules: {
                 'myModule': modules['myModule']
             }
         }
-    }
+    };
+    angular.forEach(_routes,function(e){
+        angular.forEach(e,function(v,k){
+            e[k].modules = {};
+            console.log(e);
+        });
+    });
+    return routes;
 });

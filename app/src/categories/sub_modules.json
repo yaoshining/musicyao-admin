@@ -1,0 +1,10 @@
+{
+    "categoriesModule": [
+        "categories/module"
+    ],
+    "categoriesModule.languages": [
+        "categories/repositories/Languages",
+        "categories/services/LanguagesService",
+        "categories/controllers/LanguagesController"
+    ]
+}

@@ -8,6 +8,7 @@
 
 module.exports = function(grunt) {
     // Load grunt tasks automatically
+    var glob = require('glob');
     require('load-grunt-tasks')(grunt);
 
     // Time how long tasks take. Can help when optimizing build times
@@ -123,7 +124,7 @@ module.exports = function(grunt) {
                     '<%= yeoman.app %>/conf/{,*/}*.js',
                     '!<%= yeoman.app %>/src/{,*/}*.spec.js'
                 ],
-                tasks: ['jshint'],
+                //tasks: ['jshint'],
                 options: { livereload: true }
             },
             requirejsConfig: {
@@ -142,7 +143,7 @@ module.exports = function(grunt) {
             gruntfile: { files: ['Gruntfile.js'] },
             compass: {
                 files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
-                tasks: ['compass:server', 'autoprefixer', 'concat']
+                tasks: ['compass:server', 'autoprefixer', 'concat:styles']
             },
             styles: {
                 files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
@@ -156,7 +157,25 @@ module.exports = function(grunt) {
                     '.tmp/styles/{,*/}*.css',
                     '<%= yeoman.app %>/images/{,*/}*.{gif,jpeg,jpg,png,svg,webp}'
                 ]
+            },
+            moduleMappings: {
+                options: { livereload: '<%= connect.options.livereload %>' },
+                files: ['<%= yeoman.app %>/src/{,*/}sub_modules.json'],
+                tasks: ['combine-modules']
+            },
+            routeMappings: {
+                options: { livereload: '<%= connect.options.livereload %>' },
+                files: ['<%= yeoman.app %>/src/{,*/}routes.json'],
+                tasks: ['combine-routes']
             }
+            //ngtemplates: {
+            //    options: { livereload: '<%= connect.options.livereload %>' },
+            //    files: [
+            //        '<%= yeoman.app %>/plugins/templates/**/*.html',
+            //        '<%= yeoman.app %>/src/**/*.html'
+            //    ],
+            //    tasks: ['ngtemplates']
+            //}
         },
 
         // grunt task for running shell command
@@ -385,7 +404,7 @@ module.exports = function(grunt) {
         },
 
         concat: {
-            dist: {
+            styles: {
                 src: ['.tmp/styles/{,*/}*.css'],
                 dest: '.tmp/styles/style.css'
             }
@@ -400,6 +419,7 @@ module.exports = function(grunt) {
                     cwd: '<%= yeoman.app %>',
                     dest: '<%= yeoman.dist %>',
                     src: [
+                        'src/loader.js',
                         '*.{ico,png,txt}',
                         '.htaccess',
                         'images/{,*/}*.webp',
@@ -474,9 +494,32 @@ module.exports = function(grunt) {
                 'imagemin',
                 'svgmin'
             ]
+        },
+        ngtemplates:  {
+            'ebp.templates':        {
+                src:      '<%= yeoman.app %>/src/**/*.tpl.html',
+                dest:     '<%= yeoman.app %>/src/ebp-templates.js',
+                options:    {
+                    htmlmin:  { collapseWhitespace: true, collapseBooleanAttributes: true },
+                    url: function(url){
+                        return url.replace('app/','');
+                    }
+                }
+            },
+            'ebp.plugins.templates':        {
+                src:      '<%= yeoman.app %>/plugins/templates/**/*.tpl.html',
+                dest:     '<%= yeoman.app %>/plugins/templates/ebp-plugin-templates.js',
+                options:    {
+                    htmlmin:  { collapseWhitespace: true, collapseBooleanAttributes: true },
+                    url: function(url){
+                        return url.slice(url.lastIndexOf('/')+1,url.length);
+                    }
+                }
+            }
         }
     });
     grunt.loadNpmTasks('grunt-connect-proxy');
+    grunt.loadNpmTasks('grunt-angular-templates');
     grunt.registerTask('serve', function(target) {
         if (target === 'dist') { return grunt.task.run(['build', 'connect:dist:keepalive']); }
 
@@ -486,6 +529,8 @@ module.exports = function(grunt) {
             'concurrent:server',
   //          'concat',
             'autoprefixer',
+            'combine-modules',
+            'combine-routes',
             'connect:livereload',
             'watch'
         ]);
@@ -535,6 +580,52 @@ module.exports = function(grunt) {
         var tmpIndex = testMainRequireJs.indexOf('// configurations');
         testMainRequireJs = replaceBetween(testMainRequireJs, tmpIndex, tmpIndex + '// configurations'.length, configurations);
         grunt.file.write('test/test-main.js', testMainRequireJs);
+    });
+
+    grunt.registerTask('combine-modules', function() {
+        var pattern = grunt.config.process('<%= yeoman.app %>/src/{,*/}sub_modules.json');
+        var outpath = grunt.config.process('<%= yeoman.app %>/conf/_modules.js');
+        glob(pattern, function (er, files) {
+            var result = [];
+            files.forEach(function(filepath){
+                var subModules = grunt.file.readJSON(filepath);
+                result.push(subModules);
+            });
+            var content = 'define(function(){\n'+
+                "return "+JSON.stringify(result, null, '\t')+
+                '\n});';
+            grunt.file.write(outpath, content);
+        });
+    });
+
+    grunt.registerTask('combine-routes', function() {
+        var pattern = grunt.config.process('<%= yeoman.app %>/src/{,*/}routes.json');
+        var outpath = grunt.config.process('<%= yeoman.app %>/conf/_routes.js');
+        glob(pattern, function (er, files) {
+            var result = [];
+            files.forEach(function(filepath){
+                var routes = grunt.file.readJSON(filepath);
+                var modulePath = filepath.slice(0,filepath.lastIndexOf('/')+1)+'sub_modules.json';
+                var modules = grunt.file.readJSON(modulePath);
+                for(var stateName in routes){
+                    var route = routes[stateName];
+                    for(var moduleName in route.modules){
+                        if(typeof route.modules[moduleName] === 'string'){
+                            var module = modules[route.modules[moduleName]];
+                            if(module){
+                                routes[stateName].modules[moduleName] = module;
+                            }
+                        }
+                    }
+                }
+                console.log(routes);
+                result.push(routes);
+            });
+            var content = 'define(["conf/modules"],function(modules){\n'+
+                "return "+JSON.stringify(result, null, '\t')+
+                '\n});';
+            grunt.file.write(outpath, content);
+        });
     });
 
     grunt.registerTask('build', [

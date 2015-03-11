@@ -1,0 +1,7 @@
+{
+    "usersModule": [
+        "users/module",
+        "users/services/userService",
+        "users/repositories/Users"
+    ]
+}

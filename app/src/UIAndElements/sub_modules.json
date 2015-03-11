@@ -1,0 +1,30 @@
+{
+    "UIAndElementsModule" : [
+        "UIAndElements/module"
+    ],
+    "UIAndElementsModule.bootstrap": [
+        "UIAndElements/controllers/BootstrapController"
+    ],
+    "UIAndElementsModule.treeView": [
+        "UIAndElements/controllers/TreeViewController"
+    ],
+    "UIAndElementsModule.tables": [
+        "UIAndElements/controllers/tables/TablesController"
+    ],
+    "UIAndElementsModule.nestable": [
+        "UIAndElements/controllers/list/NestableController"
+    ],
+    "UIAndElementsModule.calendar": [
+        "UIAndElements/controllers/calendar/CalendarDemoController"
+    ],
+    "UIAndElementsModule.maps": [
+        "UIAndElements/controllers/maps/MapDemoController",
+        "jvectormap-world",
+        "jvectormap-cn"
+    ],
+    "UIAndElementsModule.mindMap": [
+        "UIAndElements/controllers/TreeViewController",
+        "vendor/core/jsmind",
+        "css!styles/vendor/jsmind"
+    ]
+}

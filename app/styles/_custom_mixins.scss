@@ -60,10 +60,10 @@ $width-large:  1200px;
        -o-transition: $property .2s ease;
           transition: $property .2s ease;
 }
-@mixin custom-box-sizing {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+@mixin custom-box-sizing($box-sizing:border-box) {
+  -webkit-box-sizing: $box-sizing;
+     -moz-box-sizing: $box-sizing;
+          box-sizing: $box-sizing;
 }
 @mixin custom-linear-gradient($from, $to) {
   /* Fallback for sad browsers */
@@ -85,4 +85,10 @@ $width-large:  1200px;
     ::selection { background: $background; color: $color; text-shadow: none; }
     ::-webkit-selection{ background: $background; color: $color; text-shadow: none; }
     ::-moz-selection{ background: $background; color: $color; text-shadow: none; }
+}
+@mixin gradient-striped($color: rgba(255,255,255,.15), $angle: 45deg) {
+    background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, $color), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, $color), color-stop(.75, $color), color-stop(.75, transparent), to(transparent));
+    background-image: -webkit-linear-gradient($angle, $color 25%, transparent 25%, transparent 50%, $color 50%, $color 75%, transparent 75%, transparent);
+    background-image: -moz-linear-gradient($angle, $color 25%, transparent 25%, transparent 50%, $color 50%, $color 75%, transparent 75%, transparent);
+    background-image: linear-gradient($angle, $color 25%, transparent 25%, transparent 50%, $color 50%, $color 75%, transparent 75%, transparent);
 }

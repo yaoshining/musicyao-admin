@@ -1,0 +1,152 @@
+<div class="row">
+    <div class="col-xs-12">
+        <h3 class="header smaller lighter purple">Tabs</h3>
+        <div class="row">
+            <div class="col-sm-6">
+                <tabset class="tabbable">
+                    <tab>
+                        <tab-heading>
+                            <i class="green ebp-icon fa fa-home bigger-120"></i>
+                            Home
+                        </tab-heading>
+                        <p>Raw denim you probably haven't heard of them jean shorts Austin.</p>
+                    </tab>
+                    <tab>
+                        <tab-heading>
+                            Messages
+                            <span class="badge badge-danger">4</span>
+                        </tab-heading>
+                        <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid.</p>
+                    </tab>
+                    <tab ng-init="isOpen = false" class="{{isOpen?'opened':''}}">
+                        <tab-heading dropdown is-open="isOpen">
+                            <span ng-click="$event.preventDefault();$event.stopPropagation();isOpen = !isOpen">
+                                Dropdown
+                                <i class="ebp-icon fa fa-caret-down bigger-110 width-auto"></i>
+                            </span>
+                            <ul class="dropdown-menu dropdown-info">
+                                <li>
+                                    <a href>@fat</a>
+                                </li>
+
+                                <li>
+                                    <a href>@mdo</a>
+                                </li>
+                            </ul>
+                        </tab-heading>
+                        asdasd
+                    </tab>
+                </tabset>
+            </div>
+            <div class="vspace-6-sm"></div>
+            <div class="col-sm-6">
+                <tabset class="tabbable tabs-below">
+                    <tab heading="Home">
+                        <p>Raw denim you probably haven't heard of them jean shorts Austin.</p>
+                    </tab>
+                    <tab heading="Profile">
+                        <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid.</p>
+                    </tab>
+                    <tab heading="More">
+                        <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade.</p>
+                    </tab>
+                </tabset>
+            </div>
+        </div>
+        <div class="space"></div>
+        <div class="row">
+            <div class="col-sm-6">
+                <tabset class="tabbable tabs-left">
+                    <tab>
+                        <tab-heading>
+                            <i class="pink ebp-icon fa fa-tachometer bigger-110"></i>
+                            Home
+                        </tab-heading>
+                        <p>Raw denim you probably haven't heard of them jean shorts Austin.</p>
+                        <p>Raw denim you probably haven't heard of them jean shorts Austin.</p>
+                    </tab>
+                    <tab>
+                        <tab-heading>
+                            <i class="blue ebp-icon fa fa-user bigger-110"></i>
+                            Profile
+                        </tab-heading>
+                        <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid.</p>
+                        <p>Raw denim you probably haven't heard of them jean shorts Austin.</p>
+                    </tab>
+                    <tab>
+                        <tab-heading>
+                            <i class="ebp-icon fa fa-rocket"></i>
+                            More
+                        </tab-heading>
+                        <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade.</p>
+                        <p>Raw denim you probably haven't heard of them jean shorts Austin.</p>
+                    </tab>
+                </tabset>
+            </div>
+            <div class="vspace-6-sm"></div>
+            <div class="col-sm-6">
+                <tabset class="tabbable padding-12 tab-color-blue background-blue">
+                    <tab heading="Home">
+                        <p>Raw denim you probably haven't heard of them jean shorts Austin.</p>
+                    </tab>
+                    <tab heading="Profile">
+                        <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid.</p>
+                    </tab>
+                    <tab heading="More">
+                        <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade.</p>
+                    </tab>
+                </tabset>
+            </div>
+        </div>
+        <div class="hr hr-double hr-dotted hr18"></div>
+        <div class="row">
+            <div class="col-sm-6" ng-init="accordionStyle = 1">
+                <h3 class="row header smaller lighter blue">
+                    <span class="col-xs-6"> Accordion </span>
+                    <span class="col-xs-6">
+                        <span class="pull-right inline">
+                            <span class="grey smaller-80 bolder">style:</span>
+                            <span class="inline middle no-margin">
+                                <span class="btn-group no-margin">
+                                    <label class="btn btn-xs btn-yellow" ng-model="accordionStyle" btn-radio="1">
+                                        1
+                                    </label>
+                                    <label class="btn btn-xs btn-yellow" ng-model="accordionStyle" btn-radio="2">
+                                        2
+                                    </label>
+                                </span>
+                            </span>
+                        </span>
+                    </span>
+                </h3>
+                <div accordion class="accordion-style1" ng-class="{'accordion-style2': accordionStyle===2}">
+                    <accordion-group is-open="true">
+                        <accordion-heading>
+                            Group Item #1
+                        </accordion-heading>
+                        <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</p>
+                    </accordion-group>
+                    <accordion-group heading="Group Item #2">
+                        <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</p>
+                    </accordion-group>
+                    <accordion-group heading="Group Item #3">
+                        <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.</p>
+                    </accordion-group>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <h3 class="header smaller lighter green">Progress Bar</h3>
+                <div class="row">
+                    <div class="col-xs-8">
+                        <progressbar value="66">66%</progressbar>
+                        <progressbar class="progress-striped" value="25" type="success">25%</progressbar>
+                        <progressbar class="progress-striped progress-small active" value="40" type="warning"></progressbar>
+                        <progressbar class="progress-mini" value="35"></progressbar>
+                        <progressbar value="66">66%</progressbar>
+                    </div>
+                    <div class="col-xs-4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

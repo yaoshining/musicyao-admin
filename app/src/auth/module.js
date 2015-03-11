@@ -35,6 +35,9 @@ define(['angular','angular-ui-router','angular-cookies'],function(angular){
                             $cookieStore.remove('currentUser');
                             $location.path('/auth/login');
                         }
+                    }).error(function(){
+                        $cookieStore.remove('currentUser');
+                        $location.path('/auth/login');
                     });
             }]
             }

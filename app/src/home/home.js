@@ -36,25 +36,25 @@ define(['angular', 'angular-ui-router','plugins/charts/sparklines/ebp-sparklines
                 trackColor:'rgba(255,255,255,0.25)'
             };
             $scope.plotData = [{
-                color: "#68BC31",
+                color: '#68BC31',
                 data: 38.7,
-                label: "social networks"
+                label: 'social networks'
             },{
-                color: "#2091CF",
+                color: '#2091CF',
                 data: 24.5,
-                label: "search engines"
+                label: 'search engines'
             },{
-                color: "#AF4E96",
+                color: '#AF4E96',
                 data: 8.2,
-                label: "ad campaigns"
+                label: 'ad campaigns'
             },{
-                color: "#DA5430",
+                color: '#DA5430',
                 data: 18.6,
-                label: "direct traffic"
+                label: 'direct traffic'
             },{
-                color: "#FEE074",
+                color: '#FEE074',
                 data: 10,
-                label: "other"
+                label: 'other'
             }];
             $scope.plotOptions = {
                 series: {
@@ -62,7 +62,7 @@ define(['angular', 'angular-ui-router','plugins/charts/sparklines/ebp-sparklines
                         show: true,
                         tilt: 0.8,
                         stroke: {
-                            color: "#fff",
+                            color: '#fff',
                             width: 2
                         }
                     }
@@ -82,22 +82,22 @@ define(['angular', 'angular-ui-router','plugins/charts/sparklines/ebp-sparklines
                 grid: {
                     show:false,
                     aboveData:false,
-                    color:"#545454",
+                    color:'#545454',
                     backgroundColor:null,
                     borderColor:'#545454',
-                    "tickColor":"rgba(84,84,84,0.22)",
-                    "margin":0,
-                    "labelMargin":5,
-                    "axisMargin":8,
-                    "borderWidth":2,
-                    "minBorderMargin":null,
-                    "markings":null,
-                    "markingsColor":"#f4f4f4",
-                    "markingsLineWidth":2,
-                    "clickable":true,
-                    "hoverable":true,
-                    "autoHighlight":true,
-                    "mouseActiveRadius":10
+                    tickColor:'rgba(84,84,84,0.22)',
+                    margin:0,
+                    labelMargin:5,
+                    axisMargin:8,
+                    borderWidth:2,
+                    minBorderMargin:null,
+                    markings:null,
+                    markingsColor:'#f4f4f4',
+                    markingsLineWidth:2,
+                    clickable:true,
+                    hoverable:true,
+                    autoHighlight:true,
+                    mouseActiveRadius:10
                 }
             };
             $scope.plotEvents = {

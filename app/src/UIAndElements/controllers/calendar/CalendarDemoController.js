@@ -10,11 +10,14 @@ define(['UIAndElements/module'],function(module){
             calendar:{
                 height: 700,
                 editable: true,
+                lang: 'zh-cn',
+                weekNumbers: true,
                 header:{
                     left: 'month basicWeek basicDay agendaWeek agendaDay',
                     center: 'title',
                     right: 'today prev,next'
                 },
+                dayNames: ["Vasárnap", "Hétfő", "Kedd", "Szerda", "Csütörtök", "Péntek", "Szombat"],
                 dayClick: $scope.alertEventOnClick,
                 eventDrop: $scope.alertOnDrop,
                 eventResize: $scope.alertOnResize

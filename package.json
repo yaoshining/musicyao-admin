@@ -1,7 +1,6 @@
 {
   "name": "requirejs",
   "version": "0.0.1",
-  "dependencies": {},
   "devDependencies": {
     "grunt": "*",
     "grunt-contrib-copy": "*",
@@ -40,7 +39,9 @@
     "grunt-concurrent": "*",
     "load-grunt-tasks": "*",
     "time-grunt": "*",
-    "jshint-stylish": "*"
+    "jshint-stylish": "*",
+    "glob": "~4.4.0",
+    "grunt-angular-templates": "~0.5.7"
   },
   "engines": {
     "node": ">=0.8.0"

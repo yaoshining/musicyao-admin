@@ -1,0 +1,6 @@
+{
+    "widgetsDemoModule" : [
+        "widgets/module",
+        "widgets/controllers/WidgetsDemoController"
+    ]
+}

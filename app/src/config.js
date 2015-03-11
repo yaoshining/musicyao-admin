@@ -11,6 +11,7 @@ requirejs.config({
         'angular-cookies': '../bower_components/angular-cookies/angular-cookies',
         /*require angular for better handling and binding controller*/
         'angular-ui-router': '../bower_components/angular-ui-router/release/angular-ui-router',
+        'angular-breadcrumb': '../bower_components/angular-breadcrumb/release/angular-breadcrumb',
         'angular-ui-tinymce': '../bower_components/angular-ui-tinymce/src/tinymce',
         'angular-translate': '../bower_components/angular-translate/angular-translate',
         'angular-translate-static': '../bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files',
@@ -31,7 +32,8 @@ requirejs.config({
         'underscore': '../bower_components/underscore/underscore',
         'oclazyload': '../bower_components/oclazyload/dist/ocLazyLoad',
         'tinymce': '../bower_components/tinymce/tinymce.min',
-        'tinycon': '../bower_components/tinycon/tinycon.min'
+        'tinycon': '../bower_components/tinycon/tinycon.min',
+        'plugins': '../plugins'
     },
     shim: {
         'angular': { exports: 'angular', deps: ['jquery','underscore','ng-file-upload-shim'] },
@@ -40,6 +42,7 @@ requirejs.config({
         'angular-animate': ['angular'],
         'angular-cookies': ['angular'],
         'angular-ui-router': ['angular'],
+        'angular-breadcrumb': ['angular','angular-ui-router'],
         'angular-ui-tinymce': ['angular','tinymce'],
         'angular-sanitize': ['angular'],
         'angular-translate': ['angular'],

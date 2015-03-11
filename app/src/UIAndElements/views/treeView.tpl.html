@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-xs-12">
-        <div class="row">
+        <div class="row" ng-hide="true">
             <div class="col-sm-6">
                 <div class="widget-box widget-color-blue2">
                     <div class="widget-header">
@@ -9,63 +9,70 @@
 
                     <div class="widget-body">
                         <div class="widget-main padding-8">
-                            <ul class="tree" role="tree" ebp-tree closed-icon-class="tree-plus" opened-icon-class="tree-minus">
-                                <li class="tree-branch hide" data-template="treebranch" role="treeitem" aria-expanded="false">
-                                    <div class="tree-branch-header">
-                                        <span class="tree-branch-name">
-                                            <i class="icon-folder ebp-icon tree-plus glyphicon-folder-close"></i>
-                                            <span class="tree-label"></span>
-                                        </span>
-                                    </div>
-                                    <ul class="tree-branch-children" role="group"></ul>
-                                    <div class="tree-loader hide" role="alert">
-                                        <div class="tree-loading"><i class="ebp-icon fa fa-refresh fa-spin blue"></i>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="tree-item hide" data-template="treeitem" role="treeitem">
-                                    <span class="tree-item-name">
-                                        <i class="icon-item ebp-icon fa fa-times"></i>
-                                        <span class="tree-label"></span>
-                                    </span>
-                                </li>
-                            </ul>
+                            <div ebp-tree tree-data="treeData1" drag-enabled="true" tree-options="treeOptions1"
+                                 render-template-url="'src/UIAndElements/views/tree_nodes_render.tpl.html'">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-sm-6">
+                asdad
+            </div>
+        </div>
+        <div class="row" ng-init="tree2 = {}">
+            <div class="col-sm-6">
+                <accordion class="accordion-style1">
+                    <accordion-group is-open="true">
+                        <accordion-heading>
+                            <i class="ebp-icon fa fa-heart red"></i>
+                            Basic features
+                        </accordion-heading>
+                        <button class="btn btn-sm btn-white btn-primary btn-block" ng-click="tree2.showLine = !tree2.showLine">Toggle display lines</button>
+                        <button class="btn btn-sm btn-white btn-success btn-block" ng-click="tree2.hideIcon = !tree2.hideIcon">Toggle display icons</button>
+                        <button class="btn btn-sm btn-white btn-yellow btn-block" ng-click="collapseAll($ebpTree2)">Collapse all</button>
+                        <button class="btn btn-sm btn-white btn-purple btn-block" ng-click="expandAll($ebpTree2)">Expand all</button>
+                        <button class="btn btn-sm btn-white btn-danger btn-block" ng-click="getSelectedNode($ebpTree2)">Get selected node</button>
+                    </accordion-group>
+                    <accordion-group is-open="true">
+                        <accordion-heading>
+                            <i class="ebp-icon fa fa-check-square-o grey"></i>
+                            Checkbox & Radio
+                        </accordion-heading>
+                        <button class="btn btn-sm btn-primary btn-block" ng-click="$ebpTree2.toggleCheckMode()">Toggle check mode</button>
+                        <p class="well" style="margin-top: 10px">
+                            Checked Items:
+                            <span class="label label-yellow" ng-repeat="item in $ebpTree2.checkedItems" style="margin-right: 5px;">
+                                <i ng-class="item.iconClass"></i>
+                                {{item.name}}
+                                <a href ng-click="item.$checked = false">
+                                    <i class="ebp-icon fa fa-times red"></i>
+                                </a>
+                            </span>
+                        </p>
+                    </accordion-group>
+                    <accordion-group is-open="true">
+                        <accordion-heading>
+                            <i class="ebp-icon fa fa-edit brown"></i>
+                            Tree editing
+                        </accordion-heading>
+                        <button class="btn btn-sm btn-purple btn-block" ng-click="addFolder($ebpTree2)">Add folder</button>
+                    </accordion-group>
+                </accordion>
+            </div>
+            <div class="col-sm-6">
                 <div class="widget-box widget-color-green2">
                     <div class="widget-header">
-                        <h4 class="widget-title lighter smaller">Browse Files</h4>
+                        <h4 class="widget-title lighter smaller">Choose Categories</h4>
                     </div>
 
                     <div class="widget-body">
                         <div class="widget-main padding-8">
-                            <ul class="tree" role="tree" ebp-tree>
-                                <li class="tree-branch hide" data-template="treebranch" role="treeitem" aria-expanded="false">
-                                    <div class="tree-branch-header">
-                                        <span class="tree-branch-name">
-                                            <i class="icon-folder ebp-icon glyphicon glyphicon-folder-close">
-                                            </i>
-                                            <span class="tree-label">
-                                            </span>
-                                        </span>
-                                    </div>
-                                    <ul class="tree-branch-children" role="group"></ul>
-                                    <div class="tree-loader hide" role="alert">
-                                        <div class="tree-loading">
-                                            <i class="ebp-icon fa fa-refresh fa-spin blue"></i>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="tree-item hide" data-template="treeitem" role="treeitem">
-                                    <span class="tree-item-name">
-                                        <i class="icon-item fa fa-file-video-o"></i>
-                                        <span class="tree-label"></span>
-                                    </span>
-                                </li>
-                            </ul>
+                            <div ebp-tree tree-object="$ebpTree2" tree-data="treeData2" drag-enabled="true" tree-options="treeOptions2"
+                                 render-template-url="'tree_nodes_render.tpl.html'"
+                                 show-line="tree2.showLine"
+                                 hide-icon="tree2.hideIcon">
+                            </div>
                         </div>
                     </div>
                 </div>
