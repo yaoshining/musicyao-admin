@@ -183,6 +183,9 @@ define(['angular','conf/modules','conf/_routes'],function(angular,modules,_route
             },
             breadcrumb: {
                 label: 'Elements'
+            },
+            modules: {
+                'easypiechart': ['vendor/angular.easypiechart']
             }
         },
         'UIAndElements.buttons1': {

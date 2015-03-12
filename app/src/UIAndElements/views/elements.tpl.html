@@ -142,9 +142,62 @@
                         <progressbar class="progress-striped" value="25" type="success">25%</progressbar>
                         <progressbar class="progress-striped progress-small active" value="40" type="warning"></progressbar>
                         <progressbar class="progress-mini" value="35"></progressbar>
-                        <progressbar value="66">66%</progressbar>
+                        <progress>
+                            <bar type="success" value="35"></bar>
+                            <bar type="warning" value="20"></bar>
+                            <bar type="danger" value="10"></bar>
+                        </progress>
+                        <progressbar class="progress-striped" value="65" type="purple"></progressbar>
+                        <progressbar class="progress-striped" value="40" type="pink"></progressbar>
+                        <progressbar class="progress-striped active" value="60" type="yellow"></progressbar>
+                        <progressbar class="progress-striped" value="80" type="inverse"></progressbar>
                     </div>
-                    <div class="col-xs-4"></div>
+                    <div class="col-xs-4 center">
+                        <div class="easy-pie-chart percentage" easypiechart percent="20" options="{
+                animate:{
+                    duration:1000,
+                    enabled:true
+                },
+                barColor: '#D15B47',
+                lineWidth: 8,
+                lineCap:'butt',
+                scaleColor:false,
+                size:75,
+                trackColor:'#E2E2E2'
+            }" style="height: 75px; width: 75px; line-height: 74px;color: #D15B47">
+                            <span class="percent">20</span>%
+                        </div>
+                        <hr />
+                        <div class="easy-pie-chart percentage" easypiechart percent="55" options="{
+                animate:{
+                    duration:1000,
+                    enabled:true
+                },
+                barColor: '#87CEEB',
+                lineWidth: 8,
+                lineCap:'butt',
+                scaleColor:false,
+                size:75,
+                trackColor:'#E2E2E2'
+            }" style="height: 75px; width: 75px; line-height: 74px; color: rgb(135, 206, 235);">
+                            <span class="percent">55</span>%
+                        </div>
+                        <hr />
+                        <div class="easy-pie-chart percentage" easypiechart percent="90" options="{
+                animate:{
+                    duration:1000,
+                    enabled:true
+                },
+                barColor: '#87B87F',
+                lineWidth: 8,
+                lineCap:'butt',
+                scaleColor:false,
+                size:75,
+                trackColor:'#E2E2E2'
+            }" style="height: 75px; width: 75px; line-height: 74px; color: #87B87F;">
+                            <span class="percent">90</span>%
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
