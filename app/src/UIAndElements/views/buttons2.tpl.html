@@ -74,7 +74,7 @@
                     </button>
                 </p>
             </div>
-            <hr class="space-6" />
+            <hr class="space-6" style="clear: both" style="clear: both" style="clear: both" />
             <div class="col-sm-6">
                 <h3 class="header smaller lighter green">With/Without borders & Long shadow</h3>
                 <p>
@@ -142,7 +142,7 @@
                     <a href class="button button-raised button-pill button-inverse" style="margin: 5px">Say Hi!</a>
                 </p>
             </div>
-            <hr class="space-6" />
+            <hr class="space-6" style="clear: both" />
             <div class="col-sm-6">
                 <h3 class="header smaller lighter blue">
                     Glowing Buttons
@@ -157,7 +157,177 @@
                 </p>
             </div>
             <div class="col-sm-6">
+                <h3 class="header smaller lighter blue">
+                    Dropdown Buttons
+                </h3>
+                <p>
+                    <div class="button-dropdown" style="margin: 5px" dropdown>
+                        <button dropdown-toggle class="button button-rounded">
+                            Select Me <i class="fa fa-caret-down"></i>
+                        </button>
 
+                        <ul class="button-dropdown-list dropdown-menu">
+                            <li><a href>Option Link 1</a></li>
+                            <li><a href>Option Link 2</a></li>
+                            <li class="button-dropdown-divider">
+                                <a href>Option Link 3</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                      <span class="button-dropdown button-dropdown-primary" style="margin: 5px" dropdown>
+                        <button dropdown-toggle class="button button-primary button-large">
+                            <i class="fa fa-bars"></i> Select Me
+                        </button>
+
+                        <ul class="button-dropdown-list dropdown-menu is-below">
+                            <li><a href><i class="fa fa-heart-o"></i> Option Link 1</a></li>
+                            <li><a href>Option Link 2</a></li>
+                            <li class="button-dropdown-divider">
+                                <a href>Option Link 3</a>
+                            </li>
+                        </ul>
+                      </span>
+
+
+                      <span class="button-dropdown button-dropdown-action dropup" style="margin: 5px" dropdown>
+                        <button dropdown-toggle class="button button-action">
+                            Select Me <i class="fa fa-caret-up"></i>
+                        </button>
+
+                        <ul class="button-dropdown-list dropdown-menu is-above">
+                            <li><a href>Option Link 1</a></li>
+                            <li><a href>Option Link 2</a></li>
+                            <li class="button-dropdown-divider">
+                                <a href>Option Link 3</a>
+                            </li>
+                        </ul>
+                      </span>
+
+                      <span class="button-dropdown button-dropdown-plain" style="margin: 5px" dropdown>
+                        <button dropdown-toggle class="button button-caution button-pill">
+                            Select Me <i class="fa fa-caret-down"></i>
+                        </button>
+
+                        <ul class="button-dropdown-list dropdown-menu">
+                            <li><a href>Option Link 1</a></li>
+                            <li class="button-dropdown-divider">
+                                <a href>Option Link 2</a>
+                            </li>
+                            <li>
+                                <a href>Option Link 3</a>
+                            </li>
+                        </ul>
+                      </span>
+
+                      <div class="button-dropdown button-dropdown-inverse" style="margin: 5px" dropdown>
+                        <a href class="button button-inverse" dropdown-toggle>
+                            <i class="fa fa-envelope"></i> Select Me <i class="fa fa-caret-down"></i>
+                        </a>
+
+                        <ul class="button-dropdown-list dropdown-menu is-below">
+                            <li><a href>Option Link 1</a></li>
+                            <li class="button-dropdown-divider">
+                                <a href>Option Link 2</a>
+                            </li>
+                            <li>
+                                <a href>Option Link 3</a>
+                            </li>
+                        </ul>
+                    </div>
+                </p>
+            </div>
+            <hr class="space-6" style="clear: both" />
+            <div class="col-sm-6">
+                <h3 class="header smaller lighter blue">
+                    Button Groups
+                </h3>
+                <div class="button-group">
+                    <button type="button" class="button button-primary">Option 1</button>
+                    <button type="button" class="button button-primary">Option 2</button>
+                    <button type="button" class="button button-primary">Option 3</button>
+
+                    <!-- DROPDOWN MENU -->
+                    <span class="button-dropdown button-dropdown-primary" dropdown>
+                      <a href class="button button-primary" dropdown-toggle> Select Me <i class="fa fa-caret-down"></i></a>
+
+                      <ul class="button-dropdown-list dropdown-menu is-below">
+                          <li><a href>Option Link 1</a></li>
+                          <li><a href>Option Link 2</a></li>
+                          <li class="button-dropdown-divider"><a href>Option Link 3</a></li>
+                      </ul>
+                    </span>
+                </div>
+
+                <div class="button-group">
+                    <button type="button" class="button button-pill button-action">Option 1</button>
+                    <button type="button" class="button button-pill button-action">Option 2</button>
+                    <button type="button" class="button button-pill button-action">Option 3</button>
+                </div>
+
+                <div class="button-group">
+                    <button type="button" class="button button-royal button-rounded button-raised">Option 1</button>
+                    <button type="button" class="button button-royal button-rounded button-raised">Option 2</button>
+                    <button type="button" class="button button-royal button-rounded button-raised">Option 3</button>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <h3 class="header smaller lighter blue">
+                    Block Buttons
+                </h3>
+                <a href class="button button-block button-rounded button-large" style="margin: 5px 0">Go</a>
+                <a href class="button button-block button-rounded button-primary button-large" style="margin: 5px 0">Go</a>
+                <a href class="button button-block button-rounded button-action button-large" style="margin: 5px 0">Go</a>
+                <a href class="button button-block button-rounded button-highlight button-large" style="margin: 5px 0">Go</a>
+                <a href class="button button-block button-rounded button-caution button-large" style="margin: 5px 0">Go</a>
+                <a href class="button button-block button-rounded button-royal button-large" style="margin: 5px 0">Go</a>
+            </div>
+            <hr class="space-6" style="clear: both" />
+            <div class="col-sm-6">
+                <h3 class="header smaller lighter blue">
+                    Wrapped Button
+                </h3>
+                <span class="button-wrap">
+                    <button class="button button-circle">
+                        <i class="fa fa-cloud"></i>
+                    </button>
+                </span>
+
+                <span class="button-wrap">
+                    <button class="button button-circle button-raised button-primary">
+                        <i class="fa fa-cloud"></i>
+                    </button>
+                </span>
+
+                <span class="button-wrap">
+                    <a href class="button button-pill ">Go</a>
+                </span>
+                <span class="button-wrap">
+                    <a href class="button button-pill button-raised button-primary">Go</a>
+                </span>
+            </div>
+            <div class="col-sm-6">
+                <h3 class="header smaller lighter blue">
+                    Form Buttons
+                </h3>
+                <input type="submit" value="Go" class="button button-pill button-primary">
+                <button class="button button-pill button-primary">Go</button>
+
+                <!-- DISABLED BUTTONS -->
+                <input disabled="" type="submit" value="Go" class="button button-pill button-primary">
+                <button disabled="" class="button  button-pill button-primary">Go</button>
+                <button disabled="" class="button button-pill button-flat-primary">Go</button>
+                <a href class="button disabled button-pill button-primary ">Go</a>
+            </div>
+            <hr class="space-6" style="clear: both" />
+            <div class="col-xs-12" style="text-align: center">
+                <h3 class="header smaller lighter blue">
+                    Variaty font styles Buttons
+                </h3>
+                <a href class="button button-uppercase button-primary">uppercase</a>
+                <a href class="button button-lowercase button-primary ">lowercase</a>
+                <a href class="button button-capitalize button-primary">capitalize</a>
+                <a href class="button button-small-caps button-primary">small caps</a>
             </div>
         </div>
     </div>

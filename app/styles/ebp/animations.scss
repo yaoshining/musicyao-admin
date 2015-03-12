@@ -1,7 +1,7 @@
 /* ------------------------------------------- */
 /* Mixins
 /* ------------------------------------------- */
-
+@import "../../bower_components/hover/scss/hover";
 @mixin transitionDuration ($duration) {
     transition-duration: $duration;
     -webkit-transition-duration: $duration;
