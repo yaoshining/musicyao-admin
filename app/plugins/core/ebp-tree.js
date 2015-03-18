@@ -117,6 +117,9 @@
                             if(angular.isFunction(treeOptions.dataSource)){
                                 treeOptions.dataSource(modelValue,function(items){
                                     modelValue.children = items.data;
+                                    if(item.data.length < 1){
+                                        scope.collapsed = true;
+                                    }
                                 });
                             }
                         }
