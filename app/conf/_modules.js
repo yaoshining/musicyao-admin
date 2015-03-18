@@ -7,6 +7,9 @@ return [
 		"UIAndElementsModule.bootstrap": [
 			"UIAndElements/controllers/BootstrapController"
 		],
+		"UIAndElementsModule.elements": [
+			"UIAndElements/controllers/ElementsController"
+		],
 		"UIAndElementsModule.treeView": [
 			"UIAndElements/controllers/TreeViewController"
 		],

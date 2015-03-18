@@ -1,8 +1,27 @@
+@charset "UTF-8";
+@import "../../bower_components/sass-bootstrap/lib/variables";
 $icon: ebp-icon;
-//base variables
-// ----------------------------
+
 $baseFontSize: 13px;
 $sansFontFamily: "Open Sans";
+
+$grid-float-breakpoint-max: $grid-float-breakpoint - 1;
+
+$screen-topbar-down:         479px;//The point to move top menu buttons down in default layout
+$screen-topbar-down-min:	($screen-topbar-down + 1);//!ignore
+$screen-topbar-down-small: 360px; //!ignore
+
+$screen-qhd-width: 540px;//!ignore
+$screen-tiny:	320px;//!ignore
+$screen-tiny-max: ($screen-xs-min - 1);//!ignore
+$screen-mini:	240px;//!ignore
+$screen-mini-max: ($screen-tiny - 1);//!ignore
+
+
+
+$screen-fixed-breadcrumbs: $grid-float-breakpoint;//minimum width for fixed breadcrumbs
+$screen-hover-menu: $grid-float-breakpoint;//minimum width for .hover submenus
+$screen-compact-menu: $screen-hover-menu;
 
 // Buttons
 // ----------------------------
@@ -155,3 +174,22 @@ $tab-border: #C5D0DC;
 $tab-active-color: #576373;
 $tab-active-border: #4C8FBD;
 $tab-hover-color: #4C8FBD;
+
+//tooltip
+$tooltip-color: #333;
+$tooltip-error-color: #C94D32;
+$tooltip-success-color: #629B58;
+$tooltip-warning-color: #ED9421;
+$tooltip-info-color: #4B89AA;
+
+$breadcrumb-height: 41px;
+$breadcrumb-arrow-color: #B2B6BF;
+
+//slider colors
+$slider-color: #4AA4CE;
+$slider-green: #8BBC67;
+$slider-red: #D36E6E;
+$slider-purple: #AC68BA;
+$slider-orange: #EFAD62;
+$slider-dark: #606060;
+$slider-pink:$btn-pink;

@@ -116,7 +116,7 @@ require([
                                 resolve: config.resolve || { // Any property in resolve should return a promise and is executed before the view is loaded
 
                                 }
-                            }
+                            };
                             if(config.modules){
                                 angular.forEach(config.modules,function(files,name){
                                     stateConfig.resolve[name+'Loader'] = ['$ocLazyLoad', function($ocLazyLoad) {

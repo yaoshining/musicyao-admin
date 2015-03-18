@@ -28,6 +28,7 @@ requirejs.config({
         'ui-calendar': '../bower_components/angular-ui-calendar/src/calendar',
         'fullcalendar': '../bower_components/fullcalendar/dist/fullcalendar.min',
         'fullcalendar-lang': '../bower_components/fullcalendar/dist/lang-all',
+        'bootbox': '../bower_components/bootbox/bootbox',
         'nprogress': '../bower_components/nprogress/nprogress',
         'stickUp': '../bower_components/stickUp/stickUp.min',
         'headroom': '../bower_components/headroom.js/dist/headroom.min',
@@ -49,6 +50,7 @@ requirejs.config({
             exports: 'CodeMirror'
         },
         'vendor/core/pretty': ['css!styles/vendor/prettify'],
+        'vendor/angular.easypiechart': ['css!styles/ebp/infobox'],
         'plugins/core/ebp-prettify': ['vendor/core/pretty'],
         'plugins/core/ebp-stickup': ['jquery','stickUp'],
         'vendor/core/jsmind': ['css!styles/vendor/jsmind'],
@@ -65,6 +67,7 @@ requirejs.config({
         'jvectormap-world': ['jvectormap'],
         'jvectormap-cn': ['jvectormap'],
         'jquery-nestable': ['jquery'],
+        'bootbox': ['bootstrap'],
         'ng-nestable': ['jquery-nestable'],
         'angular-headroom': ['headroom'],
         'angular-xeditable': ['angular','css!../bower_components/angular-xeditable/dist/css/xeditable'],

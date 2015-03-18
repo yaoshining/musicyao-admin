@@ -153,53 +153,268 @@
                         <progressbar class="progress-striped" value="80" type="inverse"></progressbar>
                     </div>
                     <div class="col-xs-4 center">
-                        <div class="easy-pie-chart percentage" easypiechart percent="20" options="{
-                animate:{
-                    duration:1000,
-                    enabled:true
-                },
-                barColor: '#D15B47',
-                lineWidth: 8,
-                lineCap:'butt',
-                scaleColor:false,
-                size:75,
-                trackColor:'#E2E2E2'
-            }" style="height: 75px; width: 75px; line-height: 74px;color: #D15B47">
+                        <div class="easy-pie-chart percentage" easypiechart percent="20" options="{animate:{duration:1000,enabled:true},barColor: '#D15B47',lineWidth: 8,lineCap:'butt',scaleColor:false,size:75,trackColor:'#E2E2E2'}" style="height: 75px; width: 75px; line-height: 74px;color: #D15B47">
                             <span class="percent">20</span>%
                         </div>
                         <hr />
-                        <div class="easy-pie-chart percentage" easypiechart percent="55" options="{
-                animate:{
-                    duration:1000,
-                    enabled:true
-                },
-                barColor: '#87CEEB',
-                lineWidth: 8,
-                lineCap:'butt',
-                scaleColor:false,
-                size:75,
-                trackColor:'#E2E2E2'
-            }" style="height: 75px; width: 75px; line-height: 74px; color: rgb(135, 206, 235);">
+                        <div class="easy-pie-chart percentage" easypiechart percent="55" options="{animate:{duration:1000,enabled:true},barColor: '#87CEEB',lineWidth: 8,lineCap:'butt',scaleColor:false,size:75,trackColor:'#E2E2E2'}" style="height: 75px; width: 75px; line-height: 74px; color: rgb(135, 206, 235);">
                             <span class="percent">55</span>%
                         </div>
                         <hr />
-                        <div class="easy-pie-chart percentage" easypiechart percent="90" options="{
-                animate:{
-                    duration:1000,
-                    enabled:true
-                },
-                barColor: '#87B87F',
-                lineWidth: 8,
-                lineCap:'butt',
-                scaleColor:false,
-                size:75,
-                trackColor:'#E2E2E2'
-            }" style="height: 75px; width: 75px; line-height: 74px; color: #87B87F;">
+                        <div class="easy-pie-chart percentage" easypiechart percent="90" options="{animate:{duration:1000,enabled:true},barColor: '#87B87F',lineWidth: 8,lineCap:'butt',scaleColor:false,size:75,trackColor:'#E2E2E2'}" style="height: 75px; width: 75px; line-height: 74px; color: #87B87F;">
                             <span class="percent">90</span>%
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <hr />
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="widget-box">
+                    <div class="widget-header">
+                        <h4 class="smaller">
+                            Tooltips
+                            <small>different directions and colors</small>
+                        </h4>
+                    </div>
+                    <div class="widget-body">
+                        <div class="widget-main">
+                            <p class="muted">
+                                Tight pants next level keffiyeh
+                                <a href tooltip="Default tooltip">you probably</a>
+                                haven't heard of them. Farm-to-table seitan, mcsweeney's fixie sustainable quinoa 8-bit american apparel
+                                <a href tooltip="Another tooltip">have a</a>
+                                terry richardson vinyl chambray. A really ironic artisan
+                                <a href tooltip="Another one here too">whatever</a>
+                                keytar, scenester farm-to-table banksy Austin
+                                <a href tooltip="The last tip!">twitter</a>
+                                handle.
+                            </p>
+                            <hr>
+                            <!-- #section:elements.tooltip -->
+                            <p>
+                                <span class="btn btn-sm" tooltip="Default">Default</span>
+                                <span class="btn btn-warning btn-sm tooltip-warning" tooltip="Left Warning" tooltip-placement="left">Left</span>
+                                <span class="btn btn-success btn-sm tooltip-success" tooltip="Right Success" tooltip-placement="right">Right</span>
+                                <span class="btn btn-danger btn-sm tooltip-error" tooltip="Top Danger" tooltip-placement="top">Top</span>
+                                <span class="btn btn-info btn-sm tooltip-info" tooltip="Bottm Info" tooltip-placement="bottom">Bottom</span>
+                            </p>
+                            <!-- /section:elements.tooltip -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="widget-box">
+                    <div class="widget-header">
+                        <h4 class="smaller">
+                            Popovers
+                        </h4>
+                    </div>
+                    <div class="widget-body">
+                        <div class="widget-main">
+                            <!-- #section:elements.popover -->
+                            <p>
+                                <span class="btn btn-sm" popover="Heads up! This alert needs your attention, but it's not super important." popover-title="Default">Default</span>
+                                <span class="btn btn-success btn-sm popover-success" popover="Well done! You successfully read this important alert message." popover-title="Right Success" popover-placement="right">Right</span>
+                                <span class="btn btn-warning btn-sm popover-warning" popover="Warning! Best check yo self, you're not looking too good." popover-title="Left Warning" popover-placement="left">Left</span>
+                            </p>
+
+                            <p>
+                                <span class="btn btn-danger btn-sm popover-error" popover-placement="top" popover-title="Top Danger" popover="Oh snap! Change a few things up and try submitting again.">Top</span>
+                                <span class="btn btn-info btn-sm popover-info" popover-placement="bottom" popover="Heads up! This alert needs your attention, but it's not super important." popover-title="Some Info">Bottom</span>
+                                <span class="btn btn-inverse btn-sm popover-notitle" popover-placement="bottom" popover="Popover without a title!">No Title</span>
+                            </p>
+
+                            <!-- /section:elements.popover -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-sm-6">
+                <h3 class="header smaller lighter green">
+                    <i class="ebp-icon fa fa-bullhorn"></i>
+                    Alerts
+                </h3>
+                <alert type="danger" close>
+                    <strong>
+                        <i class="ebp-icon fa fa-times"></i>
+                        Oh snap!
+                    </strong>
+
+                    Change a few things up and try submitting again.
+                    <br>
+                </alert>
+                <alert type="warning" close>
+                    <strong>Warning!</strong>
+
+                    Best check yo self, you're not looking too good.
+                    <br>
+                </alert>
+                <alert type="success" close>
+                    <p>
+                        <strong>
+                            <i class="ebp-icon fa fa-check"></i>
+                            Well done!
+                        </strong>
+                        You successfully read this important alert message.
+                    </p>
+
+                    <p>
+                        <button class="btn btn-sm btn-success">Do This</button>
+                        <button class="btn btn-sm">Or This One</button>
+                    </p>
+                </alert>
+                <alert type="info" close>
+                    <strong>Heads up!</strong>
+
+                    This alert needs your attention, but it's not super important.
+                    <br>
+                </alert>
+            </div>
+            <div class="col-sm-6">
+                <h3 class="row header smaller lighter orange">
+                    <span class="col-sm-8">
+                        <i class="ebp-icon fa fa-bell"></i>
+                        Toaster Notifications
+                    </span>
+
+                    <span class="col-sm-4">
+                        <label class="pull-right inline">
+                            <small class="muted">Dark:</small>
+
+                            <input type="checkbox" class="ebp ebp-switch ebp-switch-5" ng-model="dark">
+                            <span class="lbl middle"></span>
+                        </label>
+                    </span>
+                </h3>
+                <p>
+                    <i>Click to see</i>
+                </p>
+                <p>
+                    <script type="text/ng-template" id="regular.tpl.html">
+                        <p>This will fade out after a certain amount of time. Vivamus eget tincidunt velit. Cum sociis natoque penatibus et <a href class="blue">magnis dis parturient</a> montes, nascetur ridiculus mus.</p>
+                    </script>
+                    <script type="text/ng-template" id="sticky.tpl.html">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget tincidunt velit. Cum sociis natoque penatibus et <a href class="red">magnis dis parturient</a> montes, nascetur ridiculus mus.</p>
+                    </script>
+                    <script type="text/ng-template" id="withoutImage.tpl.html">
+                        <p>This will fade out after a certain amount of time. Vivamus eget tincidunt velit. Cum sociis natoque penatibus et <a href class="orange">magnis dis parturient</a> montes, nascetur ridiculus mus.</p>
+                    </script>
+                    <script type="text/ng-template" id="warning.tpl.html">
+                        <p>This will fade out after a certain amount of time. Vivamus eget tincidunt velit. Cum sociis natoque penatibus et <a href class="green">magnis dis parturient</a> montes, nascetur ridiculus mus.</p>
+                    </script>
+                    <button class="btn" ng-click="toaster.pop('','This is a regular notice!','regular.tpl.html','images/avatars/avatar3.png')">Regular</button>
+                    <button class="btn btn-info" ng-click="toaster.pop('info','This is a sticky notice!','sticky.tpl.html','images/avatars/yao.jpg',-1)">Sticky</button>
+                    <button class="btn btn-success" ng-click="toaster.pop('success','This is a notice without an image!','withoutImage.tpl.html',false)">Without Image</button>
+                </p>
+                <p>
+                    <button class="btn btn-danger" ng-click="toaster.pop('error','This is a error notification','sticky.tpl.html',false)">Error</button>
+                    <button class="btn btn-warning" ng-click="toaster.pop('warning','This is a warning notification','warning.tpl.html','images/avatars/avatar4.png')">Warning</button>
+                    <button class="btn btn-primary" ng-click="toaster.pop('info','This is a centered notification','sticky.tpl.html',false,0,'center')">Center</button>
+                    <button class="btn btn-inverse" ng-click="toaster.clear()">Remove</button>
+                </p>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-sm-6">
+                <h3 class="header smaller lighter purple">
+                    Modals
+                    <small>(ebp-dialog.js)</small>
+                </h3>
+                <p>
+                    <script type="text/ng-template" id="dialogContent.tpl.html">
+                        <div>{{asyncMessage}}</div>
+                    </script>
+                    <i>via directive</i>
+                    <hr />
+                    <button ebp-dialog class="btn" dialog-options="dialogOptions">Regular Dialog</button>
+                    <button ebp-dialog class="btn btn-warning" dialog-type="alert" dialog-message="This is an alert dialog!">Alert</button>
+                    <button ebp-dialog class="btn btn-info" dialog-type="confirm" dialog-message="Are you sure?">Confirm</button>
+                    <button ebp-dialog class="btn btn-success" dialog-options="dialogOptions2">More Options</button>
+                    <div class="space-6"></div>
+                    <i>via service invocation</i>
+                    <hr />
+                    <button class="btn" ng-click="showRegularDialog()">Regular Dialog</button>
+                    <button class="btn btn-warning" ng-click="showAlertDialog()">Alert</button>
+                    <button class="btn btn-info" ng-click="showConfirmDialog()">Confirm</button>
+                    <button class="btn btn-success" ng-click="showDialog()">More Options</button>
+                </p>
+                <div class="space-24"></div>
+                <h3 class="header smaller lighter grey">
+                    <i class="ebp-icon fa fa-spinner fa-spin orange bigger-125"></i>
+                    Spinner
+                    <small>(ebp-spin.js)</small>
+                </h3>
+                <i>Change a value to begin</i>
+                <form class="form-horizontal">
+                    <label class="inline">
+                        <small class="lighter" style="display: inline-block; width: 60px;">Lines:</small>
+                        <span ebp-slider class="inline ui-slider-small" style="width: 125px;" ng-model="sliderValues.lines"></span>
+                        {{sliderValues.lines}}
+                    </label>
+                    <div class="space-0"></div>
+                    <label class="inline">
+                        <small class="lighter" style="display: inline-block; width: 60px;">Length:</small>
+                        <span ebp-slider class="inline ui-slider-small ui-slider-green" style="width: 125px;" ng-model="sliderValues.length"></span>
+                        {{sliderValues.length}}
+                    </label>
+                    <div class="space-0"></div>
+                    <label class="inline">
+                        <small class="lighter" style="display: inline-block; width: 60px;">Width:</small>
+                        <span ebp-slider class="inline ui-slider-small ui-slider-red" style="width: 125px;" ng-model="sliderValues.width"></span>
+                        {{sliderValues.width}}
+                    </label>
+                    <div class="space-0"></div>
+                    <label class="inline">
+                        <small class="lighter" style="display: inline-block; width: 60px;">Radius:</small>
+                        <span ebp-slider class="inline ui-slider-small ui-slider-purple" style="width: 125px;" ng-model="sliderValues.radius"></span>
+                        {{sliderValues.radius}}
+                    </label>
+                    <div class="space-0"></div>
+                    <label class="inline">
+                        <small class="lighter" style="display: inline-block; width: 60px;">Corners:</small>
+                        <span ebp-slider class="inline ui-slider-small ui-slider-orange" style="width: 125px;" ng-model="sliderValues.corners"></span>
+                        {{sliderValues.corners}}
+                    </label>
+                    <div class="space-0"></div>
+                    <label class="inline">
+                        <small class="lighter" style="display: inline-block; width: 60px;">Rotate:</small>
+                        <span ebp-slider class="inline ui-slider-small ui-slider-dark" style="width: 125px;" ng-model="sliderValues.rotate"></span>
+                        {{sliderValues.rotate}}
+                    </label>
+                    <div class="space-0"></div>
+                    <label class="inline">
+                        <small class="lighter" style="display: inline-block; width: 60px;">Trail:</small>
+                        <span ebp-slider class="inline ui-slider-small" style="width: 125px;" ng-model="sliderValues.trail"></span>
+                        {{sliderValues.trail}}
+                    </label>
+                    <div class="space-0"></div>
+                    <label class="inline">
+                        <small class="lighter" style="display: inline-block; width: 60px;">Speed:</small>
+                        <span ebp-slider class="inline ui-slider-small ui-slider-green" style="width: 125px;" ng-model="sliderValues.speed"></span>
+                        {{sliderValues.speed}}
+                    </label>
+                </form>
+            </div>
+            <div class="col-sm-6">
+                <h3 class="header smaller lighter red">Wells</h3>
+                <div class="well">
+                    <h4 class="green smaller lighter">Normal Well</h4>
+                    Use the well as a simple effect on an element to give it an inset effect.
+                </div>
+                <div class="well well-lg">
+                    <h4 class="blue">Large Well</h4>
+                    Control padding and rounded corners with two optional modifier classes.
+                </div>
+                <div class="well well-sm"> This is a small well </div>
+            </div>
+        </div>
     </div>
 </div>
+<toaster-container toaster-options="toasterOptions" light="{{!dark}}"></toaster-container>

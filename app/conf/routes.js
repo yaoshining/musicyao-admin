@@ -13,7 +13,7 @@ define(['angular','conf/modules','conf/_routes'],function(angular,modules,_route
                 }
             },
             breadcrumb: {
-                label: 'Home'
+                label: 'Home1'
             },
             modules: {
                 'homeModule': modules.homeModule
@@ -178,14 +178,19 @@ define(['angular','conf/modules','conf/_routes'],function(angular,modules,_route
             url: '/elements',
             views: {
                 '': {
-                    templateUrl: 'src/UIAndElements/views/elements.tpl.html'
+                    templateUrl: 'src/UIAndElements/views/elements.tpl.html',
+                    controller: 'ElementsController'
                 }
             },
             breadcrumb: {
                 label: 'Elements'
             },
             modules: {
-                'easypiechart': ['vendor/angular.easypiechart']
+                'easypiechart': ['vendor/angular.easypiechart'],
+                'ebp.toaster': ['plugins/core/ebp-toaster'],
+                'UIAndElementsModule': modules['UIAndElementsModule.elements'],
+                'ebp.dialog': ['plugins/core/ebp-dialog'],
+                'ebp.form.slider': ['plugins/form/ebp-slider']
             }
         },
         'UIAndElements.buttons1': {

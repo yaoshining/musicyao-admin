@@ -1,3 +1,4 @@
+@import "../bower_components/sass-bootstrap/lib/mixins";
 $width-small:  400px;
 $width-medium: 760px;
 $width-large:  1200px;
@@ -54,6 +55,12 @@ $width-large:  1200px;
      -moz-box-shadow: inset $x $y $z $blur $color;
           box-shadow: inset $x $y $z $blur $color;
 }
+@mixin custom-border-radius($radius:0) {
+    @include border-top-radius($radius);
+    @include border-bottom-radius($radius);
+    @include border-left-radius($radius);
+    @include border-right-radius($radius);
+}
 @mixin custom-transition($property) {
   -webkit-transition: $property .2s ease;
      -moz-transition: $property .2s ease;
@@ -91,4 +98,58 @@ $width-large:  1200px;
     background-image: -webkit-linear-gradient($angle, $color 25%, transparent 25%, transparent 50%, $color 50%, $color 75%, transparent 75%, transparent);
     background-image: -moz-linear-gradient($angle, $color 25%, transparent 25%, transparent 50%, $color 50%, $color 75%, transparent 75%, transparent);
     background-image: linear-gradient($angle, $color 25%, transparent 25%, transparent 50%, $color 50%, $color 75%, transparent 75%, transparent);
+}
+@mixin transitionDuration ($duration) {
+    transition-duration: $duration;
+    -webkit-transition-duration: $duration;
+}
+
+@mixin easingTimingFunction () {
+    -webkit-transition: all 0 cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    -moz-transition: all 0 cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    -ms-transition: all 0 cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    -o-transition: all 0 cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    transition: all 0 cubic-bezier(0.250, 0.460, 0.450, 0.940); /* easeOutQuad */
+
+    -webkit-transition-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    -moz-transition-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    -ms-transition-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    -o-transition-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    transition-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940); /* easeOutQuad */
+}
+
+@mixin bouncyTimingFunction () {
+    -webkit-transition: all 0 cubic-bezier(0.175, 0.885, 0.320, 1); /* older webkit */
+    -webkit-transition: all 0 cubic-bezier(0.175, 0.885, 0.320, 1.275);
+    -moz-transition: all 0 cubic-bezier(0.175, 0.885, 0.320, 1.275);
+    -ms-transition: all 0 cubic-bezier(0.175, 0.885, 0.320, 1.275);
+    -o-transition: all 0 cubic-bezier(0.175, 0.885, 0.320, 1.275);
+    transition: all 0 cubic-bezier(0.175, 0.885, 0.320, 1.275); /* easeOutBack */
+
+    -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.450, 1); /* older webkit */
+    -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.450, 1.595);
+    -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.450, 1.595);
+    -ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.450, 1.595);
+    -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.450, 1.595);
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.450, 1.595); /* custom */
+}
+
+@mixin easingOutQuadTimingFunction () {
+    -webkit-transition: all 0 cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    -moz-transition: all 0 cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    -ms-transition: all 0 cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    -o-transition: all 0 cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    transition: all 0 cubic-bezier(0.250, 0.460, 0.450, 0.940); /* easeOutQuad */
+
+    -webkit-transition-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    -moz-transition-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    -ms-transition-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    -o-transition-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    transition-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940); /* easeOutQuad */
+}
+
+@mixin transform ($value) {
+    transform: $value;
+    -ms-transform: $value;
+    -webkit-transform: $value;
 }

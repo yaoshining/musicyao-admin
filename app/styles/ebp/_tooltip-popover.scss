@@ -1,0 +1,167 @@
+@import "variables";
+@import "fonts";
+@import "../custom_mixins";
+.tooltip.in {
+    @include opacity(1)
+}
+.tooltip-inner  {
+    background-color: $tooltip-color;
+    color: #FFF;
+    font-size: $font-size-tooltip;
+    //white-space: nowrap;
+
+    text-shadow: 1px 1px 0 rgba(42,45,50,0.5);
+    @include custom-border-radius(0);
+
+    padding: 5px 9px;
+}
+.tooltip.top .tooltip-arrow {
+    border-bottom-width: 0;
+    border-top-color: $tooltip-color;
+    -moz-border-top-colors: $tooltip-color;
+}
+.tooltip.right .tooltip-arrow {
+    border-left-width: 0;
+    border-right-color: $tooltip-color;
+    -moz-border-right-colors: $tooltip-color;
+}
+.tooltip.left .tooltip-arrow {
+    border-right-width: 0;
+    border-left-color: $tooltip-color;
+    -moz-border-left-colors: $tooltip-color;
+}
+.tooltip.bottom .tooltip-arrow {
+    border-top-width: 0;
+    border-bottom-color: $tooltip-color;
+    -moz-border-bottom-colors: $tooltip-color;
+}
+@mixin tooltip($name , $color, $shadow) {
+    .#{$name} + .tooltip , .#{$name} {
+        > .tooltip-inner  {
+            background-color: $color;
+            text-shadow: $shadow;
+        }
+        &.top .tooltip-arrow {
+            border-top-color: $color;
+            -moz-border-top-colors: $color;
+        }
+        &.right .tooltip-arrow {
+            border-right-color: $color;
+            -moz-border-right-colors: $color;
+        }
+        &.left .tooltip-arrow {
+            border-left-color: $color;
+            -moz-border-left-colors: $color;
+        }
+        &.bottom .tooltip-arrow {
+            border-bottom-color: $color;
+            -moz-border-bottom-colors: $color;
+        }
+    }
+}
+@include tooltip(tooltip-error , $tooltip-error-color, "1px 1px 0 rgba(100,60,20,0.3)");
+@include tooltip(tooltip-success , $tooltip-success-color, "1px 1px 0 rgba(60,100,20,0.3)");
+@include tooltip(tooltip-warning , $tooltip-warning-color, "1px 1px 0 rgba(100,90,10,0.3)");
+@include tooltip(tooltip-info , $tooltip-info-color, "1px 1px 0 rgba(40,50,100,0.3)");
+
+
+$popover-color: #EFF3F8;
+$popover-error-color: #F7F0EF;
+$popover-warning-color: #F4EEE3;
+$popover-success-color: #E8F2E3;
+$popover-info-color: #E5EDF8;
+
+/* popover */
+.popover {
+    @include custom-border-radius(0);
+    padding:0;
+    border-color: #ccc;
+    border-width: 1px;
+
+    @include box-shadow("0 0 4px 2px rgba(0,0,0,0.2)");
+    color: #4D6883;
+}
+.popover-title {
+    border-radius: 0;
+    background-color: $popover-color;
+    color: #555;
+    border-bottom: 1px solid darken($popover-color, 5%);
+
+    text-shadow: 1px 1px 1px rgba(220,220,220,0.2);
+}
+.popover.bottom > .arrow:after {
+    top: 1px;
+    margin-left: -10px;
+
+    border-bottom-color: $popover-color;
+    -moz-border-bottom-colors: $popover-color;
+
+    border-top-width: 0;
+}
+.popover.left > .arrow:after {
+    -moz-border-left-colors: #FFF;
+}
+.popover.right > .arrow:after {
+    -moz-border-right-colors: #FFF;
+}
+.popover.top > .arrow:after {
+    -moz-border-top-colors: #FFF;
+}
+
+@mixin popover($name , $color, $text-color) {
+    .#{$name} + .popover , .popover.#{$name} {
+    border-color: $color;
+    .popover-title {
+        background-color: $color;
+        border-bottom-color: darken($color, 5%);
+        color: $text-color;
+        text-shadow: none;
+    }
+
+    &.top .arrow:after {
+        border-top-color: $color;
+        -moz-border-top-colors: $color;
+    }
+    &.bottom .arrow:after {
+        border-bottom-color: $color;
+        -moz-border-bottom-colors: $color;
+    }
+    &.right .arrow:after {
+        border-right-color: $color;
+        -moz-border-right-colors: $color;
+    }
+    &.left .arrow:after {
+        border-left-color: $color;
+        -moz-border-left-colors: $color;
+    }
+
+}
+}
+
+
+@include popover(popover-error ,$popover-error-color, #B75445);
+@include popover(popover-warning ,$popover-warning-color , #D67E31);
+@include popover(popover-success ,$popover-success-color , $tooltip-success-color);
+@include popover(popover-info ,$popover-info-color , #3F79B6);
+
+.popover-notitle + .popover , .popover.popover-notitle {
+    .popover-title  {
+        display:none;
+    }
+    &.top .arrow:after {
+        border-top-color: #FFF;
+        -moz-border-top-colors: #FFF;
+    }
+    &.bottom .arrow:after {
+        border-bottom-color: #FFF;
+        -moz-border-bottom-colors: #FFF;
+    }
+    &.left .arrow:after {
+        border-left-color: #FFF;
+        -moz-border-left-colors: #FFF;
+    }
+    &.right .arrow:after {
+        border-right-color: #FFF;
+        -moz-border-right-colors: #FFF;
+    }
+}

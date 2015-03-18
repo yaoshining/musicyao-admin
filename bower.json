@@ -54,6 +54,8 @@
     "angular-wizard": "~0.4.2",
     "angular-ui-tree": "~2.1.5",
     "Buttons": "alexwolfe/Buttons#~2.0.0",
-    "hover": "~2.0.2"
+    "hover": "~2.0.2",
+    "bootbox": "~4.4.0",
+    "angular-ui-utils": "~0.2.2"
   }
 }

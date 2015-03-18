@@ -420,6 +420,7 @@ module.exports = function(grunt) {
                     dest: '<%= yeoman.dist %>',
                     src: [
                         'src/loader.js',
+                        'src/ebp-templates.js',
                         '*.{ico,png,txt}',
                         '.htaccess',
                         'images/{,*/}*.webp',
