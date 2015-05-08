@@ -3,72 +3,150 @@
         <div class="row">
             <div class="col-xs-12">
                 <h3 class="header smaller lighter green">Application Buttons</h3>
+                <script type="text/ng-template" id="fileAuthorizition.tpl.html">
+                    <div class="widget-box no-margin widget-color-blue">
+                        <div class="widget-header widget-header-large ui-sortable-handle">
+                            <h5 class="widget-title">File/Folder authorizition</h5>
+                            <div class="widget-toolbar">
+                                <a href="" data-action="close">
+                                    <i class="ebp-icon fa fa-times" ng-click="cancel()"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="widget-body ebp-scroll" style="height: 400px;" scroll-options="{size: 'inherit'}">
+                            <div class="widget-main">
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <div ebp-tree tree-object="$ebpTree" tree-data="treeData" drag-enabled="true" tree-options="treeOptions"
+                                             render-template-url="'tree_nodes_render.tpl.html'"
+                                             show-line="showLine"
+                                             hide-icon="tree2.hideIcon"></div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <table class="table table-condensed">
+                                            <tbody>
+                                                <tr>
+                                                    <td style="vertical-align: middle">
+                                                        <span class="label label-inverse">
+                                                            完全控制
+                                                        </span>
+                                                    </td>
+                                                    <td class="text-center middle">
+                                                        <label class="no-margin">
+                                                            <input name="switch-field-1" class="ebp ebp-switch ebp-switch-6" type="checkbox">
+                                                            <span class="lbl"></span>
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr ng-repeat="permission in permissions">
+                                                    <td style="vertical-align: middle">
+                                                        <span class="label label-primary">
+                                                            {{permission.name}}
+                                                        </span>
+                                                    </td>
+                                                    <td class="text-center middle">
+                                                        <label class="no-margin">
+                                                            <input name="switch-field-1" ng-model="permission.$checked" class="ebp ebp-switch ebp-switch-6" type="checkbox">
+                                                            <span class="lbl"></span>
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 5px;text-align: center;clear: both">
+                            <button class="btn btn-lg btn-white btn-success btn-round" ng-click="submit()" style="margin-right: 10px">
+                                <i class="ebp-icon fa fa-check green"></i>Submit
+                            </button>
+                            <button class="btn btn-lg btn-white btn-danger btn-round" ng-click="cancel()">
+                                <i class="ebp-icon fa fa-times red2"></i>
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </script>
                 <p>
-                    <a href class="btn btn-default btn-app radius-4">
+                    <a href class="btn btn-default btn-app radius-4" ng-click="authorize()">
                         <i class="ebp-icon fa fa-cog bigger-230"></i>
                         Default
                         <span class="badge badge-pink">+3</span>
+                        <paper-ripple fit></paper-ripple>
                     </a>
 
                     <a href class="btn btn-app btn-primary no-radius">
                         <i class="ebp-icon fa fa-pencil-square-o bigger-230"></i>
                         Edit
                         <span class="badge badge-warning badge-left">11</span>
+                        <paper-ripple fit></paper-ripple>
                     </a>
 
                     <a href class="btn btn-app btn-success">
                         <i class="ebp-icon fa fa-refresh bigger-230"></i>
                         Reload
+                        <paper-ripple fit></paper-ripple>
                     </a>
 
                     <button class="btn btn-app btn-warning">
                         <i class="ebp-icon fa fa-undo bigger-230"></i>
                         Undo
+                        <paper-ripple fit></paper-ripple>
                     </button>
 
                     <a href class="btn btn-app btn-info btn-sm no-radius">
                         <i class="ebp-icon fa fa-envelope bigger-200"></i>
                         Mailbox
                         <span class="label label-inverse arrowed-in">6+</span>
+                        <paper-ripple fit></paper-ripple>
                     </a>
 
                     <button class="btn btn-app btn-danger btn-sm">
                         <i class="ebp-icon fa fa-trash-o bigger-200"></i>
                         Delete
+                        <paper-ripple fit></paper-ripple>
                     </button>
 
                     <button class="btn btn-app btn-purple btn-sm">
                         <i class="ebp-icon fa fa-cloud-upload bigger-200"></i>
                         Upload
+                        <paper-ripple fit></paper-ripple>
                     </button>
 
                     <button class="btn btn-app btn-pink btn-sm">
                         <i class="ebp-icon fa fa-share bigger-200"></i>
                         Share
+                        <paper-ripple fit></paper-ripple>
                     </button>
 
                     <button class="btn btn-app btn-inverse btn-xs">
                         <i class="ebp-icon fa fa-lock bigger-160"></i>
                         Lock
+                        <paper-ripple fit></paper-ripple>
                     </button>
 
                     <button class="btn btn-app btn-grey btn-xs radius-4">
                         <i class="ebp-icon fa fa-floppy-o bigger-160"></i>
 
                         Save
-                                                <span class="badge badge-transparent">
-                                                    <i class="light-red ebp-icon fa fa-asterisk"></i>
-                                                </span>
+                        <span class="badge badge-transparent">
+                            <i class="light-red ebp-icon fa fa-asterisk"></i>
+                        </span>
+                        <paper-ripple fit></paper-ripple>
                     </button>
 
                     <button class="btn btn-app btn-light btn-xs">
                         <i class="ebp-icon fa fa-print bigger-160"></i>
                         Print
+                        <paper-ripple fit></paper-ripple>
                     </button>
 
                     <a href class="btn btn-app btn-yellow btn-xs">
                         <i class="ebp-icon fa fa-shopping-cart bigger-160"></i>
                         Shop
+                        <paper-ripple fit></paper-ripple>
                     </a>
                 </p>
             </div>
@@ -88,10 +166,10 @@
                     </span><!-- /.col -->
                 </h3>
                 <p>
-                    <button class="btn" ng-class="{'no-border': !showBorder}">Default </button>
-                    <button class="btn btn-primary" ng-class="{'no-border': !showBorder}">Primary</button>
-                    <button class="btn btn-info" ng-class="{'no-border': !showBorder}">Info</button>
-                    <button class="btn btn-success" ng-class="{'no-border': !showBorder}">Success</button>
+                    <button class="btn" ng-class="{'no-border': !showBorder}">Default <paper-ripple fit></paper-ripple></button>
+                    <button class="btn btn-primary" ng-class="{'no-border': !showBorder}">Primary<paper-ripple fit></paper-ripple></button>
+                    <button class="btn btn-info" ng-class="{'no-border': !showBorder}">Info<paper-ripple fit></paper-ripple></button>
+                    <button class="btn btn-success" ng-class="{'no-border': !showBorder}">Success<paper-ripple fit></paper-ripple></button>
                 </p>
                 <p>
                     <button class="btn btn-warning" ng-class="{'no-border': !showBorder}">Warning</button>

@@ -48,7 +48,7 @@
 
 			css_pos = vertical ? 'top' : 'left';//'left' for horizontal
 			css_size = vertical ? 'height' : 'width';//'width' for horizontal
-			max_css_size = vertical ? 'maxHeight' : 'maxWidth';
+			max_css_size = vertical ? 'max-height' : 'max-width';
 
 			client_size = vertical ? 'clientHeight' : 'clientWidth';
 			scroll_direction = vertical ? 'scrollTop' : 'scrollLeft';
@@ -170,8 +170,7 @@
 			}
 
 			if(!vertical) $content_wrap.children(0).css(css_size, this.size);//the extra wrapper
-			$content_wrap.css(max_css_size , this.size);
-
+			$content_wrap.css(max_css_size , this.size+'px');
 			disabled = false;
 			created = true;
 		}
@@ -201,7 +200,7 @@
 			var available_space = vertical ? this.size : content_wrap.clientWidth;
 
 			if(!vertical) $content_wrap.children(0).css(css_size, this.size);//the extra wrapper
-			$content_wrap.css(max_css_size , this.size);
+			$content_wrap.css(max_css_size , this.size+'px');
 
 			if(content_size > available_space) {
 				active = true;

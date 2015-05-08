@@ -1,0 +1,281 @@
+<style shim-shadowdom>
+
+    body {
+        overflow: hidden;
+        margin: 0;
+        font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        -webkit-touch-callout: none;
+    }
+
+    section {
+        padding: 20px 0;
+    }
+
+    section > div {
+        padding: 14px;
+        font-size: 16px;
+    }
+
+    button {
+        margin: 8px 4px;
+    }
+
+    paper-button {
+        color: #FFFFFF;
+        background-color: #9badbb;
+    }
+
+    paper-button.paper-primary {
+        background-color: #2a8bcb;
+    }
+
+    paper-button.paper-success {
+        background-color: #85b458;
+    }
+
+    paper-button.paper-warning {
+        background-color: #fd9e19;
+    }
+
+    paper-button.paper-info {
+        background-color: #68acdd;
+    }
+
+    paper-button.paper-danger {
+        background-color: #d3413a;
+    }
+
+    paper-button.paper-purple {
+        background-color: #7b67af;
+    }
+
+    paper-button.paper-pink {
+        background-color: #be2f63;
+    }
+
+    paper-button.paper-inverse {
+        background-color: #2a2a2a;
+    }
+
+    paper-button.paper-grey {
+        background-color: #6c6c6c;
+    }
+
+    paper-button.paper-yellow {
+        background-color: #fddf87;
+        color: #963;
+    }
+
+    html /deep/ [autofocus] {
+        color: #03a9f4;
+    }
+
+    html /deep/ .scrolling::shadow #scroller {
+        height: 350px;
+    }
+
+    html /deep/ .colored {
+        border: 1px solid #0f9d58;
+        background-color: #b7e1cd;
+        color: #0f9d58;
+    }
+
+    html /deep/ .size-position {
+        position: fixed;
+        top: 16px;
+        right: 16px;
+    }
+
+    html /deep/ .size-position::shadow #scroller {
+        width: 300px;
+        height: 300px;
+    }
+
+</style>
+<template is="auto-binding">
+
+    <section on-tap="{{toggleDialog1}}">
+        <h3 class="header smaller lighter blue">Dialog Layouts</h3>
+
+        <paper-button raised class="paper-primary">
+            Plain dialog
+        </paper-button>
+
+        <paper-dialog>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </paper-dialog>
+
+        <paper-button raised class="paper-success">
+            Dialog with heading
+        </paper-button>
+
+        <paper-dialog heading="Title">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </paper-dialog>
+
+        <paper-button raised class="paper-warning">
+            Dialog with actions
+        </paper-button>
+
+        <paper-action-dialog heading="Title">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+            <paper-button dismissive>More paper-info...</paper-button>
+            <paper-button affirmative>Decline</paper-button>
+            <paper-button affirmative autofocus>Accept</paper-button>
+        </paper-action-dialog>
+
+        <paper-button raised class="paper-danger">
+            Modal dialog with backdrop and actions
+        </paper-button>
+
+        <paper-action-dialog backdrop autoCloseDisabled layered="false">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+            <paper-button affirmative autofocus>Tap me to close</paper-button>
+        </paper-action-dialog>
+
+    </section>
+
+    <section on-tap="{{toggleDialog1}}">
+        <h3 class="header smaller lighter green">Scrolling</h3>
+
+        <paper-button raised class="paper-grey">
+            Dialog with heading
+        </paper-button>
+
+        <paper-dialog heading="Title" class="scrolling">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </paper-dialog>
+
+        <paper-button raised class="paper-pink">
+            Dialog with actions
+        </paper-button>
+
+        <paper-action-dialog heading="Title" class="scrolling">
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+            <paper-button dismissive>More paper-info...</paper-button>
+            <paper-button affirmative>Decline</paper-button>
+            <paper-button affirmative autofocus>Accept</paper-button>
+
+        </paper-action-dialog>
+
+    </section>
+
+    <section on-tap="{{toggleDialog2}}">
+        <h3 class="header smaller lighter paper-purple">Transitions</h3>
+
+        <template repeat="{{transitions}}">
+            <paper-button raised class="paper-yellow" transition="{{}}">{{}}</paper-button>
+        </template>
+
+        <paper-dialog id="dialog2" transition="{{transition}}">
+
+            <h1>{{transition || 'No Transition'}}</h1>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+        </paper-dialog>
+
+    </section>
+
+    <section on-tap="{{toggleDialog1}}">
+        <h3 class="header smaller lighter orange">Custom Styling</h3>
+
+        <paper-button raised class="paper-purple">
+            Colors
+        </paper-button>
+
+        <paper-dialog heading="Custom Colors" class="colored">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </paper-dialog>
+
+        <paper-button raised class="paper-success">
+            Size &amp; Position
+        </paper-button>
+
+        <paper-dialog heading="Custom Size &amp; Position" class="size-position">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </paper-dialog>
+
+    </section>
+
+    <section>
+        <h3 class="header smaller lighter paper-pink">Toast</h3>
+
+        <paper-button class="paper-grey" raised onclick="document.querySelector('#toast1').show()">Discard Draft</paper-button>
+
+        <paper-button raised class="paper-warning" onclick="document.querySelector('#toast2').show()">Get Messages</paper-button>
+
+        <paper-button raised class="paper-inverse" onclick="document.querySelector('#toast3').show()">Send Message</paper-button>
+
+        <paper-toast id="toast1" text="Your draft has been discarded."></paper-toast>
+
+        <paper-toast id="toast2" role="alert" text="Connection timed out. Showing limited messages.">
+            <div style="color: #eeff41;" onclick="console.log('RETRY')">Retry</div>
+        </paper-toast>
+
+        <paper-toast id="toast3" class="capsule" text="Message sent" style="padding-right: 60px;"></paper-toast>
+    </section>
+
+    <div id="toast-container" style="position: fixed;z-index: 9999;top: 100px" toaster-options="toasterOptions" light="false" class="ng-scope toast-top-right"><!-- ngRepeat: toaster in toasters --><div ng-repeat="toaster in toasters" class="toast  toast-info toast-light" ng-class="[toaster.type,toaster.position]" ng-click="click(toaster)" ng-mouseover="stopTimer(toaster)" ng-mouseout="restartTimer(toaster)"><button class="toast-close-button" ng-show="config.closeButton" ng-click="click(toaster, true)"></button><!-- ngIf: toaster.imageUrl --><img ng-src="images/avatars/yao.jpg" class="toast-image ng-scope" ng-if="toaster.imageUrl" src="http://docs.polymerchina.org/images/logos/p-logo.svg"><!-- end ngIf: toaster.imageUrl --><div class="toast-item toast-with-image" ng-class="{'toast-with-image': toaster.imageUrl,'toast-without-image': !toaster.imageUrl}"><div ng-class="config.title" class="ng-binding toast-title">欢迎来到明天的世界!</div><div ng-class="config.message" ng-switch="" on="toaster.bodyOutputType" class="toast-message"><!-- ngSwitchWhen: trustedHtml --><!-- ngSwitchWhen: template --><div ng-switch-when="template" class="ng-scope"><!-- ngInclude: toaster.bodyTemplate --><div ng-include="toaster.bodyTemplate" class="ng-scope">
+        <p class="ng-scope">
+            Web Components usher in a new era of web development based on encapsulated and interoperable custom elements that extend HTML itself. Built atop these new standards, Polymer makes it easier and faster to create anything from a button to a complete application across desktop, mobile, and beyond.
+        </p>
+    </div></div><!-- end ngSwitchWhen: --><!-- ngSwitchWhen: templateWithData --><!-- ngSwitchDefault:  --></div></div></div><!-- end ngRepeat: toaster in toasters --></div>
+</template>
+
+<script>
+
+
+    var scope = document.querySelector('template[is=auto-binding]');
+
+    scope.toggleDialog1 = function(e) {
+        if (e.target.localName != 'paper-button') {
+            return;
+        }
+        var d = e.target.nextElementSibling;
+        if (!d) {
+            return;
+        }
+        d.toggle();
+    };
+
+    scope.transitions = [
+        'core-transition-center',
+        'core-transition-top',
+        'core-transition-bottom',
+        'core-transition-left',
+        'core-transition-right'
+    ];
+
+    scope.toggleDialog2 = function(e) {
+        if (e.target.localName != 'paper-button') {
+            return;
+        }
+        scope.transition = e.target.getAttribute('transition');
+        document.getElementById('dialog2').toggle();
+    };
+
+</script>

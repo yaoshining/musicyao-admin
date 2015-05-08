@@ -1,0 +1,251 @@
+<div class="ebp-grid">
+    <div class="ebp-grid-overlay" style="position: absolute;top: 0;left: 0;right: 0;bottom: 0;background-color: rgba(255,255,255,.1);z-index: 100" ng-show="loader.loading"></div>
+    <div class="loading" ng-show="loader.loading">Loading...</div>
+    <div class="ebp-grid-view">
+        <div class="ebp-grid-titlebar ebp-grid-caption">
+            <a role="link" ng-click="collapsed = !collapsed" class="ebp-grid-titlebar-toggle">
+                <i class="ebp-icon fa bigger-150 white" ng-class="{'fa-angle-down': collapsed,'fa-angle-up': !collapsed}"></i>
+            </a>
+            <span class="ebp-grid-title">EbpGrid with inline editing</span>
+        </div>
+        <div class="ebp-grid-hdiv" collapse="collapsed">
+            <div class="ebp-grid-hbox">
+                <table class="ebp-grid-htable table table-bordered" ng-style="{width: viewModel.gridWidth}">
+                    <thead>
+                    <tr class="ebp-grid-labels" role="rowheader">
+                        <th style="width: 35px">
+                            <label style="margin-bottom: 0">
+                                <input type="checkbox" class="ebp" ng-model="viewModel.checkedAll" ng-change="toggleCheckAll(viewModel.checkedAll)">
+                                <span class="lbl"> </span>
+                            </label>
+                        </th>
+                        <th style="width: 29px">
+                            <div></div>
+                        </th>
+                        <th style="width: 80px">
+                            <div></div>
+                        </th>
+                        <th style="position: relative" ng-repeat="col in viewModel.columns" ng-style="{width: col.width+'px'}" ebp-grid-header-cell ng-class="{'selected': sorting.by === col.index}">
+                            <div class="ebp-grid-sortable" ng-click="sortData(col)" ng-if="col.sortable">
+                                {{col.label}}
+                                <span class="s-ico" ng-if="sorting.by === col.index">
+                                    <span sort="asc" class="ebp-grid-ico-sort ebp-grid-icon-asc" ng-class="{'state-disabled': sorting.order==='desc'}"></span>
+                                    <span sort="desc" class="ebp-grid-ico-sort ebp-grid-icon-desc" ng-class="{'state-disabled': sorting.order==='asc'}"></span>
+                                </span>
+                            </div>
+                            <span ng-if="!col.sortable">
+                                {{col.label}}
+                            </span>
+                        </th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+        <div class="ebp-grid-bdiv" collapse="collapsed">
+            <div ng-style="{'height': viewModel.gridHeight+'px','min-height': '200px'}" class="ebp-nicescroll" scroll-options="scrollOptions">
+                <table class="ebp-grid-btable table table-bordered table-striped table-hover" ng-style="{width: viewModel.gridWidth}">
+                    <thead>
+                    <tr class="ebp-grid-firstrow" role="row">
+                        <td role="gridcell" style="width: 35px"></td>
+                        <td role="gridcell" style="width: 29px"></td>
+                        <td role="gridcell" style="width: 80px"></td>
+                        <td role="gridcell" ng-repeat="col in viewModel.columns" ng-style="{width: col.width+'px'}">
+                        </td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ebp-grid-new-row ng-repeat="item in itemAddHandler.items">
+                        <td role="gridcell">
+                            <label style="margin-bottom: 0">
+                                <input type="checkbox" class="ebp" ng-model="item.$checked" ng-change="onItemCheckChange()">
+                                <span class="lbl"> </span>
+                            </label>
+                        </td>
+                        <td role="gridcell">
+                            <a href>
+                                <span class="ebp-icon fa fa-plus center bigger-110 blue"></span>
+                            </a>
+                        </td>
+                        <td role="gridcell">
+                            <div class="text-center">
+                                <span>
+                                    <a href class="tooltip-info" tooltip="Edit selected row" ng-click="itemAddHandler.submit(item,$index)">
+                                        <i class="ebp-icon fa fa-check bigger-120 green"></i>
+                                    </a>
+                                    <a href style="margin-left: 8px" ng-click="itemAddHandler.dismiss($index)">
+                                        <i class="ebp-icon fa fa-times bigger-120 red"></i>
+                                    </a>
+                                </span>
+                            </div>
+                        </td>
+                        <td role="gridcell" ng-repeat="col in viewModel.columns" ebp-grid-cell style="position: relative">
+                            <div ng-if="col.key">{{item[col.name]}}</div>
+                            <div ng-if="!col.key" style="position: absolute;left: 1px;top: 1px;bottom: 1px;right: 1px;" ng-switch="col.edittype">
+                                <label class="inline" ng-switch-when="checkbox" style="height: 100%;width: 100%;line-height: 34px">
+                                    <input ng-model="item[col.name]" type="checkbox" class="ebp ebp-switch ebp-switch-5">
+                                    <span class="lbl middle"></span>
+                                </label>
+                                <select ng-switch-when="select" style="height: 100%;width: 100%" ng-model="item[col.name]">
+                                    <option ng-repeat="(key,value) in col.editoptions.value" ng-selected="key === item[col.name]" value="{{key}}">{{value}}</option>
+                                </select>
+                                <textarea ng-switch-when="textarea" style="height: 100%;width: 100%" ng-model="item[col.name]"></textarea>
+                                <input type="date" ng-switch-when="date" ng-model="item[col.name]" date-column style="height: 100%;width: 100%">
+                                <input ng-switch-default type="text" ng-model="item[col.name]" style="height: 100%;width: 100%" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr ebp-grid-row ng-repeat="item in gridData | orderBy:sorting.by:sorting.order==='desc'" ng-class="{'state-highlight': item.$checked,'animated hinge': loader.loading}">
+                        <td role="gridcell">
+                            <label style="margin-bottom: 0">
+                                <input type="checkbox" class="ebp" ng-model="item.$checked" ng-change="onItemCheckChange()">
+                                <span class="lbl"> </span>
+                            </label>
+                        </td>
+                        <td role="gridcell">
+                            <a href>
+                                <span class="ebp-icon fa fa-plus center bigger-110 blue"></span>
+                            </a>
+                        </td>
+                        <td role="gridcell">
+                            <div class="text-center">
+                                <span ng-if="!rowEditHelper.isEditing">
+                                    <a href ng-click="editRow()" class="tooltip-info" tooltip="Edit selected row">
+                                        <i class="ebp-icon fa fa-pencil bigger-120 blue"></i>
+                                    </a>
+                                    <a href style="margin-left: 8px" ebp-dialog dialog-type="confirm" dialog-message="Delete selected record(s)?" class="tooltip-error" tooltip="Delete selected row">
+                                        <i class="ebp-icon fa fa-trash bigger-120 red"></i>
+                                    </a>
+                                </span>
+                                <span ng-if="rowEditHelper.isEditing">
+                                    <a href class="tooltip-info" tooltip="Edit selected row" ng-click="rowEditHelper.submit()">
+                                        <i class="ebp-icon fa fa-check bigger-120 green"></i>
+                                    </a>
+                                    <a href style="margin-left: 8px" ng-click="rowEditHelper.dismiss()">
+                                        <i class="ebp-icon fa fa-times bigger-120 red"></i>
+                                    </a>
+                                </span>
+                            </div>
+                        </td>
+                        <td role="gridcell" ng-repeat="col in viewModel.columns" ebp-grid-cell style="position: relative">
+                            <span ng-if="!col.editable || !cellEditHelper.isEditing">{{item | edpGridColumn:col}}</span>
+                            <div ng-if="col.editable && cellEditHelper.isEditing" style="position: absolute;left: 1px;top: 1px;bottom: 1px;right: 1px;" ng-switch="col.edittype">
+                                <label class="inline" ng-switch-when="checkbox" style="height: 100%;width: 100%;line-height: 34px">
+                                    <input ng-model="rowEditHelper.item[col.name]" type="checkbox" class="ebp ebp-switch ebp-switch-5">
+                                    <span class="lbl middle"></span>
+                                </label>
+                                <select ng-switch-when="select" style="height: 100%;width: 100%" ng-model="rowEditHelper.item[col.name]">
+                                    <option ng-repeat="(key,value) in col.editoptions.value" ng-selected="key === rowEditHelper.item[col.name]" value="{{key}}">{{value}}</option>
+                                </select>
+                                <textarea ng-switch-when="textarea" style="height: 100%;width: 100%" ng-model="rowEditHelper.item[col.name]"></textarea>
+                                <input type="date" ng-switch-when="date" ng-model="rowEditHelper.item[col.name]" date-column style="height: 100%;width: 100%">
+                                <input ng-switch-default type="text" ng-model="rowEditHelper.item[col.name]" style="height: 100%;width: 100%" />
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="ebp-grid-resize-mark" ng-style="resizeMark">&nbsp;</div>
+    </div>
+    <div collapse="collapsed" class="ebp-grid-pager">
+        <div class="ebp-grid-pg-control" role="group">
+            <table cellpadding="0" cellspacing="0" border="0" class="ebp-grid-pg-table">
+                <tbody>
+                <tr>
+                    <td align="left">
+                        <table cellpadding="0" cellspacing="0" border="0" class="ebp-grid-pg-table ebp-grid-pg-operations">
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <a href ng-click="addNewRow()">
+                                        <i class="ebp-icon fa fa-plus-circle bigger-150 purple"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href>
+                                        <i class="ebp-icon fa fa-pencil bigger-150 blue"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href>
+                                        <i class="ebp-icon fa fa-search-plus bigger-150 grey"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href ebp-dialog dialog-type="confirm" dialog-message="Delete selected record(s)?">
+                                        <i class="ebp-icon fa fa-trash-o bigger-150 red"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <span class="ui-separator"></span>
+                                </td>
+                                <td>
+                                    <a href>
+                                        <i class="ebp-icon fa fa-search bigger-150 orange"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href ng-click="refresh()">
+                                        <i class="ebp-icon fa fa-refresh bigger-150 green"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            </tbody>
+
+                        </table>
+                    </td>
+                    <td align="center">
+                        <table cellspacing="0" cellpadding="0" border="0" style="table-layout:auto;" class="ebp-grid-pg-table">
+                            <tbody>
+                            <tr>
+                                <td class="ebp-grid-pg-button" ng-class="{'disabled': pager.pageNo===1}">
+                                    <a href ng-click="firstPage()">
+                                        <i class="ebp-icon fa fa-angle-double-left bigger-150"></i>
+                                    </a>
+                                </td>
+                                <td class="ebp-grid-pg-button" ng-class="{'disabled': pager.pageNo===1}">
+                                    <a href ng-click="previousPage()">
+                                        <i class="ebp-icon fa fa-angle-left bigger-150"></i>
+                                    </a>
+                                </td>
+                                <td class="ebp-grid-pg-button">
+                                    <span class="ui-separator" style="margin: 0 4px;border-left: 1px solid #C9D4DB;border-right: 1px solid #C9D4DB"></span>
+                                </td>
+                                <td>
+                                    Page
+                                    <input class="ui-pg-input" type="text" size="2" maxlength="7" ng-model="pager.pageNo" role="textbox" style="height: 20px;padding: 0 1px;text-align: center" />
+                                    of
+                                    <span>{{getTotalPage()}}</span>
+                                </td>
+                                <td class="ebp-grid-pg-button">
+                                    <span class="ui-separator" style="margin: 0 4px;border-left: 1px solid #C9D4DB;border-right: 1px solid #C9D4DB"></span>
+                                </td>
+                                <td class="ebp-grid-pg-button" ng-class="{'disabled':pager.pageNo === getTotalPage()}">
+                                    <a href ng-click="nextPage()">
+                                        <i class="ebp-icon fa fa-angle-right bigger-150"></i>
+                                    </a>
+                                </td>
+                                <td class="ebp-grid-pg-button" ng-class="{'disabled':pager.pageNo === getTotalPage()}">
+                                    <a href ng-click="lastPage()">
+                                        <i class="ebp-icon fa fa-angle-double-right bigger-150"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <select ng-model="pager.maxSize" ng-options="size for size in [10,20,30]" class="ui-pg-selbox" role="listbox" style="width: 60px;height: 24px">
+                                    </select>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td align="right">
+                        View {{pager.maxSize*(pager.pageNo-1)+1}} - {{pager.maxSize*pager.pageNo>pager.quantity?pager.quantity:pager.maxSize*pager.pageNo}} of {{pager.quantity}}
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

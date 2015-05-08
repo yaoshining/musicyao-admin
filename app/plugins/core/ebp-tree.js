@@ -23,7 +23,7 @@
         check: {
             enable: false
         }
-    }).directive('ebpTree',['$timeout',function($timeout){
+    }).directive('ebpTree',['$resource','$timeout',function($resource,$timeout){
         return {
             restrict: 'A',
             replace: false,
@@ -40,7 +40,36 @@
             compile: function compile(tElement,tAttrs,transclude){
                 return {
                     pre: function preLink(scope, iElement, iAttrs, controller) {
-
+                        var treeOptions = scope.treeOptions;
+                        if(angular.isUndefined(scope.treeData) ||
+                          (angular.isArray(scope.treeData) && scope.treeData.length < 1)){
+                            if(angular.isFunction(treeOptions.dataSource)){
+                                treeOptions.dataSource(null,function(items){
+                                    scope.treeData = items.data;
+                                    if(item.data.length < 1){
+                                        scope.collapsed = true;
+                                    }
+                                });
+                            }
+                            if(angular.isObject(treeOptions.dataSource)){
+                                var url = treeOptions.dataSource.url;
+                                var params = treeOptions.dataSource.params;
+                                var NodeResource = $resource(url,params);
+                                angular.forEach(params,function(val,key){
+                                    if(val.charAt(0) === '@'){
+                                        params[key] = undefined;
+                                    }
+                                });
+                                var items = NodeResource.query(params,function(){
+                                    scope.treeData = new Array();
+                                    angular.forEach(items,function(item,index){
+                                        $timeout(function(){
+                                            scope.treeData.push(item);
+                                        },500+ (100 * index));
+                                    });
+                                });
+                            }
+                        }
                     },
                     post: function postLink(scope, element, iAttrs, controller) {
 
@@ -95,7 +124,7 @@
                 });
             }]
         };
-    }]).directive('ebpTreeNode',['$timeout',function($timeout){
+    }]).directive('ebpTreeNode',['$resource',function($resource){
         return {
             restrict: 'A',
             require: '^ebpTree',
@@ -120,6 +149,19 @@
                                     if(item.data.length < 1){
                                         scope.collapsed = true;
                                     }
+                                });
+                            }
+                            if(angular.isObject(treeOptions.dataSource)){
+                                var url = treeOptions.dataSource.url;
+                                var params = treeOptions.dataSource.params;
+                                var NodeResource = $resource(url,params);
+                                angular.forEach(params,function(val,key){
+                                    if(val.charAt(0) === '@'){
+                                        params[key] = modelValue[val.substr(1)];
+                                    }
+                                });
+                                var items = NodeResource.query(params,function(){
+                                    modelValue.children = items;
                                 });
                             }
                         }

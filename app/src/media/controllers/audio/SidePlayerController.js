@@ -52,7 +52,7 @@ define(['media/module','mCustomScrollbar'],function(module){
         controller.onPlayReady = function(api){
             API = controller.API = api;
             $timeout(function(){
-                $scope.showPlayer = true;
+                //$scope.showPlayer = true;
                 //$timeout(function(){
                 //    $scope.showList = true;
                 //},1000);

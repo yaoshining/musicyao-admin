@@ -1,0 +1,209 @@
+<style shim-shadowdom>
+    #sidebar2 {
+        padding-top: 10px;
+        position: absolute;
+        top: 45px;
+        bottom: 0;
+        width: 190px;
+    }
+    #sidebar2 > ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    #sidebar2 li:hover .ebp-icon,#sidebar2 li.active .ebp-icon {
+        color: #266cad;
+    }
+    #sidebar2 > ul > li > a {
+        display: block;
+        height: 31px;
+        line-height: 31px;
+        text-decoration: none;
+        color: #656565;
+        font-size: 14px;
+        position: relative;
+        margin: 3px 0;
+    }
+    #sidebar2 > ul > li:hover > a,#sidebar2 > ul > li.active > a {
+        box-shadow: inset 1px 0 10px #ccc;
+    }
+    #sidebar2 li > a > span {
+        position: relative;
+        width: 115px;
+        margin: 0 auto;
+        display: block;
+        padding-left: 35px;
+    }
+    #sidebar2 > ul .ebp-icon {
+        position: absolute;
+        left: 2px;
+        top: 6px;
+        font-size: 18px;
+        width: 23px;
+        height: 22px;
+        text-align: center;
+        line-height: 22px;
+    }
+    li.separator {
+        height: 0;
+        line-height: 0;
+        border-top: #dce1e6 1px solid;
+        border-bottom: #f7f9fb 1px solid;
+        overflow: hidden;
+        margin: 5px auto;
+    }
+    .side-options {
+        padding: 18px 5px 0;
+    }
+    .side-options > a {
+        display: inline-block;
+    }
+    .side-options > a {
+        font-size: 8px;
+        color: #656565;
+        text-align: center;
+    }
+    .side-options .ebp-icon {
+        display: inline-block;
+        width: 100%;
+        font-size: 20px;
+        text-align: center;
+    }
+    #sidebar2 > .remaining {
+        position: absolute;
+        bottom: 67px;
+        width: 100%;
+    }
+    .remaining > ul.remaining-quota {
+        list-style: none;
+        padding: 0;
+        margin: 0 28px;
+    }
+    ul.remaining-quota > li {
+        position: relative;
+    }
+    .remaining-quota > .add {
+        text-align: right;
+    }
+    .remaining-quota .remainingSpace {
+        position: absolute;
+        top: 10px;
+        font-size: 10px;
+    }
+</style>
+<div id="sidebar2">
+    <ul>
+        <li class="active">
+            <a href>
+                <span>
+                    <i class="ebp-icon fa fa-file-o"></i>
+                    All Files
+                </span>
+                <paper-ripple fit></paper-ripple>
+            </a>
+        </li>
+        <li>
+            <a href>
+                <span>
+                    <i class="ebp-icon fa fa-file-image-o"></i>
+                    Images
+                </span>
+                <paper-ripple fit></paper-ripple>
+            </a>
+        </li>
+        <li>
+            <a href>
+                <span>
+                    <i class="ebp-icon fa fa-file-text-o"></i>
+                    Documents
+                </span>
+                <paper-ripple fit></paper-ripple>
+            </a>
+        </li>
+        <li>
+            <a href>
+                <span>
+                    <i class="ebp-icon fa fa-file-video-o"></i>
+                    Videos
+                </span>
+                <paper-ripple fit></paper-ripple>
+            </a>
+        </li>
+        <li>
+            <a href>
+                <span>
+                    <i class="ebp-icon fa fa-file-audio-o"></i>
+                    Audios
+                </span>
+                <paper-ripple fit></paper-ripple>
+            </a>
+        </li>
+        <li>
+            <a href>
+                <span>
+                    <i class="ebp-icon fa fa-ellipsis-h"></i>
+                    Others
+                </span>
+                <paper-ripple fit></paper-ripple>
+            </a>
+        </li>
+        <li class="separator"></li>
+        <li>
+            <a href>
+                <span>
+                    <i class="ebp-icon fa fa-share-alt"></i>
+                    My Sharing
+                </span>
+                <paper-ripple fit></paper-ripple>
+            </a>
+        </li>
+        <li class="separator"></li>
+        <li>
+            <a href>
+                <span>
+                    <i class="ebp-icon fa fa-trash"></i>
+                    Recycle Bin
+                </span>
+                <paper-ripple fit></paper-ripple>
+            </a>
+        </li>
+    </ul>
+    <div class="side-options">
+        <a href class="col-xs-3 no-padding">
+            <i class="ebp-icon fa fa-desktop"></i>
+            Cloud
+        </a>
+        <a href class="col-xs-3 no-padding">
+            <i class="ebp-icon fa fa-android"></i>
+            Android
+        </a>
+        <a href class="col-xs-3 no-padding">
+            <i class="ebp-icon fa fa-mobile"></i>
+            iPhone
+        </a>
+        <a href class="col-xs-3 no-padding" popover="<h3>aasd</h3>" popover-trigger="mouseenter" popover-placement="right" popover-html="true">
+            <i class="ebp-icon fa fa-ellipsis-h"></i>
+            More
+        </a>
+        <div class="popover right">
+            <div class="arrow"></div>
+            <h3 class="popover-title" id="popover-右侧">Popover 右侧<a class="anchorjs-link" href="#popover-右侧"><span class="anchorjs-icon"></span></a></h3>
+            <div class="popover-content">
+                <p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+            </div>
+        </div>
+    </div>
+    <div class="remaining">
+        <ul class="remaining-quota">
+            <li>
+                <progressbar class="progress-mini progress-striped active no-margin" value="35"></progressbar>
+                <div class="remainingSpace">
+                    <span>1.51G</span>/<span>2058G</span>
+                </div>
+            </li>
+            <li class="add">
+                <a href>Add</a>
+            </li>
+        </ul>
+    </div>
+</div>

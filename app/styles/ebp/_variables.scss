@@ -23,6 +23,28 @@ $screen-fixed-breadcrumbs: $grid-float-breakpoint;//minimum width for fixed brea
 $screen-hover-menu: $grid-float-breakpoint;//minimum width for .hover submenus
 $screen-compact-menu: $screen-hover-menu;
 
+
+$ebp-nav-default: #2E6589;//ebp nav button default background color
+$ebp-nav-grey: #555;//ebp nav button grey background color
+$ebp-nav-purple: #892E65;//ebp nav button purple background color
+$ebp-nav-green: #2E8965;
+$ebp-nav-red: #B74635;
+$ebp-nav-light-green: #9ABC32;
+$ebp-nav-light-purple: #CB6FD7;
+$ebp-nav-light-orange: #F79263;
+$ebp-nav-light-blue: #62A8D1;
+$ebp-nav-light-blue2: #42A8E1;
+$ebp-nav-light-pink: #F4DAE5;
+$ebp-nav-dark: #404040;
+$ebp-nav-white-opaque: rgba(255,255,255,0.8);
+$ebp-nav-dark-opaque: rgba(0,0,0,0.2);
+
+
+$navbar-min-height: 45px;//navbar's min-height
+$navbar-dropdown-width: 240px;
+$navbar-dropdown-shadow: 0 2px 4px rgba(30, 30, 100, 0.25);
+
+
 // Buttons
 // ----------------------------
 $btn-primary-bg:  #428bca;
@@ -193,3 +215,47 @@ $slider-purple: #AC68BA;
 $slider-orange: #EFAD62;
 $slider-dark: #606060;
 $slider-pink:$btn-pink;
+
+//form
+$help-button-bg: #65BCDA;
+$input-border: #D5D5D5;
+$input-background: #FFF;
+$input-color: #858585;
+
+$input-border-focus: #F59942;
+$input-background-focus: #FFF;
+$input-color-focus: #696969;
+
+$breadcrumb-height: 41px;
+$breadcrumb-arrow-color: #B2B6BF;
+$page-content-padding-top: 8px;
+
+//menu colors
+$dropdown-menu: #4F99C6;
+$dropdown-default:$btn-default;
+$dropdown-primary:$btn-primary;
+$dropdown-info:$btn-info;
+$dropdown-success:$btn-success;
+$dropdown-warning: #FFA24D;
+$dropdown-danger:$btn-danger;
+$dropdown-inverse:$btn-inverse;
+$dropdown-pink:$btn-pink;
+$dropdown-purple:$btn-purple;
+$dropdown-grey:$btn-grey;
+$dropdown-light:$btn-light;
+$dropdown-lighter: #EFEFEF;
+$dropdown-lightest: #F3F3F3;
+$dropdown-yellow:$btn-yellow;
+$dropdown-yellow2: #F9E8B3;
+$dropdown-light-blue: #ECF3F9;
+
+
+$sidebar-width: 190px;
+$sidebar-min-width: 43px;//sidebar minimum width
+$sidebar-compact-width: 105px;
+$nav-item-height: 39px;
+
+$sidebar-toggler-line-1: #87B87F;
+$sidebar-toggler-line-2: #6FB3E0;
+$sidebar-toggler-line-3: #FFA24D;
+$sidebar-toggler-line-4: #D15B47;

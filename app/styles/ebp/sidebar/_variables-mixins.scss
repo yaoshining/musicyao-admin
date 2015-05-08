@@ -1,0 +1,98 @@
+@charset "UTF-8";
+@import "../variables";
+//sidebar variables
+$sidebar-background: #F2F2F2;
+$sidebar-border: #CCC;
+
+
+$nav-item-color: #585858;
+$nav-item-background: #F8F8F8;
+$nav-item-border: #E5E5E5;
+
+$nav-item-color-focus: #1963AA;
+
+$nav-item-color-hover: mix(#4B88B7 , $nav-item-color-focus , 25%);
+$nav-item-background-hover: #FFF;
+
+$nav-item-background-open: #FAFAFA;
+
+$nav-item-color-active: #2B7DBC;//#0B6CBC;
+$nav-item-background-active: #FFF;
+
+
+$nav-item-icon-width: 30px;
+
+
+
+$nav-item-hover-indicator: #629CC9;
+$nav-item-arrow-color: #777;
+$nav-item-arrow-color-active: #4B88B7;
+
+
+$submenu-border: $nav-item-border;
+$submenu-background: #FFF;
+$submenu-item-background: #FFF;
+$submenu-item-color: #616161;
+$submenu-item-border: #E4E4E4;
+$submenu-item-icon-size: 18px;
+
+$submenu-item-color-hover: #4B88B7;
+$submenu-item-background-hover: #F1F5F9;
+$submenu-item-icon-active: #C86139;
+$submenu-item-background-active: #F5F7FA;
+$submenu-border-active: #83B6D1;
+
+
+$third-level-item-background-hover: $submenu-item-background-hover;
+$third-level-item-color-hover: $submenu-item-color-hover;
+
+$submenu-tree-line-style: dotted;
+$submenu-tree-line-color: mix(#BCCFE0 , #7EAACB);
+$submenu-tree-line-color-active: mix(mix(#BCCFE0 , #7EAACB) , #7EAACB);
+
+
+$menumin-text-background: #F5F5F5;
+$menumin-border: #CCC;
+$menumin-shadow1: 2px 1px 2px 0 rgba(0,0,0,0.1);//!ignore
+$menumin-shadow2: 2px 2px 2px 0 rgba(0,0,0,0.1);//!ignore
+
+
+$sidebar-toggle-background: #F3F3F3;
+$sidebar-toggle-border: #E0E0E0;
+$sidebar-toggle-icon-color: #AAA;
+$sidebar-toggle-icon-border: #BBB;
+$sidebar-toggle-icon-background: #FFF;
+
+$shortcuts-background: #FAFAFA;
+$shortcuts-border: #DDD;
+
+$hover-submenu-border: $menumin-border;
+
+
+$zindex-sidebar-fixed: $zindex-navbar-fixed - 3;
+$zindex-breadcrumbs-fixed: $zindex-sidebar-fixed - 3;//so that .sidebar-shortcuts appears above breadcrumbs.
+$zindex-submenu: $zindex-sidebar-fixed - 1;
+
+$hover-submenu-background-active: #F5F5F5;
+$hover-submenu-item-background-hover: #EEF3F7;
+$hover-submenu-item-color-hover: #2E7DB4;
+
+$h-sidebar-background: $nav-item-background;
+$h-sidebar-preground: #E4E4E4;
+$h-sidebar-preshadow: 0 -1px 1px 0 rgba(0, 0, 0, 0.05) inset;
+
+$h-nav-item-border-active: #79B0CE;
+$h-nav-item-border-hover: #CEDDE5;
+
+$h-navbar-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+
+@mixin third_level_icon() {
+    display: inline-block;
+    //font-size: @font-size-submenu-3rd-level-icon;
+    //color: inherit;
+
+    width: auto;
+    position: static;
+    background-color: transparent;
+    margin-right: 4px;
+}

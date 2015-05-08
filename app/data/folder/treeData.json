@@ -1,0 +1,11 @@
+[
+    {
+        "name": "wallpaper6.jpg",
+        "type": "item",
+        "iconClass": "fa fa-picture-o green no-border"
+    },
+    {
+        "name": "others",
+        "type": "folder","iconClass": "green"
+    }
+]

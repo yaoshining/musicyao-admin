@@ -56,6 +56,11 @@
     "Buttons": "alexwolfe/Buttons#~2.0.0",
     "hover": "~2.0.2",
     "bootbox": "~4.4.0",
-    "angular-ui-utils": "~0.2.2"
+    "angular-ui-utils": "~0.2.2",
+    "interact": "~1.2.4",
+    "jquery.nicescroll": "~3.5.6",
+    "polymer": "Polymer/polymer#~0.5.5",
+    "rainyday.js": "maroslaw/rainyday.js#~0.1.2",
+    "jquery.ripples": "sirxemic/jquery.ripples"
   }
 }

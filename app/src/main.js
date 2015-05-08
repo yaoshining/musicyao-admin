@@ -11,6 +11,7 @@ require([
     'tinycon',
     'oclazyload',
     'ui-bootstrap-tpls',
+    '../conf/paths',
     'bootstrap'
 ], function(angular) {
     'use strict';
@@ -38,9 +39,7 @@ require([
                     'ngAnimate',
                     'authModule',
                     'ngCookies',
-                    'ebp.breadcrumb',
-                    'ebp.templates',
-                    'ebp.plugins.templates'
+                    'ebp.breadcrumb'
                 ]).config([
                     '$urlRouterProvider',
                     '$provide',
@@ -156,6 +155,13 @@ require([
                         $rootScope.isAppLoaded = true;
                         $rootScope.$apply();
                     },0);
+                    $ocLazyLoad.load([{
+                        name: 'ebp.plugins.templates',
+                        files: ['plugins-templates']
+                    },{
+                        name: 'ebp.templates',
+                        files: ['ebp-templates']
+                    }]);
                     $rootScope.$on('$stateChangeStart',function(){
                         $rootScope.isAppLoaded && NProgress.start();
                     });
@@ -184,9 +190,7 @@ require([
                     }
                 }).appendTo(document.body);
                 /*bootstrap model*/
-                require(['ebp-templates','plugins-templates'],function(){
-                    angular.bootstrap($html, ['ebp']);
-                });
+                angular.bootstrap($html, ['ebp']);
             });
         });
     });

@@ -34,7 +34,7 @@
                         };
                         initScroll();
                         $(window).on('resize',function(){
-                            initScroll();
+                            element.ebp_scroll('reset');
                         });
                     }
                 }

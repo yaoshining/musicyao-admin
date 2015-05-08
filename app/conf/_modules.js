@@ -19,6 +19,9 @@ return [
 		"UIAndElementsModule.nestable": [
 			"UIAndElements/controllers/list/NestableController"
 		],
+		"UIAndElementsModule.buttons1": [
+			"UIAndElements/controllers/Buttons1Controller"
+		],
 		"UIAndElementsModule.calendar": [
 			"UIAndElements/controllers/calendar/CalendarDemoController"
 		],
@@ -56,6 +59,14 @@ return [
 		]
 	},
 	{
+		"ebpFormsModule": [
+			"forms/module"
+		],
+		"ebpFormsModule.ebpGrid": [
+			"forms/controllers/EbpFormsController"
+		]
+	},
+	{
 		"homeModule": [
 			"home/home",
 			"css!styles/ebp/infobox",
@@ -85,6 +96,14 @@ return [
 		],
 		"musicYaoModule_mtv": [
 			"musicyao/controllers/MTVController"
+		]
+	},
+	{
+		"ebpTablesModule": [
+			"tables/module"
+		],
+		"ebpTablesModule.ebpGrid": [
+			"tables/controllers/EbpGridController"
 		]
 	},
 	{

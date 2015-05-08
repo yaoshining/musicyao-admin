@@ -1,0 +1,82 @@
+[
+    {
+        "name": "Pictures",
+        "type": "folder",
+        "iconClass":"red",
+        "children": [
+            {
+                "name": "Wallpapers",
+                "type": "folder",
+                "iconClass":"pink",
+                "children": [
+                    {"name": "wallpaper1.jpg", "type": "item","iconClass": "fa fa-picture-o green no-border"},
+                    {"name": "wallpaper2.jpg", "type": "item","iconClass": "fa fa-picture-o green no-border"},
+                    {"name": "wallpaper3.jpg", "type": "item","iconClass": "fa fa-picture-o green no-border"},
+                    {"name": "wallpaper4.jpg", "type": "item","iconClass": "fa fa-picture-o green no-border"},
+                    {"name": "others", "type": "folder","iconClass": "green"}
+                ]
+            },
+            {
+                "name": "Camera",
+                "type": "folder",
+                "iconClass":"pink",
+                "children": [
+                    {"name": "photo1.jpg", "type": "item","iconClass": "fa fa-picture-o green no-border"},
+                    {"name": "photo2.jpg", "type": "item","iconClass": "fa fa-picture-o green no-border"},
+                    {"name": "photo3.jpg", "type": "item","iconClass": "fa fa-picture-o green no-border"},
+                    {"name": "photo4.jpg", "type": "item","iconClass": "fa fa-picture-o green no-border"},
+                    {"name": "photo5.jpg", "type": "item","iconClass": "fa fa-picture-o green no-border"},
+                    {"name": "photo6.jpg", "type": "item","iconClass": "fa fa-picture-o green no-border"}
+                ]
+            }
+        ]
+    }	,
+    {
+        "name": "Music",
+        "type": "folder",
+        "iconClass":"orange",
+        "children": [
+            {"name": "song1.ogg", "type": "item","iconClass":"fa fa-music blue no-border"},
+            {"name": "song2.ogg", "type": "item","iconClass":"fa fa-music blue no-border"},
+            {"name": "song3.ogg", "type": "item","iconClass":"fa fa-music blue no-border"},
+            {"name": "song4.ogg", "type": "item","iconClass":"fa fa-music blue no-border"},
+            {"name": "song5.ogg", "type": "item","iconClass":"fa fa-music blue no-border"}
+        ]
+    }	,
+    {
+        "name": "Video",
+        "type": "folder",
+        "iconClass":"blue",
+        "children": [
+            {"name": "movie1.avi", "type": "item","iconClass":"fa fa-film blue no-border"},
+            {"name": "movie2.avi", "type": "item","iconClass":"fa fa-film blue no-border"},
+            {"name": "movie3.avi", "type": "item","iconClass":"fa fa-film blue no-border"},
+            {"name": "movie4.avi", "type": "item","iconClass":"fa fa-film blue no-border"},
+            {"name": "movie5.avi", "type": "item","iconClass":"fa fa-film blue no-border"}
+        ]
+    }	,
+    {
+        "name": "Documents",
+        "type": "folder",
+        "iconClass":"green",
+        "children": [
+            {"name": "document1.pdf", "type": "item","iconClass": "fa fa-file-pdf-o grey no-border"},
+            {"name": "document2.doc", "type": "item","iconClass": "fa fa-file-word-o grey no-border"},
+            {"name": "document3.doc", "type": "item","iconClass": "fa fa-file-word-o grey no-border"},
+            {"name": "document4.pdf", "type": "item","iconClass": "fa fa-file-pdf-o grey no-border"},
+            {"name": "document5.doc", "type": "item","iconClass": "fa fa-file-word-o grey no-border"}
+        ]
+    },
+    {
+        "name": "Backup",
+        "type": "folder",
+        "children": [
+            {"name": "backup1.zip", "type": "item","iconClass": "fa fa-archive brown no-border"},
+            {"name": "backup2.zip", "type": "item","iconClass": "fa fa-archive brown no-border"},
+            {"name": "backup3.zip", "type": "item","iconClass": "fa fa-archive brown no-border"},
+            {"name": "backup4.zip", "type": "item","iconClass": "fa fa-archive brown no-border"}
+        ]
+    }	,
+    {"name": "ReadMe.txt", "type": "item","iconClass": "fa fa-file-text grey no-border"},
+    {"name": "Manual.html", "type": "item","iconClass": "fa fa-book blue no-border"}
+]

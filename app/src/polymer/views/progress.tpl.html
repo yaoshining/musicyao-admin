@@ -1,0 +1,128 @@
+<style shim-shadowdom>
+
+    body {
+        font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
+        margin: 0;
+        overflow: hidden;
+    }
+
+    paper-button {
+        color: #FFFFFF;
+        background-color: #9badbb;
+    }
+
+    paper-button.paper-primary {
+        background-color: #2a8bcb;
+    }
+
+    paper-progress {
+        display: block;
+        width: 100%;
+        height: 9px;
+        padding: 18px 0;
+        box-sizing: content-box;
+    }
+    paper-progress.striped::shadow #activeProgress {
+        background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    }
+
+    paper-progress.primary::shadow #activeProgress {
+        background-color: #2A91D8;
+    }
+
+    paper-progress.primary::shadow #secondaryProgress {
+        background-color: #25beff;
+    }
+
+    paper-progress.pink::shadow #activeProgress {
+        background-color: #e91e63;
+    }
+
+    paper-progress.pink::shadow #secondaryProgress {
+        background-color: #f8bbd0;
+    }
+
+    paper-progress.danger::shadow #activeProgress {
+        background-color: #CA5952;
+    }
+
+    paper-progress.warning::shadow #activeProgress {
+        background-color: #F2BB46;
+    }
+
+    paper-progress.purple::shadow #activeProgress {
+        background-color: #9585BF;
+    }
+
+    paper-progress.yellow::shadow #activeProgress {
+        background-color: #FFD259;
+    }
+
+    paper-progress.inverse::shadow #activeProgress {
+        background-color: #404040;
+    }
+
+</style>
+<template>
+
+</template>
+<paper-progress></paper-progress>
+
+<paper-button class="paper-primary" raised onclick="startProgress();">Start</paper-button>
+
+<br><br><br>
+
+<paper-progress></paper-progress><br>
+
+<paper-progress class="primary" value="40"></paper-progress><br>
+
+<paper-progress class="danger striped" value="800" min="100" max="1000"></paper-progress><br>
+
+<paper-progress value="40" secondaryProgress="80"></paper-progress><br>
+
+<paper-progress class="warning" value="200" max="200"></paper-progress><br>
+
+<paper-progress class="purple" indeterminate></paper-progress><br>
+
+<paper-progress class="pink" value="80"></paper-progress><br>
+
+<paper-progress class="striped" value="40" secondaryProgress="80"></paper-progress><br>
+
+<paper-progress class="inverse" indeterminate></paper-progress><br>
+
+<script>
+
+    var progress = document.querySelector('paper-progress');
+    var button = document.querySelector('paper-button');
+
+    var repeat, maxRepeat = 5, animating = false;
+
+    function nextProgress() {
+        animating = true;
+        if (progress.value < progress.max) {
+            progress.value += (progress.step || 1);
+        } else {
+            if (++repeat >= maxRepeat) {
+                animating = false;
+                button.disabled = false;
+                return;
+            }
+            progress.value = progress.min;
+        }
+        progress.async(nextProgress);
+    }
+
+    function startProgress() {
+        repeat = 0;
+        progress.value = progress.min;
+        button.disabled = true;
+        if (!animating) {
+            nextProgress();
+        }
+    }
+
+    addEventListener('polymer-ready', function() {
+        startProgress();
+    });
+
+</script>

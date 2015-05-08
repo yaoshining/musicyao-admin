@@ -1,0 +1,214 @@
+@charset "UTF-8";
+@import "../custom_mixins";
+.ebp-grid {
+    position: relative;
+    @include user-select(auto);
+    .scroll-content {
+        position: relative;
+    }
+    .ebp-grid-resize-mark {
+        width: 2px;
+        left: 0;
+        background-color: #777;
+        cursor: e-resize;
+        cursor: col-resize;
+        position: absolute;
+        top: 0;
+        height: 100px;
+        overflow: hidden;
+        display: none;
+        border: 0 none;
+        z-index: 99999;
+    }
+    & > .loading {
+        position: absolute;
+        top: 45%;
+        left: 45%;
+        width: auto;
+        height: auto;
+        z-index: 101;
+        padding: 6px;
+        margin: 5px;
+        text-align: center;
+        font-weight: 700;
+        font-size: 12px;
+        background-color: #FFF;
+        border: 2px solid #8EB8D1;
+        color: #E2B018;
+    }
+}
+.ebp-grid-titlebar {
+    height: 40px;
+    color: #FFF;
+    background-color: #307ecc;
+    line-height: 24px;
+    font-size: 15px;
+    position: relative;
+    & > .ebp-grid-titlebar-toggle {
+        top: 10%;
+        right:0;
+        position: absolute;
+        width: 19px;
+        cursor: pointer;
+        margin: 2px 8px 0 0;
+        text-align: center;
+        border-radius: 4px;
+    }
+    & > .ebp-grid-title {
+        float: left;
+        margin: 8px
+    }
+}
+.ebp-grid-hbox {
+    overflow: hidden;
+}
+.ebp-grid-htable,.ebp-grid-btable {
+    width: 100%;
+    margin-bottom: 0;
+    table-layout: fixed;
+    overflow: hidden;
+    tr > td,tr > th {
+        &:last-child {
+            border-right-width: 2px;
+        }
+    }
+}
+table.ebp-grid-btable {
+    & > tbody {
+        & > tr {
+            &.state-highlight > td {
+                background-color: #E4EFC9!important;
+            }
+            &:first-child > td {
+                border-top: none;
+            }
+            &:last-child > td {
+                border-bottom-width: 2px;
+            }
+            &:hover > td {
+                background-color: #EFF4F7!important;
+            }
+        }
+    }
+}
+table.ebp-grid-htable {
+    th.selected {
+        @include custom-linear-gradient(rgb(239, 243, 248) 0px,rgb(227, 231, 237) 100%);
+    }
+}
+.ebp-grid-bdiv {
+    height: 350px;
+    overflow: auto;
+    margin-top: -2px;
+    & > div {
+        position: relative;
+    }
+}
+.ebp-grid-firstrow {
+    & > td {
+        max-height: 0;
+        padding-top: 0!important;
+        padding-bottom: 0!important;
+        border-bottom: 0!important;
+        border-color: transparent;
+    }
+}
+.ebp-grid-pager {
+    height: 55px;
+    line-height: 15px;
+    padding-top: 3px;
+    padding-bottom: 5px;
+    background-color: #eff3f8;
+    border-bottom: 1px solid #E1E1E1;
+    border-top:1px solid #E1E1E1;
+    position: relative;
+    top: -2px;
+    font-size: 11px;
+    & > .ebp-grid-pg-control {
+        position: relative;
+        height: 50px;
+        padding: 0 9px;
+    }
+}
+.ebp-grid-pg-table {
+    table-layout: fixed;
+    width: 100%;
+    height: 100%;
+    .ebp-grid-pg-table {
+        table-layout: auto;
+        width: auto;
+    }
+}
+.ui-separator {
+    height: 18px;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+.ebp-grid-pg-operations {
+    .ebp-icon {
+        width: 18px;
+        margin: auto 5px;
+    }
+    .td {
+        padding: 0 1px;
+        & > a{
+            padding: 0 1px;
+        }
+    }
+}
+.ebp-grid-pg-button .ebp-icon {
+    border-radius: 100%;
+    border: 1px solid #CCC;
+    background-color: #F7F7F7;
+    color: grey;
+    width: 24px;
+    height: 24px;
+    line-height: 22px;
+    text-align: center;
+    margin: 0 2px;
+}
+.ebp-grid-pg-button.disabled .ebp-icon {
+    border: 1px solid #DDD;
+    color: #B0B0B0;
+    cursor: not-allowed;
+}
+.ebp-grid-sortable {
+    position: absolute;
+    top: 0;
+    left: 3px;
+    right: 3px;
+    bottom: 17px;
+    padding: 8px 5px;
+    cursor: pointer;
+    font-weight: 700;
+    &:hover,th.selected > & {
+        color: #307ecc;
+    }
+}
+.ebp-grid-ico-sort {
+    overflow: hidden;
+    position: absolute;
+    display: inline;
+    cursor: pointer !important;
+    text-indent: 0;
+    color: #307ecc;
+    float: none;
+    right: 2px;
+    top: 5px;
+    &:before {
+        display: inline;
+        content: "\f0d7";
+        font-family: FontAwesome;
+        font-size: 12px;
+    }
+    &.ebp-grid-icon-desc {
+        margin-top: 6px;
+        height: 12px;
+    }
+    &.state-disabled {
+        color: #BBB;
+    }
+}
+.ebp-grid-icon-asc:before {
+    content: "\f0d8";
+}

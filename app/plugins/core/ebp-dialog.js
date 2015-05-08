@@ -32,6 +32,7 @@
         var alert = function(configs){
             configs = angular.extend({},ebpDialogConfig,configs);
             bootbox.alert({
+                title: configs.title,
                 message: configs.message,
                 callback: configs.callback,
                 buttons: {
@@ -42,6 +43,7 @@
         var confirm = function(configs){
             configs = angular.extend({},ebpDialogConfig,configs);
             bootbox.confirm({
+                title: configs.title,
                 message: configs.message,
                 callback: configs.callback,
                 buttons: {

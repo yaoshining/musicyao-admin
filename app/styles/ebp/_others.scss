@@ -23,3 +23,71 @@
     width: 23%;
     padding: 0 1%;
 }
+
+
+.butterfly {
+    position: relative;
+    width: 40%;
+    pointer-events: none;
+    @include transform(rotate(-20deg))
+}
+.butterfly > div {
+    position: absolute;
+}
+.butterfly img {
+    width: 100%;
+}
+.leftwing {
+    @include animation(flap-l 4s cubic-bezier(0.08, 1.47, 0.65, -0.68) infinite)
+}
+.rightwing {
+    @include animation(flap-r 4s cubic-bezier(0.08, 1.47, 0.65, -0.68) infinite)
+}
+.leftwing,
+.rightwing {
+    z-index: 1;
+}
+@keyframes flap-l {
+    0% {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(80deg);
+    }
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+@-webkit-keyframes flap-l {
+    0% {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(80deg);
+    }
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+@keyframes flap-r {
+    0% {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(-80deg);
+    }
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+@-webkit-keyframes flap-r {
+    0% {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(-80deg);
+    }
+    100% {
+        transform: rotateY(0deg);
+    }
+}

@@ -1,0 +1,15 @@
+<template is="auto-binding">
+    <template repeat="{{iconset in $.meta.metaArray}}">
+        <h2>{{iconset.id}}</h2>
+        <h5>{{iconset.id === 'icons' ? 'The Default Set' : 'Import ' + iconset.id + '-icons.html'}}</h5>
+        <div class="row" horizontal wrap layout>
+            <template repeat="{{ icon in iconset.iconNames }}">
+          <div class="col-xs-2" style="padding: 10px" vertical center layout>
+            <core-icon icon="{{ iconset.id }}:{{ icon }}"></core-icon>
+            <div>{{ icon }}</div>
+          </div>
+            </template>
+        </div>
+    </template>
+    <core-iconset id="meta"></core-iconset>
+</template>

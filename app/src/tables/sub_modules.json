@@ -1,0 +1,8 @@
+{
+    "ebpTablesModule": [
+        "tables/module"
+    ],
+    "ebpTablesModule.ebpGrid": [
+        "tables/controllers/EbpGridController"
+    ]
+}

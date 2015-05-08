@@ -1,8 +1,12 @@
 /**
  * Created by 世宁 on 14-12-12.
  */
-'use strict'
-define(['angular','conf/modules','conf/_routes'],function(angular,modules,_routes){
+'use strict';
+var dependencies = ['angular','conf/modules','conf/_routes'];
+angular.forEach($.paths.moduleDirs,function(dir){
+    dependencies.push(dir+'/routes');
+});
+define(dependencies,function(angular,modules,_routes){
     var routes = {
         home: {
             url: '/',
@@ -13,77 +17,91 @@ define(['angular','conf/modules','conf/_routes'],function(angular,modules,_route
                 }
             },
             breadcrumb: {
-                label: 'Home1'
+                label: 'Home'
             },
             modules: {
                 'homeModule': modules.homeModule
             }
         },
-        categories: {
-            url: '/categories',
+        emails: {
+            url: '/emails/:emailView/:emailId',
             views: {
                 '': {
-                    template: '<div ui-view></div>'
+                    controller: 'EmailController',
+                    templateUrl: 'src/email/views/email.tpl.html'
                 }
             },
-            breadcrumb: {
-                label: 'Categories',
-                parent: 'home'
-            },
             modules: {
-                'categoriesModule': modules.categoriesModule
+                'emailModule': modules.emailModule,
+                'usersModule': modules.usersModule,
+                'filesModule': modules.filesModule
             }
         },
-        'categories.languages': {
-            url: '/languages',
-            views: {
-                '': {
-                    controller: 'LanguagesController',
-                    templateUrl: 'src/categories/views/languages.tpl.html'
-                }
-            },
-            breadcrumb: {
-                label: 'Languages'
-            },
-            modules: {
-                'categoriesModule': modules['categoriesModule.languages'],
-                'angular-table': ['at-table'],
-                'xeditable': ['angular-xeditable']
-            }
-        },
-        'music': {
-            url: '/music',
-            views: {
-                '': {
-                    template: '<div ui-view></div>'
-                }
-            },
-            breadcrumb: {
-                label: 'Music',
-                parent: 'home'
-            },
-            modules: {
-                'musicModule': modules['musicModule']
-            }
-        },
-        'music.upload': {
-            url: '/upload',
-            views: {
-                '': {
-                    controller: 'MusicUploadController',
-                    templateUrl: 'src/music/views/upload.tpl.html'
-                }
-            },
-            breadcrumb: {
-                label: 'Upload'
-            },
-            modules: {
-                'musicModule': modules['musicModule.upload'],
-                'categoriesModule': modules.categoriesModule.concat(modules['categoriesModule.languages']),
-                'ebp.dropzone': ['plugins/core/ebp-dropzone'],
-                'mgo-angular-wizard': ['angular-wizard']
-            }
-        },
+        //categories: {
+        //    url: '/categories',
+        //    views: {
+        //        '': {
+        //            template: '<div ui-view></div>'
+        //        }
+        //    },
+        //    breadcrumb: {
+        //        label: 'Categories',
+        //        parent: 'home'
+        //    },
+        //    modules: {
+        //        'categoriesModule': modules.categoriesModule
+        //    }
+        //},
+        //'categories.languages': {
+        //    url: '/languages',
+        //    views: {
+        //        '': {
+        //            controller: 'LanguagesController',
+        //            templateUrl: 'src/categories/views/languages.tpl.html'
+        //        }
+        //    },
+        //    breadcrumb: {
+        //        label: 'Languages'
+        //    },
+        //    modules: {
+        //        'categoriesModule': modules['categoriesModule.languages'],
+        //        'angular-table': ['at-table'],
+        //        'xeditable': ['angular-xeditable']
+        //    }
+        //},
+        //'music': {
+        //    url: '/music',
+        //    views: {
+        //        '': {
+        //            template: '<div ui-view></div>'
+        //        }
+        //    },
+        //    breadcrumb: {
+        //        label: 'Music',
+        //        parent: 'home'
+        //    },
+        //    modules: {
+        //        'musicModule': modules['musicModule']
+        //    }
+        //},
+        //'music.upload': {
+        //    url: '/upload',
+        //    views: {
+        //        '': {
+        //            controller: 'MusicUploadController',
+        //            templateUrl: 'src/music/views/upload.tpl.html'
+        //        }
+        //    },
+        //    breadcrumb: {
+        //        label: 'Upload'
+        //    },
+        //    modules: {
+        //        'musicModule': modules['musicModule.upload'],
+        //        'categoriesModule': modules.categoriesModule.concat(modules['categoriesModule.languages']),
+        //        'ebp.dropzone': ['plugins/core/ebp-dropzone'],
+        //        'mgo-angular-wizard': ['angular-wizard']
+        //    }
+        //},
         UIAndElements: {
             url: '/ui',
             views: {
@@ -197,11 +215,17 @@ define(['angular','conf/modules','conf/_routes'],function(angular,modules,_route
             url: '/buttons1',
             views: {
                 '': {
-                    templateUrl: 'src/UIAndElements/views/buttons1.tpl.html'
+                    templateUrl: 'src/UIAndElements/views/buttons1.tpl.html',
+                    controller: 'Buttons1Controller'
                 }
             },
             breadcrumb: {
                 label: 'Buttons1'
+            },
+            modules: {
+                UIAndElementsModule: modules['UIAndElementsModule.buttons1'],
+                'ebp.tree': ['plugins/core/ebp-tree'],
+                'ebp.scroll': ['plugins/core/ebp-scroll']
             }
         },
         'UIAndElements.buttons2': {
@@ -273,6 +297,36 @@ define(['angular','conf/modules','conf/_routes'],function(angular,modules,_route
                 'ebp.mindmap': modules['ebpJsMindPlugin']
             }
         },
+        'forms': {
+            url: '/forms',
+            views: {
+                '': {
+                    template: '<div ui-view></div>'
+                }
+            },
+            breadcrumb: {
+                label: 'Forms',
+                parent: 'home'
+            },
+            modules: {
+                'ebpFormsModule': modules.ebpFormsModule
+            }
+        },
+        'forms.elements': {
+            url: '/elements',
+            views: {
+                '': {
+                    templateUrl: 'src/forms/views/elements.tpl.html'
+                }
+            },
+            breadcrumb: {
+                label: 'Elements'
+            },
+            modules: {
+                'ebpFormsModule': modules.ebpFormsModule,
+                'ebp.form.slider': ['plugins/form/ebp-slider']
+            }
+        },
         'tables': {
             url: '/tables',
             views: {
@@ -283,17 +337,25 @@ define(['angular','conf/modules','conf/_routes'],function(angular,modules,_route
             breadcrumb: {
                 label: 'Tables',
                 parent: 'home'
+            },
+            modules: {
+                'ebpTablesModule': modules.ebpTablesModule
             }
         },
         'tables.ebpGrid': {
             url: '/ebpGrid',
             views: {
                 '': {
-                    templateUrl: 'src/tables/views/tables.tpl.html'
+                    templateUrl: 'src/tables/views/tables.tpl.html',
+                    controller: 'EbpGridController'
                 }
             },
             breadcrumb: {
                 label: 'EbpGrid'
+            },
+            modules: {
+                'ebpTablesModule': modules['ebpTablesModule.ebpGrid'],
+                'ebp.grid': ['plugins/core/ebp-grid']
             }
         },
         widgetsDemo: {
@@ -339,6 +401,17 @@ define(['angular','conf/modules','conf/_routes'],function(angular,modules,_route
                 'com.2fdevs.videogular.plugins.overlayplay': ['videogular-overlay-play'],
                 'com.2fdevs.videogular.plugins.buffering': ['videogular-buffering'],
                 'com.2fdevs.videogular.plugins.poster': ['videogular-poster']
+            }
+        },
+        'documents': {
+            url: '/documents',
+            views: {
+                'sidebar': {
+                    templateUrl: 'src/documents/views/sidebar.tpl.html'
+                },
+                'main.content': {
+                    templateUrl: 'src/documents/views/layout.tpl.html'
+                }
             }
         },
         'musicyao.home': {
@@ -437,21 +510,115 @@ define(['angular','conf/modules','conf/_routes'],function(angular,modules,_route
                 'mediaModule': modules['mediaModule.audioPlayer']
             }
         },
-        'myState': {
-            url: '/myState',
+        'polymer': {
+            url: '/polymer',
             views: {
                 '': {
-                    template: ''
+                    template: '<div ui-view></div>'
                 }
             },
             breadcrumb: {
-                label: 'MyState',
+                label: 'Polymer',
                 parent: 'home'
+            }
+        },
+        'polymer.icons': {
+            url: '/icons',
+            views: {
+                '': {
+                    templateUrl: 'src/polymer/views/icons.tpl.html'
+                }
+            },
+            breadcrumb: {
+                label: 'Icons'
+            }
+        },
+        'polymer.buttons': {
+            url: '/buttons',
+            views: {
+                '': {
+                    templateUrl: 'src/polymer/views/buttons.tpl.html'
+                }
+            },
+            breadcrumb: {
+                label: 'Buttons'
+            }
+        },
+        'polymer.dialog': {
+            url: '/dialog',
+            views: {
+                '': {
+                    templateUrl: 'src/polymer/views/dialog.tpl.html'
+                }
+            },
+            breadcrumb: {
+                label: 'Dialog'
+            }
+        },
+        'polymer.progress': {
+            url: '/progress',
+            views: {
+                '': {
+                    templateUrl: 'src/polymer/views/progress.tpl.html'
+                }
+            },
+            breadcrumb: {
+                label: 'Progress'
+            }
+        },
+        'experiments': {
+            url: '/experiments',
+            modules: {
+                'foobar': ['experiments/module']
+            }
+        },
+        'experiments.rainyday': {
+            url: '/rainyday',
+            views: {
+                'body@': {
+                    templateUrl: 'src/experiments/rainyday/views/rainyday.tpl.html',
+                    controller: 'RainyDayController'
+                }
             },
             modules: {
-                'myModule': modules['myModule']
+                'foobar': [
+                    'experiments/rainyday/controllers/RainyDayController'
+                ]
+            }
+        },
+        'experiments.ripples': {
+            url: '/ripples',
+            views: {
+                'body@': {
+                    templateUrl: 'src/experiments/ripples/views/ripples.tpl.html',
+                    controller: 'RipplesController'
+                }
+            },
+            modules: {
+                'foobar': [
+                    'experiments/ripples/controllers/RipplesController'
+                ]
+            }
+        },
+        'modal': {
+            url: '/modal',
+            views: {
+                '': {
+                    templateUrl: 'src/modal/views/modal.tpl.html',
+                    controller: 'ModalController'
+                }
+            },
+            modules: {
+                'ModalModule': [
+                    'modal/controllers/ModalController',
+                    'modal/controllers/ModalInstanceController',
+                    'modal/m、odule'
+                ]
             }
         }
+    };
+    for(var i = 3;i < arguments.length;i++){
+        $.extend(true,routes,arguments[i]);
     };
     angular.forEach(_routes,function(e){
         angular.forEach(e,function(v,k){

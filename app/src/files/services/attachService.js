@@ -9,7 +9,7 @@ define(['files/module'],function(filesModule){
                     events = {};
                 }
                 return $upload.upload({
-                    url: '/oa/services/attachments/upload', //upload.php script, node.js route, or servlet url
+                    url: 'http://localhost:8080/oa/resources/attachments/upload', //upload.php script, node.js route, or servlet url
                     method: 'POST',
                     //headers: {'header-key': 'header-value'},
                     //withCredentials: true,

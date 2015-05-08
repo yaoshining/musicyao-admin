@@ -21,6 +21,13 @@
         border-color: #5090C1;
       }
     }
+    &.widget-color-red2 {
+        border-color: #e04141;
+        &>.widget-header {
+            background: #e04141;
+            border-color: #e04141;
+        }
+    }
     &.widget-color-green2 {
       border-color: #2E8965;
       & > .widget-header {

@@ -24,6 +24,14 @@ define(['angular','conf/_modules'],function(angular,_modules){
         'mediaModule.audioPlayer': [
             'media/controllers/audio/AudioPlayerDemoController',
             'jquery-knob'
+        ],
+        'emailModule': [
+            'email/module',
+            'email/controllers/emailController',
+            'email/services/emailService',
+            'email/repositories/Email',
+            'css!styles/email/email',
+            'css!styles/jquery-ui/jquery-ui'
         ]
     };
     angular.forEach(_modules,function(e){

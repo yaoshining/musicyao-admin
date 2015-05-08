@@ -1,0 +1,5 @@
+[
+    {"id": 21,"lastSales": 1196640000000,"name": "Laptop","stock": true,"shipVia": "InTime","notes": "Long Text"},
+    {"id": 22,"lastSales": 1196640000000,"name": "LCD Monitor","stock": true,"shipVia": "TNT","notes": "note3"},
+    {"id": 23,"lastSales": 1196640000000,"name": "Speakers","stock": false,"shipVia": "ARAMEX","notes": "note"}
+]

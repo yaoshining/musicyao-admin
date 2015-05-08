@@ -20,6 +20,7 @@
                     <a class="dropdown-toggle" dropdown-toggle href="javascript:void(0)">
                         <i class="ebp-icon fa fa-tasks"></i>
                         <span class="badge badge-gray">4</span>
+                        <paper-ripple fit></paper-ripple>
                     </a>
                     <ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close" role="menu">
                         <li class="dropdown-header">
@@ -86,6 +87,7 @@
                     <a class="dropdown-toggle" dropdown-toggle href="javascript:void(0)">
                         <i class="ebp-icon fa fa-bell icon-animated-bell"></i>
                         <span class="badge badge-important">8</span>
+                        <paper-ripple fit></paper-ripple>
                     </a>
                     <ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
                         <li class="dropdown-header">
@@ -147,6 +149,7 @@
                     <a dropdown-toggle class="dropdown-toggle" href="javascript:void(0)">
                         <i class="ebp-icon fa fa-envelope icon-animated-vertical"></i>
                         <span class="badge badge-success">5</span>
+                        <paper-ripple fit></paper-ripple>
                     </a>
                     <ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
                         <li class="dropdown-header">
@@ -253,8 +256,9 @@
                                 Yao
                             </span>
                         <i class="ebp-icon fa fa-caret-down"></i>
+                        <paper-ripple fit></paper-ripple>
                     </a>
-                    <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                    <ul class="core-transition user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
                         <li>
                             <a href="#">
                                 <i class="ebp-icon fa fa-cog"></i>
@@ -278,5 +282,65 @@
                 </li>
             </ul>
         </div>
+        <nav role="navigation" class="navbar-menu pull-left collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li dropdown>
+                    <a href dropdown-toggle>
+                        Overview
+                        &nbsp;
+                        <i class="ebp-icon fa fa-angle-down bigger-110"></i>
+                    </a>
+
+                    <ul class="dropdown-menu dropdown-light-blue dropdown-caret">
+                        <li>
+                            <a href>
+                                <i class="ebp-icon fa fa-eye bigger-110 blue"></i>
+                                Monthly Visitors
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href>
+                                <i class="ebp-icon fa fa-user bigger-110 blue"></i>
+                                Active Users
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href>
+                                <i class="ebp-icon fa fa-cog bigger-110 blue"></i>
+                                Settings
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href>
+                        <i class="ebp-icon fa fa-envelope"></i>
+                        Messages
+                        <span class="badge badge-warning">5</span>
+                    </a>
+                </li>
+            </ul>
+            <form dropdown class="navbar-form navbar-left form-search" style="position: relative" role="search">
+                <div class="form-group">
+                    <input type="text" placeholder="search">
+                </div>
+
+                <button type="button" class="btn btn-xs btn-info2">
+                    <i class="ebp-icon fa fa-search icon-only bigger-110"></i>
+                </button>
+
+                <button dropdown-toggle type="button" class="btn btn-xs btn-info2">
+                    <i class="ebp-icon fa fa-caret-down icon-only bigger-110"></i>
+                </button>
+                <div class="dropdown-menu dropdown-navbar dropdown-menu-right" style="width: 700px">
+                    <div class="dropdown-content" style="padding: 10px">
+                        <span class="label label-primary" style="margin: 5px;cursor: pointer" ng-repeat="word in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]">word{{$index}}</span>
+                    </div>
+                </div>
+            </form>
+        </nav>
     </div>
 </div>

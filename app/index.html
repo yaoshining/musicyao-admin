@@ -7,11 +7,11 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=yes">
     <title>MusicYao Admin</title>
     <link rel="stylesheet" href="styles/style.css">
-    <!--<link rel="import" href="bower_components/polymer/polymer.html">-->
-    <link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600&subset=latin,latin-ext' rel='stylesheet'>
+    <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+    <link rel="import" href="ebp-elements.html">
     <script src="src/vendor/require.js" type="text/javascript" charset="utf-8"></script>
     <script src="src/vendor/modernizr.js" type="text/javascript" charset="utf-8"></script>
     <script src="src/loader.js" type="text/javascript" charset="utf-8"></script>
@@ -43,7 +43,26 @@
             <div class="main-content">
                 <div class="main-content-inner" ui-view="main.content">
                     <div class="breadcrumbs" id="breadcrumbs">
+                        <div class="butterfly" style="width: 100px;z-index: 2;left: -60px;top: -20px;opacity: 0.8">
+                            <div class="body">
+                                <img src="images/demos/butterfly/butterfly3-body.png">
+                            </div>
+                            <div class="leftwing">
+                                <img src="images/demos/butterfly/butterfly3-leftwing.png">
+                            </div>
+                            <div class="rightwing">
+                                <img src="images/demos/butterfly/butterfly3-rightwing.png">
+                            </div>
+                        </div>
                         <ebp-breadcrumb></ebp-breadcrumb>
+                        <div class="nav-search" id="nav-search">
+                            <form class="form-search">
+							<span class="input-icon">
+								<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off">
+								<i class="ebp-icon fa fa-search nav-search-icon"></i>
+							</span>
+                            </form>
+                        </div>
                     </div>
                     <div class="page-content fade-in-up" ui-view></div>
                 </div>

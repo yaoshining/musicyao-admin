@@ -1,0 +1,8 @@
+{
+    "ebpFormsModule": [
+        "forms/module"
+    ],
+    "ebpFormsModule.ebpGrid": [
+        "forms/controllers/EbpFormsController"
+    ]
+}
