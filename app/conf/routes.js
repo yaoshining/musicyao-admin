@@ -612,7 +612,7 @@ define(dependencies,function(angular,modules,_routes){
                 'ModalModule': [
                     'modal/controllers/ModalController',
                     'modal/controllers/ModalInstanceController',
-                    'modal/m、odule'
+                    'modal/module'
                 ]
             }
         }
