@@ -31,7 +31,7 @@ body {
         width: 51%;
         height: 100%;
         background-color: #222;
-        z-index: 999;
+        z-index: 1033;
         &.section-left {
             left: 0;
         }
@@ -47,7 +47,7 @@ body {
     width: 100%;
     height: 100%;
     background-color: #ffffff;
-    z-index: 999;
+    z-index: 1033;
 }
 .loaded{
     #loader-wrapper {
@@ -203,7 +203,7 @@ body {
 }
 .page-content {
   background-color: #fff;
-  position: relative;
+  position: static;
   margin: 0;
   padding: 8px 20px 24px;
 }
@@ -311,7 +311,7 @@ body {
     background: #66FF00;
 
     position: fixed;
-    z-index: 1031;
+    z-index: 1035;
     top: 0;
     left: 0;
 

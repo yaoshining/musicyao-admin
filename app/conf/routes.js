@@ -117,6 +117,17 @@ define(dependencies,function(angular,modules,_routes){
                 'UIAndElementsModule': modules.UIAndElementsModule
             }
         },
+        'layout': {
+            url: '/layout',
+            views: {
+                '': {
+                    templateUrl: 'src/UIAndElements/views/layout/SidebarContent.tpl.html'
+                }
+            },
+            breadcrumb: {
+                label: 'Layout'
+            }
+        },
         'UIAndElements.bootstrap': {
             url: '/bootstrap',
             views: {

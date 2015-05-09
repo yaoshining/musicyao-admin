@@ -23,6 +23,8 @@
 @import 'label-badge';
 @import 'widgets';
 @import 'lists';
+@import "items";
+@import "responsive";
 @import 'tooltip-popover';
 @import 'animations';
 @import 'toaster';
@@ -167,6 +169,14 @@ button {
     &:focus {
         outline: none;
     }
+}
+.page-content .abs-content {
+    position: absolute;
+    top: $navbar-min-height + $breadcrumb-height;
+    left: $sidebar-width;
+    bottom: 0;
+    right: 0;
+    padding: 8px 20px 24px;
 }
 //.curved_box:before, .curved_box:after {
 //    width: 70%;

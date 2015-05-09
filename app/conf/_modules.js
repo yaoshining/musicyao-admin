@@ -1,42 +1,6 @@
 define(function(){
 return [
 	{
-		"UIAndElementsModule": [
-			"UIAndElements/module"
-		],
-		"UIAndElementsModule.bootstrap": [
-			"UIAndElements/controllers/BootstrapController"
-		],
-		"UIAndElementsModule.elements": [
-			"UIAndElements/controllers/ElementsController"
-		],
-		"UIAndElementsModule.treeView": [
-			"UIAndElements/controllers/TreeViewController"
-		],
-		"UIAndElementsModule.tables": [
-			"UIAndElements/controllers/tables/TablesController"
-		],
-		"UIAndElementsModule.nestable": [
-			"UIAndElements/controllers/list/NestableController"
-		],
-		"UIAndElementsModule.buttons1": [
-			"UIAndElements/controllers/Buttons1Controller"
-		],
-		"UIAndElementsModule.calendar": [
-			"UIAndElements/controllers/calendar/CalendarDemoController"
-		],
-		"UIAndElementsModule.maps": [
-			"UIAndElements/controllers/maps/MapDemoController",
-			"jvectormap-world",
-			"jvectormap-cn"
-		],
-		"UIAndElementsModule.mindMap": [
-			"UIAndElements/controllers/TreeViewController",
-			"vendor/core/jsmind",
-			"css!styles/vendor/jsmind"
-		]
-	},
-	{
 		"categoriesModule": [
 			"categories/module"
 		]
@@ -104,6 +68,42 @@ return [
 		],
 		"ebpTablesModule.ebpGrid": [
 			"tables/controllers/EbpGridController"
+		]
+	},
+	{
+		"UIAndElementsModule": [
+			"UIAndElements/module"
+		],
+		"UIAndElementsModule.bootstrap": [
+			"UIAndElements/controllers/BootstrapController"
+		],
+		"UIAndElementsModule.elements": [
+			"UIAndElements/controllers/ElementsController"
+		],
+		"UIAndElementsModule.treeView": [
+			"UIAndElements/controllers/TreeViewController"
+		],
+		"UIAndElementsModule.tables": [
+			"UIAndElements/controllers/tables/TablesController"
+		],
+		"UIAndElementsModule.nestable": [
+			"UIAndElements/controllers/list/NestableController"
+		],
+		"UIAndElementsModule.buttons1": [
+			"UIAndElements/controllers/Buttons1Controller"
+		],
+		"UIAndElementsModule.calendar": [
+			"UIAndElements/controllers/calendar/CalendarDemoController"
+		],
+		"UIAndElementsModule.maps": [
+			"UIAndElements/controllers/maps/MapDemoController",
+			"jvectormap-world",
+			"jvectormap-cn"
+		],
+		"UIAndElementsModule.mindMap": [
+			"UIAndElements/controllers/TreeViewController",
+			"vendor/core/jsmind",
+			"css!styles/vendor/jsmind"
 		]
 	},
 	{

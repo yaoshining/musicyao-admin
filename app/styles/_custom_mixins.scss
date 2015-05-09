@@ -153,3 +153,10 @@ $width-large:  1200px;
     -ms-transform: $value;
     -webkit-transform: $value;
 }
+
+@mixin custom-animation-duration($duration) {
+    -webkit-animation-duration: $duration;
+    -moz-animation-duration: $duration;
+    -o-animation-duration: $duration;
+    animation-duration: $duration;
+}
