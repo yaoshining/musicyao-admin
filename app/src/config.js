@@ -15,8 +15,8 @@ requirejs.config({
         'angular-translate': '../bower_components/angular-translate/angular-translate',
         'angular-translate-static': '../bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files',
         'angular-sanitize': '../bower_components/angular-sanitize/angular-sanitize',
-        'ng-file-upload-shim': '../bower_components/ng-file-upload-shim/angular-file-upload-shim',
-        'ng-file-upload': '../bower_components/ng-file-upload/angular-file-upload',
+        'ng-file-upload-shim': '../bower_components/ng-file-upload-shim/ng-file-upload-shim',
+        'ng-file-upload': '../bower_components/ng-file-upload/ng-file-upload',
         /*require ui-bootstrap with the embeded template [http://angular-ui.github.io/bootstrap/]*/
         'ui-bootstrap-tpls': '../bower_components/angular-bootstrap/ui-bootstrap-tpls',
         /*require jquery*/

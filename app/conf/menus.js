@@ -9,6 +9,7 @@ define(function(){
             {name: 'Music',sref: 'music',iconClass: 'fa-music'},
             {name: 'MusicYao',sref: 'musicyao.home',iconClass: 'fa-music'},
             {name: 'Documents',sref: 'documents',iconClass: 'fa-file-text-o'},
+            {name: 'Layouts',sref: 'layouts',iconClass: 'fa-file-text-o'},
             {name: 'UI & Elements',sref: 'UIAndElements',iconClass: 'fa-desktop'},
             {name: 'Forms',sref: 'forms',iconClass: 'fa-pencil-square-o'},
             {name: 'Tables',sref: 'tables',iconClass: 'fa-table'},

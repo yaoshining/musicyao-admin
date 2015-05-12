@@ -117,8 +117,8 @@ define(dependencies,function(angular,modules,_routes){
                 'UIAndElementsModule': modules.UIAndElementsModule
             }
         },
-        'layout': {
-            url: '/layout',
+        'layouts': {
+            url: '/layouts',
             views: {
                 '': {
                     templateUrl: 'src/UIAndElements/views/layout/SidebarContent.tpl.html'
@@ -126,6 +126,9 @@ define(dependencies,function(angular,modules,_routes){
             },
             breadcrumb: {
                 label: 'Layout'
+            },
+            modules: {
+                'ebp.slidePanel': ['plugins/core/ebp-slide-panel']
             }
         },
         'UIAndElements.bootstrap': {
