@@ -36,7 +36,7 @@
         <header id="navbar" class="navbar navbar-default navbar-fixed-top slide-down" ui-view="navbar" role="banner">
             <div class="slide-down" ng-include="'src/home/navbar.tpl.html'"></div>
        </header>
-        <div class="main-container" id="mainContainer" ui-view="main">
+        <div class="main-container" id="mainContainer" ui-view="main" ng-controller="MainController">
             <div id="sidebar" class="sidebar responsive sidebar-fixed slide-left" ui-view="sidebar" ng-controller="SidebarController" ng-class="{'menu-min': minified}">
                 <div class="slide-left" ng-include="'src/home/sidebar.tpl.html'"></div>
             </div>

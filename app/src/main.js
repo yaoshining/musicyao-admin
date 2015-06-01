@@ -5,6 +5,7 @@ require([
     'angular-resource',
     'angular-animate',
     'angular-ui-router',
+    'angular-ui-utils',
     'angular-cookies',
     'plugins/core/ebp-breadcrumb',
     'angular-sanitize',
@@ -22,6 +23,7 @@ require([
             'nprogress',
             'conf/routes',
             'conf/menus',
+            'plugins/core/ebp-slide-panel',
             'auth/module'
         ],function(NProgress,routes,menus){
             /*App Module*/
@@ -33,12 +35,14 @@ require([
                 angular.module('ebp.plugins.templates',[]);
                 angular.module('ebp', [
                     'ui.router',
+                    'ui.utils',
                     'ngResource',
                     'oc.lazyLoad',
                     'ui.bootstrap',
                     'ngAnimate',
                     'authModule',
                     'ngCookies',
+                    'ebp.slidePanel',
                     'ebp.breadcrumb'
                 ]).config([
                     '$urlRouterProvider',
@@ -148,7 +152,26 @@ require([
                             menu.isOpen=!menu.isOpen;
                         };
                     }
-                ]).run(['$ocLazyLoad','$rootScope',function($ocLazyLoad,$rootScope){
+                ]).controller('MainController',['$scope','$ebpSlidePanel',function($scope,$ebpSlidePanel){
+                    $scope.openTaskDetail = function(){
+                        $ebpSlidePanel.open({
+                            url: 'src/UIAndElements/views/layout/taskDetails.tpl.html',
+                            resolve: {
+                            }
+                        });
+                    };
+                    $scope.openProjectDetail = function(){
+                        $ebpSlidePanel.open({
+                            url: 'src/UIAndElements/views/layout/projectDetails.tpl.html',
+                            resolve: {
+                                projects: '项目详情1'
+                            }
+                        });
+                    };
+                    $scope.closePanel = function(){
+                        $ebpSlidePanel.close();
+                    };
+                }]).run(['$ocLazyLoad','$rootScope',function($ocLazyLoad,$rootScope){
                     window.NProgress.inc();
                     setTimeout(function(){
                         window.NProgress.done(true);

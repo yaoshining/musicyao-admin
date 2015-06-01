@@ -1,7 +1,7 @@
 define(function(){
 return [
 	{
-		"categoriesModule": [
+		"categoriesModule1": [
 			"categories/module"
 		]
 	},

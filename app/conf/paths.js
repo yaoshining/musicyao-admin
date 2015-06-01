@@ -6,7 +6,16 @@ define(['jquery'],function(){
         moduleDirs: [
             'auth',
             'categories',
-            'music'
+            'music',
+            'UIAndElements',
+            'forms',
+            'tables',
+            'musicyao',
+            'polymer',
+            'experiments',
+            'widgets',
+            'media',
+            'worktile'
         ]
     };
     $.extend({

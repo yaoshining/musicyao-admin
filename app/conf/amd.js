@@ -40,6 +40,8 @@ requirejs.config({
         'angular-xeditable': '../bower_components/angular-xeditable/dist/js/xeditable.min',
         'angular-wizard': '../bower_components/angular-wizard/dist/angular-wizard.min',
         'angular-ui-tree': '../bower_components/angular-ui-tree/dist/angular-ui-tree.min',
+        'bootstrap-datetimepicker': '../bower_components/smalot-bootstrap-datetimepicker/js/bootstrap-datetimepicker.min',
+        'bootstrap-datetimepicker-zh-CN': '../bower_components/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN',
         'id3': '../bower_components/id3/id3.min',
         'dropzone': '../bower_components/dropzone/downloads/dropzone.min',
         'videogular': '../bower_components/videogular/videogular.min',
@@ -66,6 +68,11 @@ requirejs.config({
         'jquery-mousewheel': ['jquery'],
         'jquery-knob': ['jquery'],
         'jquery-nicescroll': ['jquery'],
+        'bootstrap-datetimepicker': [
+            'jquery',
+            'css!../bower_components/smalot-bootstrap-datetimepicker/css/bootstrap-datetimepicker.min'
+        ],
+        'bootstrap-datetimepicker-zh-CN': ['bootstrap-datetimepicker'],
         'ripples': ['jquery'],
         'dropzone': ['css!../bower_components/dropzone/downloads/css/basic','css!../bower_components/dropzone/downloads/css/dropzone'],
         'mCustomScrollbar': ['jquery-mousewheel','css!../bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar'],

@@ -19,37 +19,56 @@
             compile: function compile(tElement,tAttrs,transclude){
                 return function(scope, element, iAttrs, controller,$transclude) {
                     element.removeClass('slide-panel').addClass('slide-panel').addClass('slide-right');
+                    $ebpSlidePanel.setElement(element);
                     iAttrs.$observe('templateUrl', function(value) {
-                        $templateRequest(value, true).then(function(response){
-                            var newScope = scope.$new();
-                            newScope.test = '123';
-                            var clonedElement = $compile(response)(newScope);
-                            element.html(clonedElement);
-                        });
-                        //scope.templateUrl = value;
+                        if(value){
+                            $ebpSlidePanel.loadTemplate(value);
+                        }
                     });
-                    $ebpSlidePanel.panelElement = element;
                 }
 
-            },
-            template: function($scope){
-                return '<div ng-include="templateUrl">{{templateUrl}}</div>';
-            },
-            controller: ['$ebpSlidePanel',function($ebpSlidePanel){
-            }]
+            }
         };
-    }]).service('$ebpSlidePanel',['$animate',function($animate){
+    }]).service('$ebpSlidePanel',
+    ['$animate','$templateRequest','$compile',
+    function($animate,$templateRequest,$compile){
+        var panelElement = null;
+        var currentScope = null;
+        var cleanupLastContent = function() {
+            if (panelElement) {
+                panelElement.empty();
+            }
+            if (currentScope) {
+                currentScope.$destroy();
+                currentScope = null;
+            }
+        };
         var service = {
-            panelElement: null,
-            openPanel: function(){
-                $animate.removeClass(service.panelElement,'ng-hide',{
+            open: function(settings){
+                if(!panelElement) return;
+                service.loadTemplate(settings.url,settings.resolve);
+                $animate.removeClass(panelElement,'ng-hide',{
                     tempClasses: 'ng-hide-animate'
                 });
             },
-            closePanel: function(){
-                $animate.addClass(service.panelElement,'ng-hide',{
+            close: function(){
+                if(!panelElement) return;
+                $animate.addClass(panelElement,'ng-hide',{
                     tempClasses: 'ng-hide-animate'
                 });
+            },
+            loadTemplate: function(url,resolve){
+                $templateRequest(url, true).then(function(response){
+                    cleanupLastContent();
+                    var newScope = panelElement.scope().$new();
+                    $.extend(newScope,resolve);
+                    currentScope = newScope;
+                    var clonedElement = $compile(response)(newScope);
+                    panelElement.html(clonedElement);
+                });
+            },
+            setElement: function(element){
+                panelElement = element;
             }
         };
         return service;
