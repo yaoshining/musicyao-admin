@@ -12,6 +12,7 @@ define(function(){
             {name: 'Layouts',sref: 'layouts',iconClass: 'fa-file-text-o'},
             {name: 'UI & Elements',sref: 'UIAndElements',iconClass: 'fa-desktop'},
             {name: 'Forms',sref: 'forms',iconClass: 'fa-pencil-square-o'},
+            {name: 'Charts',sref: 'charts',iconClass: 'fa-pencil-square-o'},
             {name: 'Tables',sref: 'tables',iconClass: 'fa-table'},
             {name: 'Widgets',sref: 'widgetsDemo',iconClass: 'fa-list-alt'},
             {name: 'Polymer',sref: 'polymer',polymerIcon: 'polymer'},
@@ -38,10 +39,14 @@ define(function(){
             {name: 'Nestable List',sref: 'UIAndElements.nestable'},
             {name: 'Calendar',sref: 'UIAndElements.calendar'},
             {name: 'Maps',sref: 'UIAndElements.maps'},
-            {name: 'MindMap',sref: 'UIAndElements.mindMap'}
+            {name: 'MindMap',sref: 'UIAndElements.mindMap'},
+            {name: 'DatePicker',sref: 'UIAndElements.datepicker'}
         ],
         'Forms': [
             {name: 'Form Elements',sref: 'forms.elements'}
+        ],
+        'Charts': [
+            {name: 'Gantt', sref: 'charts.gantt'}
         ],
         'Tables': [
             {name: 'EbpGrid',sref: 'tables.ebpGrid'}

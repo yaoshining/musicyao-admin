@@ -13,7 +13,7 @@
             <button class="btn btn-primary" ng-click="closePanel()">close slide panel</button>
             <button class="btn btn-primary" ng-click="addTask()">add task</button>
             {{tasks}}
-            <input type="text" ui-jq="datetimepicker" readonly ui-options="{format: 'yyyy-mm-dd hh:ii',todayBtn: true,autoclose: true,language: 'zh-CN',showMeridian: true}" ng-model="time" />
+            <input type="text" ui-jq="datepicker" readonly ui-options="{format: 'yyyy-mm-dd',todayBtn: 'linked',todayHighlight: true,autoclose: true,language: 'zh-CN',showMeridian: false}" ng-model="time" ui-event="{changeDate: 'blurCallback()'}" />
             {{time}}
         </div>
     </div>

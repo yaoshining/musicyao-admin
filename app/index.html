@@ -33,16 +33,16 @@
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <div ui-view="body" style="min-height: 100%">
-        <header id="navbar" class="navbar navbar-default navbar-fixed-top slide-down" ui-view="navbar" role="banner">
+        <header id="navbar" class="navbar navbar-default slide-down" ui-view="navbar" role="banner">
             <div class="slide-down" ng-include="'src/home/navbar.tpl.html'"></div>
        </header>
         <div class="main-container" id="mainContainer" ui-view="main" ng-controller="MainController">
-            <div id="sidebar" class="sidebar responsive sidebar-fixed slide-left" ui-view="sidebar" ng-controller="SidebarController" ng-class="{'menu-min': minified}">
+            <div id="sidebar" class="sidebar responsive slide-left" ui-view="sidebar" ng-controller="SidebarController" ng-class="{'menu-min': minified}">
                 <div class="slide-left" ng-include="'src/home/sidebar.tpl.html'"></div>
             </div>
             <div class="main-content">
                 <div class="main-content-inner" ui-view="main.content">
-                    <div class="breadcrumbs breadcrumbs-fixed" id="breadcrumbs">
+                    <div class="breadcrumbs" id="breadcrumbs">
                         <div class="butterfly" style="width: 100px;z-index: 1031;left: -60px;top: -20px;opacity: 0.8">
                             <div class="body">
                                 <img src="images/demos/butterfly/butterfly3-body.png">

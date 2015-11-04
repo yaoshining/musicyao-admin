@@ -16,6 +16,14 @@ return [
 		]
 	},
 	{
+		"chartsModule": [
+			"charts/module"
+		],
+		"chartsModule.gantt": [
+			"charts/controllers/GanttController"
+		]
+	},
+	{
 		"filesModule": [
 			"files/module",
 			"files/services/attachService",
@@ -104,6 +112,9 @@ return [
 			"UIAndElements/controllers/TreeViewController",
 			"vendor/core/jsmind",
 			"css!styles/vendor/jsmind"
+		],
+		"UIAndElementsModule.datepicker": [
+			"UIAndElements/views/datepicker/EbpDateTimePickerController"
 		]
 	},
 	{

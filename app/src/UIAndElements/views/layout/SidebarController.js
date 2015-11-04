@@ -8,7 +8,10 @@ define(['UIAndElements/module'],function(module) {
             $scope.tasks = [1,2,3];
             $scope.addTask = function(){
                 $scope.tasks.push(4);
-            }
+            };
+            $scope.blurCallback = function(){
+                console.log(this);
+            };
     }]).controller('TaskDetailsController',['$scope',function($scope){
 
         }]);

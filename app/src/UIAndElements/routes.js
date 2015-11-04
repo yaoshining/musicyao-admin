@@ -31,7 +31,7 @@ define(['conf/modules'],function(modules){
                 label: 'Layout'
             },
             modules: {
-                'UIAndElementsModule': ['UIAndElements/views/layout/SidebarController','bootstrap-datetimepicker-zh-CN']
+                'UIAndElementsModule': ['UIAndElements/views/layout/SidebarController','bootstrap-datepicker-zh-CN']
             }
         },
         'UIAndElements.bootstrap': {
@@ -212,6 +212,22 @@ define(['conf/modules'],function(modules){
             modules: {
                 'UIAndElementsModule': modules['UIAndElementsModule.mindMap'],
                 'ebp.mindmap': modules['ebpJsMindPlugin']
+            }
+        },
+        'UIAndElements.datepicker': {
+            url: '/datepicker',
+            views: {
+                '': {
+                    templateUrl: 'src/UIAndElements/views/datepicker/EbpDateTimePicker.tpl.html',
+                    controller: 'EbpDateTimePickerController'
+                }
+            },
+            breadcrumb: {
+                label: 'DatePicker'
+            },
+            modules: {
+                'UIAndElementsModule': modules['UIAndElementsModule.datepicker'],
+                'ebp.form.datetimepicker': ['plugins/form/ebp-datetimepicker']
             }
         }
     };

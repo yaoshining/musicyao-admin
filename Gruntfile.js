@@ -21,7 +21,8 @@ module.exports = function(grunt) {
         yeoman: {
             // Configurable paths
             app: 'app',
-            dist: 'dist'
+            dist: 'dist',
+            bower: 'app/bower_components'
         },
 
         // The actual grunt server settings
@@ -337,7 +338,8 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     cwd: '<%= yeoman.app %>/images',
-                    src: '{,*/}*.{gif,jpeg,jpg,png}',
+                    //src: '{,*/}*.{gif,jpeg,jpg,png}',
+                    src: '{*/}*.{abc}',
                     dest: '<%= yeoman.dist %>/images'
                 }],
                 options: { cache: false }
@@ -423,7 +425,9 @@ module.exports = function(grunt) {
                         'src/ebp-templates.js',
                         '*.{ico,png,txt}',
                         '.htaccess',
-                        'images/{,*/}*.webp',
+                        //'images/{,*/}*.webp',
+                        'images/**/*.*',
+                        'data/**/*',
                         '{,*/}*.html',
                         'styles/fonts/{,*/}*.*',
                         'bower_components/sass-bootstrap/fonts/*.*',
@@ -619,7 +623,6 @@ module.exports = function(grunt) {
                         }
                     }
                 }
-                console.log(routes);
                 result.push(routes);
             });
             var content = 'define(["conf/modules"],function(modules){\n'+
@@ -627,6 +630,45 @@ module.exports = function(grunt) {
                 '\n});';
             grunt.file.write(outpath, content);
         });
+    });
+
+    grunt.registerTask('copy-deps',function(){
+        var pattern = grunt.config.process('<%=yeoman.app %>/conf/amd.js');
+        var bower = grunt.config.process('<%=yeoman.bower %>');
+        var destDir = grunt.config.process('<%=yeoman.dist %>') + '/bower_components';
+        var amd = grunt.file.read(pattern);
+        var settings = eval('(' + amd.substring(amd.indexOf('{'), amd.lastIndexOf('}') + 1) + ')');
+        var paths = settings.paths;
+        for(var name in paths) {
+            var filepath = paths[name];
+            copyBowerFiles('.js', 'bower_components', filepath);
+        }
+        var shims = settings.shim;
+        for(var p in shims) {
+            var deps = shims[p];
+            if(typeof deps === 'object' && !Array.isArray(deps)) {
+                deps = deps.deps;
+            }
+            if(Array.isArray(deps)) {
+                deps.forEach(function(module){
+                    if(module.indexOf('css!') > -1){
+                        copyBowerFiles('.css', 'bower_components', module);
+                    }
+                });
+            }
+        }
+        function copyBowerFiles(suffix, bowerDir, value) {
+            if(value.indexOf(bowerDir) > -1){
+                var relPath = value.split(bowerDir).pop() + suffix;
+                if(relPath){
+                    var source = bower + relPath;
+                    var dest = destDir + relPath;
+                    if(grunt.file.exists(source)) {
+                        grunt.file.copy(source, dest);
+                    }
+                }
+            }
+        }
     });
 
     grunt.registerTask('build', [
@@ -639,6 +681,7 @@ module.exports = function(grunt) {
         'requirejs',
         'clean:afterBuild',
         'copy:dist',
+        'copy-deps',
         'requirejs-bundle',
         'modernizr',
         'uglify',

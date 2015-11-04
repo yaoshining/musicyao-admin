@@ -15,7 +15,8 @@ define(['jquery'],function(){
             'experiments',
             'widgets',
             'media',
-            'worktile'
+            'worktile',
+            'charts'
         ]
     };
     $.extend({

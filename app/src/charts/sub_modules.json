@@ -1,0 +1,8 @@
+{
+    "chartsModule": [
+        "charts/module"
+    ],
+    "chartsModule.gantt": [
+        "charts/controllers/GanttController"
+    ]
+}

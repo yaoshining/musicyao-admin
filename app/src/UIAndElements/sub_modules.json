@@ -32,5 +32,8 @@
         "UIAndElements/controllers/TreeViewController",
         "vendor/core/jsmind",
         "css!styles/vendor/jsmind"
+    ],
+    "UIAndElementsModule.datepicker": [
+        "UIAndElements/views/datepicker/EbpDateTimePickerController"
     ]
 }

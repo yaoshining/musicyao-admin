@@ -1,0 +1,55 @@
+<div gantt
+     data="data"
+     timespans="timespans"
+     show-side="options.labelsEnabled"
+     daily="options.daily"
+     filter-task="{'name': options.filterTask}"
+     filter-row="{'name': options.filterRow}"
+     sort-mode="options.sortMode"
+     view-scale="options.scale"
+     column-width="getColumnWidth(options.width, options.scale, options.zoom)"
+     auto-expand="options.autoExpand"
+     task-out-of-range="options.taskOutOfRange"
+     from-date = "options.fromDate"
+     to-date = "options.toDate"
+     allow-side-resizing = "options.allowSideResizing"
+     task-content = "options.taskContentEnabled ? options.taskContent : undefined"
+     row-content = "options.rowContentEnabled ? options.rowContent : undefined"
+     current-date="options.currentDate"
+     current-date-value="options.currentDateValue"
+     headers="options.width && options.shortHeaders || options.longHeaders"
+     headers-formats="options.headersFormats"
+     max-height="options.maxHeight && 300 || 0"
+     time-frames="options.timeFrames"
+     date-frames="options.dateFrames"
+     time-frames-working-mode="options.timeFramesWorkingMode"
+     time-frames-non-working-mode="options.timeFramesNonWorkingMode"
+     time-frames-magnet="options.timeFramesMagnet"
+     api="options.api"
+     column-magnet="options.columnMagnet">
+    <gantt-tree enabled="options.sideMode === 'Tree' || options.sideMode === 'TreeTable'"
+                header-content="options.treeHeaderContent"
+                keep-ancestor-on-filter-row="true">
+    </gantt-tree>
+    <gantt-table enabled="options.sideMode === 'Table' || options.sideMode === 'TreeTable'"
+                 columns="options.sideMode === 'TreeTable' ? options.treeTableColumns : options.columns"
+                 headers="options.columnsHeaders"
+                 classes="options.columnsClasses"
+                 formatters="options.columnsFormatters"
+                 contents="options.columnsContents"
+                 header-contents="options.columnsHeaderContents">
+    </gantt-table>
+    <gantt-groups enabled="options.groupDisplayMode === 'group' || options.groupDisplayMode === 'overview' || options.groupDisplayMode === 'promote'" display="options.groupDisplayMode"></gantt-groups>
+    <gantt-tooltips></gantt-tooltips>
+    <gantt-bounds></gantt-bounds>
+    <gantt-progress></gantt-progress>
+    <gantt-sortable></gantt-sortable>
+    <gantt-movable enabled="!options.readOnly"></gantt-movable>
+    <gantt-draw-task
+        enabled="options.canDraw"
+        move-threshold="2"
+        task-factory="options.drawTaskFactory">
+    </gantt-draw-task>
+    <gantt-overlap></gantt-overlap>
+    <gantt-resize-sensor></gantt-resize-sensor>
+</div>

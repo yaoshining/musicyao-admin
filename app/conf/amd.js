@@ -40,15 +40,18 @@ requirejs.config({
         'angular-xeditable': '../bower_components/angular-xeditable/dist/js/xeditable.min',
         'angular-wizard': '../bower_components/angular-wizard/dist/angular-wizard.min',
         'angular-ui-tree': '../bower_components/angular-ui-tree/dist/angular-ui-tree.min',
-        'bootstrap-datetimepicker': '../bower_components/smalot-bootstrap-datetimepicker/js/bootstrap-datetimepicker.min',
-        'bootstrap-datetimepicker-zh-CN': '../bower_components/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN',
+        'bootstrap-datepicker': '../bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min',
+        'bootstrap-datepicker-zh-CN': '../bower_components/bootstrap-datepicker/dist/locales/bootstrap-datepicker.zh-CN.min',
         'id3': '../bower_components/id3/id3.min',
         'dropzone': '../bower_components/dropzone/downloads/dropzone.min',
         'videogular': '../bower_components/videogular/videogular.min',
         'videogular-controls': '../bower_components/videogular-controls/controls.min',
         'videogular-poster': '../bower_components/videogular-poster/poster.min',
         'videogular-overlay-play': '../bower_components/videogular-overlay-play/overlay-play.min',
-        'videogular-buffering': '../bower_components/videogular-buffering/buffering.min'
+        'videogular-buffering': '../bower_components/videogular-buffering/buffering.min',
+        'angular-gantt': '../bower_components/angular-gantt/dist/angular-gantt.min',
+        'angular-gantt-plugins': '../bower_components/angular-gantt/dist/angular-gantt-plugins.min',
+        'angular-moment': '../bower_components/angular-moment/angular-moment.min'
     },
     shim: {
         'codemirror': {
@@ -68,11 +71,11 @@ requirejs.config({
         'jquery-mousewheel': ['jquery'],
         'jquery-knob': ['jquery'],
         'jquery-nicescroll': ['jquery'],
-        'bootstrap-datetimepicker': [
+        'bootstrap-datepicker': [
             'jquery',
-            'css!../bower_components/smalot-bootstrap-datetimepicker/css/bootstrap-datetimepicker.min'
+            'css!../bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min'
         ],
-        'bootstrap-datetimepicker-zh-CN': ['bootstrap-datetimepicker'],
+        'bootstrap-datepicker-zh-CN': ['bootstrap-datepicker'],
         'ripples': ['jquery'],
         'dropzone': ['css!../bower_components/dropzone/downloads/css/basic','css!../bower_components/dropzone/downloads/css/dropzone'],
         'mCustomScrollbar': ['jquery-mousewheel','css!../bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar'],
@@ -96,7 +99,10 @@ requirejs.config({
         'plot': ['flot'],
         'fuelux': ['bootstrap','jquery','moment','css!styles/ebp/tree'],
         'ui-sortable': ['jquery-ui'],
-        'nprogress': ['']
+        'nprogress': [''],
+        'angular-moment': ['moment'],
+        'angular-gantt': ['angular','angular-moment','css!../bower_components/angular-gantt/dist/angular-gantt.min'],
+        'angular-gantt-plugins': ['angular-gantt','css!../bower_components/angular-gantt/dist/angular-gantt-plugins.min']
     },
     map: {
         '*': {

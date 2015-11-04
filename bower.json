@@ -62,6 +62,7 @@
     "rainyday.js": "maroslaw/rainyday.js#~0.1.2",
     "jquery.ripples": "sirxemic/jquery.ripples",
     "lodash": "~3.8.0",
-    "smalot-bootstrap-datetimepicker": "~2.3.4"
+    "bootstrap-datepicker": "~1.4.0",
+    "angular-gantt": "~1.2.7"
   }
 }
