@@ -9,6 +9,8 @@
 module.exports = function(grunt) {
     // Load grunt tasks automatically
     var glob = require('glob');
+    var serveStatic = require('serve-static');
+    var serveIndex = require('serve-index');
     require('load-grunt-tasks')(grunt);
 
     // Time how long tasks take. Can help when optimizing build times
@@ -45,9 +47,9 @@ module.exports = function(grunt) {
                             // Include the proxy first
                             proxy,
                             // Serve static files.
-                            connect.static(options.base),
+                            serveStatic(option.base),
                             // Make empty directories browsable.
-                            connect.directory(options.base)
+                            serveIndex(options.base)
                         ];
                     }
                 },
@@ -75,12 +77,12 @@ module.exports = function(grunt) {
 
                         // Serve static files.
                         options.base.forEach(function(base) {
-                          middlewares.push(connect.static(base));
+                          middlewares.push(serveStatic(base));
                         });
 
                         // Make directory browse-able.
                         var directory = options.directory || options.base[options.base.length - 1];
-                        middlewares.push(connect.directory(directory));
+                        middlewares.push(serveIndex(directory));
                         return middlewares;
                     }
                 },
